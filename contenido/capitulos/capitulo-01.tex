@@ -259,6 +259,80 @@ El conjunto de los \indexemph{números reales}, denotado por $\mathbb{R}$, es un
 
 \end{definition}
 
+Las nueve reglas anteriores se llaman \indexemph{axiomas de campo}. Se aplican a todos los números reales y permiten calcular sin depender de ejemplos particulares. Por ejemplo, al elegir $a=2$, $b=3$ y $c=4$ en la asociatividad y la distributividad obtenemos
+\[
+(2+3)+4=2+(3+4)=9,
+\qquad
+2(3+4)=2\cdot3+2\cdot4=14.
+\]
+Los elementos $0$ y $1$ actúan como neutros, mientras que $-2$ y $1/2$ son, respectivamente, el inverso aditivo de $2$ y el inverso multiplicativo de $2$:
+\[
+2+(-2)=0,
+\qquad
+2\cdot\frac12=1.
+\]
+
+Las propiedades de campo también implican reglas que usaremos sin tener que suponerlas por separado.
+
+\begin{proposition}[Unicidad y cancelación en un campo]
+En un campo el neutro aditivo y el neutro multiplicativo son únicos; cada elemento tiene un único inverso aditivo y, si es distinto de cero, un único inverso multiplicativo. Además,
+\[
+a+c=b+c\quad\Longrightarrow\quad a=b.
+\]
+\end{proposition}
+
+\begin{proof}
+Si $0$ y $0'$ fueran neutros aditivos, entonces $0=0+0'=0'$. Análogamente, si $1$ y $1'$ fueran neutros multiplicativos, entonces $1=1\cdot1'=1'$. Si $u$ y $v$ fueran inversos aditivos de $a$, entonces
+\[
+u=u+0=u+(a+v)=(u+a)+v=0+v=v.
+\]
+La unicidad del inverso multiplicativo se obtiene de la misma manera: si $u a=v a=1$ y $a\ne0$, entonces
+\[
+u=u\cdot1=u(av)=(ua)v=1\cdot v=v.
+\]
+Finalmente, sumando $-c$ a ambos lados de $a+c=b+c$ y usando asociatividad se obtiene $a=b$.
+\end{proof}
+
+\begin{proposition}[Cálculos con cero y signos]
+Para cualesquiera $a,b\in\mathbb{R}$,
+\[
+a\cdot0=0,\qquad a(-b)=-(ab),\qquad (-a)(-b)=ab.
+\]
+Además, $ab=0$ si y sólo si $a=0$ o $b=0$.
+\end{proposition}
+
+\begin{proof}
+Por distributividad,
+\[
+a\cdot0=a(0+0)=a\cdot0+a\cdot0.
+\]
+Al cancelar $a\cdot0$ en ambos lados resulta $a\cdot0=0$. También,
+\[
+a(-b)+ab=a((-b)+b)=a\cdot0=0,
+\]
+de modo que $a(-b)$ es el inverso aditivo de $ab$ y, por unicidad, $a(-b)=-(ab)$. Usando conmutatividad y esta identidad dos veces,
+\[
+(-a)(-b)=-\bigl((-a)b\bigr)=-\bigl(-(ab)\bigr)=ab.
+\]
+Si $a=0$ o $b=0$, el producto es cero. Recíprocamente, si $ab=0$ y $a\ne0$, multiplicamos por $a^{-1}$ y obtenemos
+\[
+b=1b=(a^{-1}a)b=a^{-1}(ab)=0.
+\]
+Así, alguno de los factores debe ser cero.
+\end{proof}
+
+\begin{example}
+Las identidades anteriores justifican, por ejemplo,
+\[
+(-2)\cdot3=-(2\cdot3)=-6,
+\qquad
+(-2)(-3)=2\cdot3=6,
+\qquad
+7\cdot0=0.
+\]
+También permiten simplificar una ecuación como $3x+2=11$: al restar $2$ y multiplicar por $1/3$ se obtiene $x=3$.
+\end{example}
+
 Los números reales que no pertenecen a $\mathbb{Q}$ se denominan \indexemph{irracionales}; es decir,
 \[
 \mathbb{R}\setminus\mathbb{Q}.
@@ -278,6 +352,10 @@ son irracionales. En consecuencia,
 \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}.
 \]
 \end{example}
+
+\begin{figuranotas}{Inclusión de los conjuntos numéricos estudiados.}{fig:inclusion-conjuntos-numericos}
+\input{assets/inclusion-conjuntos-numericos.tikz.tex}
+\end{figuranotas}
 
 \section{Estructura de campo ordenado de \texorpdfstring{$\mathbb{R}$}{R}}
 
@@ -309,6 +387,8 @@ Todo número real es también complejo, pues $a=a+0i$ para todo $a\in\mathbb{R}$
 El campo $\mathbb{C}$ no puede dotarse de un orden que sea compatible con sus operaciones. En efecto, en cualquier campo ordenado se cumple $x^2\geq0$ para todo $x$. Si $\mathbb{C}$ fuera un campo ordenado, entonces $i^2\geq0$; pero $i^2=-1$, por lo que tendríamos $-1\geq0$, contradiciendo que $1>0$. Por tanto, $\mathbb{C}$ no es un campo ordenado.
 \end{example}
 
+En el ejemplo anterior se anticipó una consecuencia de los axiomas de campo ordenado: el cuadrado de cualquier elemento es no negativo. Después de formalizar el orden, demostraremos esta y otras reglas que explican cómo operar con desigualdades.
+
 \begin{definition}
 Un campo $K$ se denomina \indexemph{campo ordenado} si está provisto de una relación $\leq$ que es un orden total y es compatible con las operaciones del campo. Esto significa que para cualesquiera $a,b,c\in K$ se cumplen:
 \begin{enumerate}
@@ -320,6 +400,47 @@ Un campo $K$ se denomina \indexemph{campo ordenado} si está provisto de una rel
     \item si $0\leq a$ y $0\leq b$, entonces $0\leq ab$.
 \end{enumerate}
 \end{definition}
+
+Las primeras cuatro condiciones dicen que cualquier par de elementos puede compararse en un orden coherente. Las dos últimas exigen que la comparación sea compatible con la suma y que el producto de elementos no negativos siga siendo no negativo. La notación $a<b$ significa que $a\leq b$ y $a\ne b$; equivalentemente, $a>b$ significa $b<a$.
+
+\begin{proposition}[Comparación mediante la diferencia]
+Para cualesquiera $a,b\in K$,
+\[
+a\leq b\quad\Longleftrightarrow\quad 0\leq b-a.
+\]
+En particular, $a<b$ si y sólo si $0<b-a$.
+\end{proposition}
+
+\begin{proof}
+Sumar el mismo elemento preserva el orden. Por tanto, al sumar $-a$ a $a\leq b$ obtenemos $0\leq b-a$. Recíprocamente, al sumar $a$ a $0\leq b-a$ se obtiene $a\leq b$. Si alguna de las desigualdades es estricta, la otra también lo es: sumar o restar el mismo elemento no convierte dos elementos distintos en iguales.
+\end{proof}
+
+\begin{proposition}[Tricotomía]
+Para cualesquiera $a,b\in K$ se cumple exactamente una de las siguientes posibilidades:
+\[
+a<b,\qquad a=b,\qquad b<a.
+\]
+\end{proposition}
+
+\begin{proof}
+Por totalidad, $a\leq b$ o $b\leq a$. Si ambas relaciones se cumplen, la antisimetría implica $a=b$. Si $a\ne b$, por tanto, sólo una de las dos comparaciones puede cumplirse y es estricta.
+\end{proof}
+
+\begin{proposition}[Positividad de $1$ y de los cuadrados]
+En todo campo ordenado, $0<1$. Además, para cada $x\in K$,
+\[
+x^2\geq0,
+\]
+y si $x\ne0$, entonces $x^2>0$.
+\end{proposition}
+
+\begin{proof}
+Por totalidad, $0\leq1$ o $1\leq0$. Si $1\leq0$, como $1\ne0$ tendríamos $1<0$, y al sumar $-1$ se obtendría $0<-1$. La compatibilidad del orden con el producto daría $0\leq(-1)(-1)=1$. Junto con $1\leq0$, esto implicaría $1=0$ por antisimetría, una contradicción. Así, $0\leq1$; como $1\ne0$, en realidad $0<1$.
+
+Por tricotomía, $0\leq x$ o $x<0$. En el primer caso el axioma del producto da $x^2\geq0$. En el segundo, al sumar $-x$ a $x<0$ vemos que $0<-x$, y de nuevo el axioma del producto da $(-x)^2=x^2\geq0$. Si $x\ne0$, el producto $x^2$ no es cero por la propiedad de producto nulo; por ello $x^2>0$.
+\end{proof}
+
+Estas consecuencias justifican varias reglas prácticas: se puede sumar o restar el mismo número a ambos lados sin cambiar el sentido; multiplicar por un número positivo conserva el sentido; y multiplicar por uno negativo lo invierte. Para esta última regla es esencial conocer el signo del factor.
 
 La relación de orden nos permite expresar comparaciones mediante desigualdades. Escribimos $a<b$ cuando $a\leq b$ y $a\neq b$; de manera análoga, $a>b$ significa $b<a$ y $a\geq b$ significa $b\leq a$. Así, por ejemplo,
 \[
@@ -347,6 +468,61 @@ Por ejemplo, de $2<5$ y $-3<0$ obtenemos
 \[
 -6>-15.
 \]
+
+\begin{proposition}[Multiplicación de desigualdades]
+Sean $a,b,c\in K$ y supongamos que $a<b$. Entonces:
+\begin{enumerate}
+    \item si $c>0$, entonces $ac<bc$;
+    \item si $c<0$, entonces $ac>bc$.
+\end{enumerate}
+En particular, multiplicar por $-1$ invierte la desigualdad:
+\[
+a<b\quad\Longrightarrow\quad -b<-a.
+\]
+\end{proposition}
+
+\begin{proof}
+Por la caracterización mediante la diferencia, $0<b-a$. Si $c>0$, el producto $c(b-a)$ es no negativo por el axioma del orden y no es cero por la propiedad de producto nulo. Por tanto, $0<c(b-a)=bc-ac$, de donde $ac<bc$.
+
+Si $c<0$, al sumar $-c$ a ambos lados se obtiene $0<-c$. El mismo argumento da $0<(-c)(b-a)$. Sumando $-(-c)(b-a)$ a ambos lados de esta última desigualdad se obtiene $c(b-a)<0$. Por consiguiente, $bc-ac<0$, es decir, $bc<ac$. Para la última afirmación tomamos $c=-1$; al sumar $-1$ a $0<1$ se obtiene $-1<0$.
+\end{proof}
+
+\begin{example}
+De $2<5$, al multiplicar por $-3<0$ se obtiene $-6>-15$. En cambio, al multiplicar por $3>0$ se conserva el sentido y se obtiene $6<15$. Estos dos casos muestran por qué siempre debemos revisar el signo del factor.
+\end{example}
+
+\begin{figuranotas}{Multiplicar una desigualdad por un número negativo invierte el orden.}{fig:inversion-desigualdad}
+\input{assets/inversion-desigualdad.tikz.tex}
+\end{figuranotas}
+
+\begin{proposition}[Orden de los recíprocos positivos]
+Si $0<y<x$, entonces
+\[
+0<\frac1x<\frac1y.
+\]
+Así, al tomar recíprocos de dos números positivos, el orden se invierte.
+\end{proposition}
+
+\begin{proof}
+Para $v\ne0$ usamos la notación $u/v:=uv^{-1}$. Primero observamos que si $t>0$, entonces $t^{-1}>0$. En efecto, $t^{-1}\ne0$. Si fuera negativo, al multiplicar $0<t$ por $t^{-1}<0$ resultaría $1=tt^{-1}<0$, en contradicción con $0<1$.
+
+Como $x,y>0$, también $xy>0$ y, por lo anterior, $(xy)^{-1}>0$. Además, $x-y>0$. Por tanto,
+\[
+=\frac1y-\frac1x
+=\frac{x}{xy}-\frac{y}{xy}
+=\frac{x-y}{xy}
+=(x-y)(xy)^{-1}>0,
+\]
+lo que equivale a $1/x<1/y$. La positividad de ambos recíprocos da la primera desigualdad.
+\end{proof}
+
+\begin{example}
+Como $0<2<5$, sus recíprocos satisfacen
+\[
+0<\frac15<\frac12.
+\]
+La hipótesis de positividad importa: no se puede tomar recíprocos de una desigualdad que atraviesa el cero, y el orden debe analizarse por separado cuando los números son negativos.
+\end{example}
 
 Las desigualdades permiten describir de forma natural ciertos subconjuntos fundamentales de $\mathbb{R}$ llamados intervalos.
 
@@ -510,6 +686,7 @@ De manera análoga,
 \[
 |x|\leq r\quad\Longleftrightarrow\quad -r\leq x\leq r.
 \]
+Estas equivalencias se leen directamente de la definición: si $x\geq0$, entonces $|x|=x$; si $x<0$, entonces $|x|=-x$. En ambos casos, comparar $|x|$ con $r>0$ equivale a exigir que $x$ no quede ni a la izquierda de $-r$ ni a la derecha de $r$.
 Esta observación permite describir intervalos centrados en cualquier punto de la recta real.
 
 \begin{proposition}
@@ -553,7 +730,23 @@ x\in(a-r,a+r)
 |x-a|<r.
 \]
 El caso cerrado se demuestra de manera análoga utilizando desigualdades no estrictas.
+En efecto,
+\[
+x\in[a-r,a+r]
+\quad\Longleftrightarrow\quad
+a-r\leq x\leq a+r
+\quad\Longleftrightarrow\quad
+-r\leq x-a\leq r
+\quad\Longleftrightarrow\quad
+|x-a|\leq r.
+\]
 \end{proof}
+
+La equivalencia de esta proposición también tiene una lectura geométrica: $|x-a|<r$ describe los puntos cuya distancia a $a$ es menor que $r$. En la recta real son exactamente los puntos del intervalo abierto con centro $a$ y radio $r$.
+
+\begin{figuranotas}{El valor absoluto como distancia a un centro.}{fig:valor-absoluto-intervalo}
+\input{assets/valor-absoluto-intervalo.tikz.tex}
+\end{figuranotas}
 
 \begin{example}
 La desigualdad
@@ -590,7 +783,7 @@ Como $|x|^2=x^2$ y $|y|^2=y^2$, tenemos
 \[
 |xy|^2=x^2y^2=|x|^2|y|^2=(|x||y|)^2.
 \]
-Puesto que $|xy|\geq0$ y $|x||y|\geq0$, se sigue que
+Puesto que $|xy|\geq0$ y $|x||y|\geq0$, la igualdad de sus cuadrados implica que son iguales. En efecto, si $u,v\geq0$ y $u^2=v^2$, entonces $(u-v)(u+v)=0$; si $u+v=0$, ambos son cero, y si $u+v>0$, necesariamente $u-v=0$. Se sigue que
 \[
 |xy|=|x||y|.
 \]
@@ -841,14 +1034,16 @@ Si $a,b>0$, entonces
 \end{proposition}
 
 \begin{proof}
-La desigualdad central ya fue demostrada. De
+La desigualdad central ya fue demostrada. Probemos con detalle la primera comparación. Como $a,b>0$, también $a+b>0$ y $\sqrt{ab}>0$. Partimos de
 \[
 2\sqrt{ab}\leq a+b
 \]
-y como todas las cantidades son positivas, obtenemos
+y multiplicamos ambos lados por $\sqrt{ab}/(a+b)>0$. Al simplificar,
 \[
 \frac{2ab}{a+b}\leq\sqrt{ab}.
 \]
+Así queda justificado que la desigualdad conserva su sentido: el factor por el que multiplicamos es positivo.
+
 Por otra parte,
 \[
 (a+b)^2\leq2(a^2+b^2),
@@ -861,7 +1056,29 @@ Tomando raíces cuadradas,
 \[
 \frac{a+b}{2}\leq\sqrt{\frac{a^2+b^2}{2}}.
 \]
+En la comparación armónica--geométrica, la transformación anterior sólo multiplica por un factor positivo, así que la igualdad equivale a $2\sqrt{ab}=a+b$. En la comparación geométrica--aritmética, la igualdad ocurre cuando $(\sqrt a-\sqrt b)^2=0$. Ambas condiciones equivalen a $a=b$. En la comparación aritmética--cuadrática, la igualdad equivale a $(a-b)^2=0$, por lo que también requiere $a=b$. Por tanto, las cuatro medias coinciden exactamente cuando $a=b$.
 \end{proof}
+
+\begin{example}
+Para $a=1$ y $b=4$, las medias armónica, geométrica, aritmética y cuadrática son, respectivamente,
+\[
+\frac{2\cdot1\cdot4}{1+4}=\frac85,
+\qquad
+\sqrt{1\cdot4}=2,
+\qquad
+\frac{1+4}{2}=\frac52,
+\qquad
+\sqrt{\frac{1^2+4^2}{2}}=\sqrt{\frac{17}{2}}.
+\]
+En efecto,
+\[
+1.6\leq2\leq2.5\leq\sqrt{8.5}.
+\]
+\end{example}
+
+\begin{figuranotas}{Las cuatro medias del ejemplo ordenadas sobre la recta real: $H$ es la armónica, $G$ la geométrica, $A$ la aritmética y $Q$ la cuadrática.}{fig:orden-medias}
+\input{assets/orden-medias.tikz.tex}
+\end{figuranotas}
 
 Otra desigualdad elemental de gran utilidad es la \indexemph{desigualdad de Bernoulli}, que permite estimar potencias sin necesidad de desarrollarlas completamente.
 

@@ -1,0 +1,14 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  \draw[->] (0,0) -- (10,0);
+  \foreach \x/\val/\pos/\mean in {
+    2/{\frac85}/above/H,
+    4/{2}/above/G,
+    6.5/{\frac52}/above/A,
+    8.58/{\sqrt{17/2}}/above/Q
+  } {
+    \fill[blue!65] (\x,0) circle (2pt);
+    \node[\pos=5pt] at (\x,0) {$\val$};
+    \node[below=5pt] at (\x,0) {$\mean$};
+  }
+  \node[below=23pt] at (5,0) {$H\leq G\leq A\leq Q$};
+\end{tikzpicture}

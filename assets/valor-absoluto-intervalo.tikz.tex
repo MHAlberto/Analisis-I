@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  \draw[->] (0,0) -- (10,0) node[right] {$\mathbb{R}$};
+  \draw[very thick,blue!65] (2.5,0) -- (7.5,0);
+  \draw[blue!65,thick] (2.5,-0.13) -- (2.5,0.13);
+  \draw[blue!65,thick] (7.5,-0.13) -- (7.5,0.13);
+  \draw[fill=white,thick] (2.5,0) circle (2.2pt);
+  \draw[fill=white,thick] (7.5,0) circle (2.2pt);
+  \fill (5,0) circle (2pt);
+  \fill (4.25,0) circle (2pt);
+  \node[above=5pt] at (2.5,0.13) {$a-r$};
+  \node[above=5pt] at (7.5,0.13) {$a+r$};
+  \node[above=5pt] at (5,0.04) {$a$};
+  \node[below=5pt] at (4.25,-0.02) {$x$};
+  \draw[<->] (2.5,-0.72) -- (5,-0.72);
+  \node[below=3pt] at (3.75,-0.72) {$r$};
+  \node[below=3pt] at (6.0,-1.0) {$|x-a|<r\;\Longleftrightarrow\;a-r<x<a+r$};
+\end{tikzpicture}
