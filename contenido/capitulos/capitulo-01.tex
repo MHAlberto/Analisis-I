@@ -392,12 +392,12 @@ En el ejemplo anterior se anticipó una consecuencia de los axiomas de campo ord
 \begin{definition}
 Un campo $K$ se denomina \indexemph{campo ordenado} si está provisto de una relación $\leq$ que es un orden total y es compatible con las operaciones del campo. Esto significa que para cualesquiera $a,b,c\in K$ se cumplen:
 \begin{enumerate}
-    \item $a\leq a$;
-    \item si $a\leq b$ y $b\leq a$, entonces $a=b$;
-    \item si $a\leq b$ y $b\leq c$, entonces $a\leq c$;
-    \item $a\leq b$ o $b\leq a$;
-    \item si $a\leq b$, entonces $a+c\leq b+c$;
-    \item si $0\leq a$ y $0\leq b$, entonces $0\leq ab$.
+    \item \textbf{Reflexividad:} $a\leq a$;
+    \item \textbf{Antisimetría:} si $a\leq b$ y $b\leq a$, entonces $a=b$;
+    \item \textbf{Transitividad:} si $a\leq b$ y $b\leq c$, entonces $a\leq c$;
+    \item \textbf{Totalidad o comparabilidad:} $a\leq b$ o $b\leq a$;
+    \item \textbf{Compatibilidad con la suma (invariancia por traslación):} si $a\leq b$, entonces $a+c\leq b+c$;
+    \item \textbf{Compatibilidad multiplicativa (producto de no negativos):} si $0\leq a$ y $0\leq b$, entonces $0\leq ab$.
 \end{enumerate}
 \end{definition}
 
@@ -576,6 +576,11 @@ contiene a $4$ pero no a $1$. Finalmente,
 contiene ambos extremos.
 \end{example}
 
+\begin{figuranotas}{Intervalos acotados y pertenencia de sus extremos.}{fig:intervalos-acotados}
+\input{assets/intervalos-acotados.tikz.tex}
+\end{figuranotas}
+En estas gráficas, el círculo vacío indica que el extremo no pertenece al intervalo y el punto lleno indica que sí pertenece.
+
 También necesitamos describir conjuntos que se extienden indefinidamente hacia alguno de los dos sentidos de la recta real. Para ello utilizamos los símbolos $\infty$ y $-\infty$. Estos símbolos no representan números reales y, por tanto,
 \[
 \infty\notin\mathbb{R},\qquad -\infty\notin\mathbb{R}.
@@ -629,6 +634,11 @@ El intervalo
 contiene a todos los números reales menores o iguales que $3$, incluido el propio $3$.
 \end{example}
 
+\begin{figuranotas}{Intervalos no acotados: los extremos infinitos indican una dirección, no un punto.}{fig:intervalos-no-acotados}
+\input{assets/intervalos-no-acotados.tikz.tex}
+\end{figuranotas}
+Las flechas muestran que el intervalo continúa indefinidamente en esa dirección; no señalan un extremo real llamado $\infty$ o $-\infty$.
+
 Enseguida verificamos que el orden usual de los números reales es compatible con su estructura algebraica.
 
 \begin{proposition}
@@ -654,6 +664,21 @@ x, & x\geq0,\\
 En particular, $|x|\geq0$ para todo $x\in\mathbb{R}$ y $|x|=0$ si y sólo si $x=0$.
 \end{definition}
 
+\begin{proposition}[Relación entre el valor absoluto y el cuadrado]
+Para todo $x\in\mathbb{R}$,
+\[
+(|x|)^2=x^2,
+\qquad
+|x^2|=x^2,
+\qquad\text{y, por consiguiente,}\qquad
+|x|=\sqrt{x^2}.
+\]
+\end{proposition}
+
+\begin{proof}
+Si $x\geq0$, entonces $|x|=x$, así que $(|x|)^2=x^2$. Si $x<0$, entonces $|x|=-x$ y de nuevo $(|x|)^2=(-x)^2=x^2$. En ambos casos $x^2\geq0$, por lo que $|x^2|=x^2$. Además, $|x|$ es no negativo y su cuadrado es $x^2$; por la unicidad de la raíz cuadrada no negativa, $|x|=\sqrt{x^2}$.
+\end{proof}
+
 \begin{example}
 Por definición,
 \[
@@ -673,6 +698,17 @@ pues en este caso
 \]
 En general, esta desigualdad se cumple para todo $x\in\mathbb{R}$.
 \end{example}
+
+\begin{proposition}[Cotas inmediatas del valor absoluto]
+Para todo $x\in\mathbb{R}$,
+\[
+-|x|\leq x\leq |x|.
+\]
+\end{proposition}
+
+\begin{proof}
+Si $x\geq0$, entonces $|x|=x$ y $-|x|=-x\leq x$. Si $x<0$, entonces $|x|=-x$ y $-|x|=x\leq -x=|x|$. En ambos casos la afirmación sigue de la definición por casos del valor absoluto y del orden usual.
+\end{proof}
 
 El valor absoluto también permite expresar desigualdades de una manera especialmente compacta. Si $r>0$, entonces
 \[

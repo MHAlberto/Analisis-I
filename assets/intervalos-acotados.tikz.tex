@@ -1,0 +1,36 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  % Intervalo abierto: los dos extremos quedan fuera.
+  \node[anchor=east] at (1.15,3) {$(a,b)$};
+  \draw[<->,gray] (1.4,3) -- (6.8,3);
+  \draw[very thick,blue!65] (2.4,3) -- (5.8,3);
+  \draw[fill=white,blue!65,thick] (2.4,3) circle (2.3pt);
+  \draw[fill=white,blue!65,thick] (5.8,3) circle (2.3pt);
+  \node[below=4pt] at (2.4,3) {$a$};
+  \node[below=4pt] at (5.8,3) {$b$};
+
+  % Intervalo cerrado: los dos extremos se incluyen.
+  \node[anchor=east] at (1.15,2) {$[a,b]$};
+  \draw[<->,gray] (1.4,2) -- (6.8,2);
+  \draw[very thick,blue!65] (2.4,2) -- (5.8,2);
+  \fill[blue!65] (2.4,2) circle (2.3pt);
+  \fill[blue!65] (5.8,2) circle (2.3pt);
+  \node[below=4pt] at (2.4,2) {$a$};
+  \node[below=4pt] at (5.8,2) {$b$};
+
+  % Intervalos semiabiertos: se incluye exactamente uno de los extremos.
+  \node[anchor=east] at (1.15,1) {$[a,b)$};
+  \draw[<->,gray] (1.4,1) -- (6.8,1);
+  \draw[very thick,blue!65] (2.4,1) -- (5.8,1);
+  \fill[blue!65] (2.4,1) circle (2.3pt);
+  \draw[fill=white,blue!65,thick] (5.8,1) circle (2.3pt);
+  \node[below=4pt] at (2.4,1) {$a$};
+  \node[below=4pt] at (5.8,1) {$b$};
+
+  \node[anchor=east] at (1.15,0) {$(a,b]$};
+  \draw[<->,gray] (1.4,0) -- (6.8,0);
+  \draw[very thick,blue!65] (2.4,0) -- (5.8,0);
+  \draw[fill=white,blue!65,thick] (2.4,0) circle (2.3pt);
+  \fill[blue!65] (5.8,0) circle (2.3pt);
+  \node[below=4pt] at (2.4,0) {$a$};
+  \node[below=4pt] at (5.8,0) {$b$};
+\end{tikzpicture}
