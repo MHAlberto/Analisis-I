@@ -1,0 +1,46 @@
+% !TeX program = xelatex
+% Compilar: latexmk -xelatex -interaction=nonstopmode -file-line-error main.tex
+\documentclass{notas}
+
+\newcommand{\tituloapuntes}{Análisis I}
+\newcommand{\subtituloapuntes}{Análisis real de una variable}
+\newcommand{\autorapuntes}{}
+\title{\tituloapuntes}
+\author{}
+\date{}
+\hypersetup{pdfsubject={Temario de Análisis Real I}}
+
+\usepackage{imakeidx}
+\usepackage{etoolbox}
+\makeindex
+\NewDocumentCommand{\indexemph}{m}{\emph{#1}\index{#1}}
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+\frontmatter
+\input{contenido/portada}
+\input{contenido/prefacio}
+\clearpage
+\tableofcontents
+\clearpage
+
+\mainmatter
+\input{contenido/capitulos/capitulo-01}
+\input{contenido/capitulos/capitulo-02}
+\input{contenido/capitulos/capitulo-03}
+\input{contenido/capitulos/capitulo-04}
+\input{contenido/capitulos/capitulo-05}
+\input{contenido/capitulos/capitulo-06}
+\input{contenido/capitulos/capitulo-07}
+\input{contenido/capitulos/capitulo-08}
+
+\backmatter
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Índice de palabras}
+\printindex
+\cleardoublepage
+\phantomsection
+\nocite{*}
+\printbibliography[heading=bibintoc,title={Referencias}]
+\end{document}

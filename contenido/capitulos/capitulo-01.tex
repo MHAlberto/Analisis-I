@@ -1,0 +1,1025 @@
+\chapter{Los números reales y la completitud}
+\label{cap:reales-completitud}
+Los números reales que estudiaremos en este capítulo contienen distintos subconjuntos que permiten comprender mejor su estructura. Comenzaremos con los números naturales, los cuales utilizamos para contar, y posteriormente construiremos los enteros, racionales y reales.
+
+Los números naturales pueden describirse informalmente como los números usados para contar. Sin embargo, existe una caracterización formal atribuida a Giuseppe Peano, conocida mediante los \indexemph{axiomas de Peano}. En estas notas adoptaremos la convención
+\[
+\mathbb{N}=\{1,2,3,\ldots\}.
+\]
+
+\begin{definition}
+Sea $\mathbb{N}$ un conjunto con un elemento distinguido $1$ y una aplicación sucesor
+$S:\mathbb{N}\to\mathbb{N}.$ Diremos que $\mathbb{N}$ es el conjunto de los \indexemph{números naturales} si:
+\begin{enumerate}
+    \item $1\in\mathbb{N}$;
+    \item para todo $n\in\mathbb{N}$, $S(n)\in\mathbb{N}$;
+    \item $S(n)\neq 1$ para todo $n\in\mathbb{N}$;
+    \item $S(n)=S(m)$ implica $n=m$;
+    \item si $A\subseteq\mathbb{N}$ contiene a $1$ y $n\in A$ implica $S(n)\in A$, entonces $A=\mathbb{N}$.
+\end{enumerate}
+Usualmente escribimos $S(n)=n+1$.
+\end{definition}
+
+Estos números tienen una importancia fundamental, pues su estructura conduce al principio de inducción matemática, una herramienta que permite demostrar proposiciones para todos los números naturales.
+
+\begin{example}
+Los primeros números naturales son
+\[
+1,2,3,4,5,\ldots
+\]
+Por ejemplo,
+\[
+2,10,125\in\mathbb{N},
+\]
+mientras que
+\[
+0,-1,\frac12\notin\mathbb{N}.
+\]
+\end{example}
+
+\begin{theorem}[Principio de inducción matemática]
+Sea $P(n)$ una proposición definida para todo $n\in\mathbb{N}$. Si $P(1)$
+es verdadera y, para todo $n\in\mathbb{N}$, si $P(n)$ implica $P(n+1),$
+entonces $P(n)$ es verdadera para todo $n\in\mathbb{N}$.
+\end{theorem}
+
+\begin{example}
+Demostremos que
+\[
+1+2+\cdots+n=\frac{n(n+1)}2.
+\]
+Para $n=1$,
+\[
+1=\frac{1(2)}2.
+\]
+Supongamos que
+\[
+1+\cdots+n=\frac{n(n+1)}2.
+\]
+Entonces
+\[
+1+\cdots+n+(n+1)
+=\frac{n(n+1)}2+(n+1)
+=\frac{(n+1)(n+2)}2.
+\]
+Por inducción, la igualdad se cumple para todo $n\in\mathbb{N}$.
+\end{example}
+
+\begin{example}
+Demostremos que
+\[
+2^n\geq n+1
+\]
+para todo $n\in\mathbb{N}$. Para $n=1$,
+\[
+2=1+1.
+\]
+Si suponemos que $2^n\geq n+1$, entonces
+\[
+2^{n+1}=2\cdot2^n\geq2(n+1)\geq n+2.
+\]
+Por inducción,
+\[
+2^n\geq n+1
+\]
+para todo $n\in\mathbb{N}$.
+\end{example}
+
+Después de los números naturales nos interesa incorporar el cero y los números negativos. Existe una diferencia de convenciones respecto a si $0$ pertenece o no a $\mathbb{N}$. Algunos autores utilizan $\mathbb{N}=\{0,1,2,\ldots\}$ y otros $\mathbb{N}=\{1,2,3,\ldots\}$. En estas notas utilizaremos esta última convención.
+
+\begin{definition}
+El conjunto de los \indexemph{números enteros} se define por
+\[
+\mathbb{Z}
+=
+\{-n:n\in\mathbb{N}\}\cup\{0\}\cup\mathbb{N}.
+\]
+Por tanto,
+\[
+\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}.
+\]
+\end{definition}
+
+\begin{example}
+Tenemos, por ejemplo,
+\[
+-8,-1,0,4,20\in\mathbb{Z},
+\]
+mientras que
+\[
+\frac12,\sqrt2\notin\mathbb{Z}.
+\]
+\end{example}
+
+Los enteros tienen una limitación algebraica: sus elementos, salvo $1$ y $-1$, no poseen inverso multiplicativo dentro de $\mathbb{Z}$. Esta dificultad nos lleva a considerar un conjunto más amplio.
+
+\begin{example}
+El entero $2$ no posee inverso multiplicativo en $\mathbb{Z}$, pues necesitaríamos un entero $m$ tal que
+\[
+2m=1.
+\]
+Esto implicaría
+\[
+m=\frac12,
+\]
+pero
+\[
+\frac12\notin\mathbb{Z}.
+\]
+\end{example}
+
+Los números racionales representan una extensión importante, pues constituyen un campo: todo elemento distinto de cero posee inverso multiplicativo.
+
+\begin{definition}
+El conjunto de los \indexemph{números racionales} se define como
+\[
+\mathbb{Q}
+=
+\left\{
+\frac{p}{q}:p,q\in\mathbb{Z},\ q\neq0
+\right\}.
+\]
+Dos fracciones $\frac pq$ y $\frac rs$ representan el mismo racional si
+\[
+ps=rq.
+\]
+\end{definition}
+
+Todo entero es racional, pues
+\[
+n=\frac n1,
+\]
+de modo que
+\[
+\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}.
+\]
+Además, si $\frac pq\neq0$, entonces
+\[
+\left(\frac pq\right)^{-1}=\frac qp.
+\]
+
+Aun así, los racionales presentan una limitación: existen números que surgen naturalmente mediante operaciones elementales y que no pertenecen a $\mathbb{Q}$. Estos números serán llamados irracionales.
+
+\begin{proposition}
+Se cumple
+\[
+\sqrt2\notin\mathbb{Q}.
+\]
+\end{proposition}
+
+\begin{proof}
+Supongamos que $\sqrt2\in\mathbb{Q}$. Entonces existen $p,q\in\mathbb{Z}$, con $q\neq0$ y $\gcd(p,q)=1$, tales que
+\[
+\sqrt2=\frac pq.
+\]
+Elevando al cuadrado,
+\[
+p^2=2q^2.
+\]
+Por tanto, $p^2$ es par y entonces $p$ es par. Escribimos $p=2k$. Sustituyendo,
+\[
+4k^2=2q^2,
+\]
+por lo que
+\[
+q^2=2k^2.
+\]
+Así, $q$ también es par. Entonces $p$ y $q$ son ambos divisibles por $2$, contradiciendo que $\gcd(p,q)=1$. Por tanto,
+\[
+\sqrt2\notin\mathbb{Q}.
+\]
+\end{proof}
+
+\begin{example}
+Son racionales, por ejemplo,
+\[
+\frac12,\quad -\frac73,\quad 5=\frac51,\quad 0=\frac01.
+\]
+Además,
+\[
+0.5=\frac12,
+\qquad
+0.333\ldots=\frac13.
+\]
+\end{example}
+
+Para incorporar tanto racionales como irracionales introducimos los números reales. Formalmente, no los definiremos simplemente como la unión de racionales e irracionales, sino mediante la estructura que los caracteriza.
+
+\begin{definition}
+El conjunto de los \indexemph{números reales}, denotado por $\mathbb{R}$, es un campo. Para cualesquiera $a,b,c\in\mathbb{R}$ se cumplen las siguientes propiedades:
+
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\Roman{enumi}.}
+
+    \item \textbf{Conmutatividad de la suma:}
+    \[
+    a+b=b+a.
+    \]
+
+    \item \textbf{Conmutatividad del producto:}
+    \[
+    ab=ba.
+    \]
+
+    \item \textbf{Asociatividad de la suma:}
+    \[
+    (a+b)+c=a+(b+c).
+    \]
+
+    \item \textbf{Asociatividad del producto:}
+    \[
+    (ab)c=a(bc).
+    \]
+
+    \item \textbf{Distributividad:}
+    \[
+    a(b+c)=ab+ac.
+    \]
+
+    \item \textbf{Existencia del neutro aditivo:} existe $0\in\mathbb{R}$ tal que
+    \[
+    a+0=a.
+    \]
+
+    \item \textbf{Existencia del neutro multiplicativo:} existe $1\in\mathbb{R}$, con $1\neq0$, tal que
+    \[
+    a\cdot1=a.
+    \]
+
+    \item \textbf{Existencia del inverso aditivo:} para todo $a\in\mathbb{R}$ existe $-a\in\mathbb{R}$ tal que
+    \[
+    a+(-a)=0.
+    \]
+
+    \item \textbf{Existencia del inverso multiplicativo:} para todo $a\in\mathbb{R}\setminus\{0\}$ existe $a^{-1}\in\mathbb{R}$ tal que
+    \[
+    aa^{-1}=1.
+    \]
+\end{enumerate}
+
+\end{definition}
+
+Los números reales que no pertenecen a $\mathbb{Q}$ se denominan \indexemph{irracionales}; es decir,
+\[
+\mathbb{R}\setminus\mathbb{Q}.
+\]
+
+\begin{example}
+Son números reales
+\[
+-5,\quad 0,\quad \frac37,\quad \sqrt2,\quad \pi,\quad e.
+\]
+Los tres primeros son racionales, mientras que
+\[
+\sqrt2,\pi,e
+\]
+son irracionales. En consecuencia,
+\[
+\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}.
+\]
+\end{example}
+
+\section{Estructura de campo ordenado de \texorpdfstring{$\mathbb{R}$}{R}}
+
+Los números reales poseen estructuras matemáticas importantes. La primera que estudiaremos es que $\mathbb{R}$ es un \indexemph{campo ordenado}. Esto significa que, además de satisfacer las propiedades algebraicas de un campo, sus elementos pueden compararse mediante una relación de orden compatible con la suma y el producto. Aunque esta propiedad puede parecer natural, no todos los campos pueden dotarse de un orden de este tipo. El ejemplo fundamental es el campo de los números complejos.
+
+\begin{definition}
+El conjunto de los \indexemph{números complejos} se define por
+\[
+\mathbb{C}=\{a+bi:a,b\in\mathbb{R}\},
+\]
+donde $i$ es un elemento que satisface $i^2=-1$. Si $z=a+bi\in\mathbb{C}$, llamamos \indexemph{parte real} y \indexemph{parte imaginaria} de $z$ a
+\[
+\operatorname{Re}(z)=a,\qquad \operatorname{Im}(z)=b.
+\]
+\end{definition}
+
+\begin{example}
+Son números complejos
+\[
+2+3i,\qquad -1+i,\qquad 4-7i,\qquad 5,\qquad -2i.
+\]
+Todo número real es también complejo, pues $a=a+0i$ para todo $a\in\mathbb{R}$. Por tanto,
+\[
+\mathbb{R}\subseteq\mathbb{C}.
+\]
+\end{example}
+
+\begin{example}
+El campo $\mathbb{C}$ no puede dotarse de un orden que sea compatible con sus operaciones. En efecto, en cualquier campo ordenado se cumple $x^2\geq0$ para todo $x$. Si $\mathbb{C}$ fuera un campo ordenado, entonces $i^2\geq0$; pero $i^2=-1$, por lo que tendríamos $-1\geq0$, contradiciendo que $1>0$. Por tanto, $\mathbb{C}$ no es un campo ordenado.
+\end{example}
+
+\begin{definition}
+Un campo $K$ se denomina \indexemph{campo ordenado} si está provisto de una relación $\leq$ que es un orden total y es compatible con las operaciones del campo. Esto significa que para cualesquiera $a,b,c\in K$ se cumplen:
+\begin{enumerate}
+    \item $a\leq a$;
+    \item si $a\leq b$ y $b\leq a$, entonces $a=b$;
+    \item si $a\leq b$ y $b\leq c$, entonces $a\leq c$;
+    \item $a\leq b$ o $b\leq a$;
+    \item si $a\leq b$, entonces $a+c\leq b+c$;
+    \item si $0\leq a$ y $0\leq b$, entonces $0\leq ab$.
+\end{enumerate}
+\end{definition}
+
+La relación de orden nos permite expresar comparaciones mediante desigualdades. Escribimos $a<b$ cuando $a\leq b$ y $a\neq b$; de manera análoga, $a>b$ significa $b<a$ y $a\geq b$ significa $b\leq a$. Así, por ejemplo,
+\[
+2<5,\qquad -3<0,\qquad 4\leq4,\qquad 7>2.
+\]
+También pueden escribirse desigualdades encadenadas. La expresión $a<x<b$ significa simultáneamente $a<x$ y $x<b$. Por ejemplo,
+\[
+1<2<5
+\]
+significa que $1<2$ y $2<5$. De igual manera, $a\leq x<b$ significa $a\leq x$ y $x<b$.
+
+Las desigualdades son compatibles con las operaciones algebraicas. Si $a<b$, entonces para todo $c\in\mathbb{R}$ se cumple
+\[
+a+c<b+c.
+\]
+Por ejemplo, de $2<5$ obtenemos $2+3<5+3$, es decir, $5<8$. Si además $c>0$, entonces
+\[
+ac<bc,
+\]
+mientras que si $c<0$, el sentido de la desigualdad se invierte:
+\[
+ac>bc.
+\]
+Por ejemplo, de $2<5$ y $-3<0$ obtenemos
+\[
+-6>-15.
+\]
+
+Las desigualdades permiten describir de forma natural ciertos subconjuntos fundamentales de $\mathbb{R}$ llamados intervalos.
+
+\begin{definition}
+Sean $a,b\in\mathbb{R}$ con $a<b$. Definimos los \indexemph{intervalos acotados} por
+\begin{enumerate}
+    \item
+    \[
+    (a,b)=\{x\in\mathbb{R}:a<x<b\};
+    \]
+
+    \item
+    \[
+    [a,b)=\{x\in\mathbb{R}:a\leq x<b\};
+    \]
+
+    \item
+    \[
+    (a,b]=\{x\in\mathbb{R}:a<x\leq b\};
+    \]
+
+    \item
+    \[
+    [a,b]=\{x\in\mathbb{R}:a\leq x\leq b\}.
+    \]
+\end{enumerate}
+El intervalo $(a,b)$ se denomina \indexemph{abierto}, $[a,b]$ se denomina \indexemph{cerrado}, mientras que $[a,b)$ y $(a,b]$ se denominan \indexemph{semiabiertos} o \indexemph{semicerrados}.
+\end{definition}
+
+\begin{example}
+El intervalo
+\[
+(1,4)=\{x\in\mathbb{R}:1<x<4\}
+\]
+contiene, por ejemplo, a $2$, $3$ y $\pi$, pero no contiene a $1$ ni a $4$.
+\end{example}
+
+\begin{example}
+El intervalo
+\[
+[1,4)=\{x\in\mathbb{R}:1\leq x<4\}
+\]
+contiene a $1$ pero no contiene a $4$, mientras que
+\[
+(1,4]
+\]
+contiene a $4$ pero no a $1$. Finalmente,
+\[
+[1,4]
+\]
+contiene ambos extremos.
+\end{example}
+
+También necesitamos describir conjuntos que se extienden indefinidamente hacia alguno de los dos sentidos de la recta real. Para ello utilizamos los símbolos $\infty$ y $-\infty$. Estos símbolos no representan números reales y, por tanto,
+\[
+\infty\notin\mathbb{R},\qquad -\infty\notin\mathbb{R}.
+\]
+Su función es únicamente indicar que un intervalo no posee un extremo real en cierta dirección.
+
+\begin{definition}
+Sea $a\in\mathbb{R}$. Los \indexemph{intervalos no acotados} se definen por
+\[
+(a,\infty)=\{x\in\mathbb{R}:a<x\},\qquad [a,\infty)=\{x\in\mathbb{R}:a\leq x\},
+\]
+y
+\[
+(-\infty,a)=\{x\in\mathbb{R}:x<a\},\qquad (-\infty,a]=\{x\in\mathbb{R}:x\leq a\}.
+\]
+Además,
+\[
+\mathbb{R}=(-\infty,\infty).
+\]
+\end{definition}
+
+\begin{example}
+El intervalo
+\[
+(2,\infty)=\{x\in\mathbb{R}:x>2\}
+\]
+contiene a $3$, $\pi$ y $10$, pero no contiene a $2$.
+\end{example}
+
+\begin{example}
+El intervalo
+\[
+[2,\infty)=\{x\in\mathbb{R}:x\geq2\}
+\]
+contiene a $2$ y a todos los números reales mayores que él.
+\end{example}
+
+\begin{example}
+El intervalo
+\[
+(-\infty,3)=\{x\in\mathbb{R}:x<3\}
+\]
+contiene, por ejemplo, a $-5$, $0$ y $\sqrt2$, pero no contiene a $3$.
+\end{example}
+
+\begin{example}
+El intervalo
+\[
+(-\infty,3]=\{x\in\mathbb{R}:x\leq3\}
+\]
+contiene a todos los números reales menores o iguales que $3$, incluido el propio $3$.
+\end{example}
+
+Enseguida verificamos que el orden usual de los números reales es compatible con su estructura algebraica.
+
+\begin{proposition}
+El campo $\mathbb{R}$, provisto de su orden usual $\leq$, es un campo ordenado.
+\end{proposition}
+
+\begin{proof}
+La relación $\leq$ en $\mathbb{R}$ es reflexiva, antisimétrica, transitiva y total. Además, para cualesquiera $a,b,c\in\mathbb{R}$, si $a\leq b$, entonces $a+c\leq b+c$, y si $0\leq a$ y $0\leq b$, entonces $0\leq ab$. Por tanto, el orden usual de $\mathbb{R}$ es compatible con las operaciones de suma y producto, y en consecuencia $\mathbb{R}$ es un campo ordenado.
+\end{proof}
+
+\section{Valor absoluto y desigualdades}
+Una parte importante del análisis real se fundamenta en el estudio de desigualdades. Estas permiten comparar cantidades, obtener estimaciones y controlar el comportamiento de expresiones que posteriormente aparecerán en sucesiones, límites, continuidad y convergencia. Una de las herramientas más elementales y, al mismo tiempo, más utilizadas para expresar este tipo de estimaciones es el valor absoluto.
+
+\begin{definition}[Valor absoluto]
+Sea $x\in\mathbb{R}$. El \indexemph{valor absoluto} de $x$ se define por
+\[
+|x|=
+\begin{cases}
+x, & x\geq0,\\
+-x, & x<0.
+\end{cases}
+\]
+En particular, $|x|\geq0$ para todo $x\in\mathbb{R}$ y $|x|=0$ si y sólo si $x=0$.
+\end{definition}
+
+\begin{example}
+Por definición,
+\[
+|5|=5,\qquad |-5|=5,\qquad |0|=0.
+\]
+El valor absoluto puede interpretarse como la distancia de un número al origen; por ello, tanto $5$ como $-5$ se encuentran a distancia $5$ de $0$.
+\end{example}
+
+\begin{example}
+Si $x=-3$, entonces $|x|=3$. Además,
+\[
+-|x|\leq x\leq |x|,
+\]
+pues en este caso
+\[
+-3\leq -3\leq3.
+\]
+En general, esta desigualdad se cumple para todo $x\in\mathbb{R}$.
+\end{example}
+
+El valor absoluto también permite expresar desigualdades de una manera especialmente compacta. Si $r>0$, entonces
+\[
+|x|<r
+\]
+significa que la distancia de $x$ al origen es menor que $r$, lo cual equivale a
+\[
+-r<x<r.
+\]
+De manera análoga,
+\[
+|x|\leq r\quad\Longleftrightarrow\quad -r\leq x\leq r.
+\]
+Esta observación permite describir intervalos centrados en cualquier punto de la recta real.
+
+\begin{proposition}
+Sean $a,x\in\mathbb{R}$ y $r>0$. Entonces
+\[
+x\in(a-r,a+r)
+\quad\Longleftrightarrow\quad
+|x-a|<r.
+\]
+De manera análoga,
+\[
+x\in[a-r,a+r]
+\quad\Longleftrightarrow\quad
+|x-a|\leq r.
+\]
+\end{proposition}
+
+\begin{proof}
+Por definición,
+\[
+x\in(a-r,a+r)
+\]
+si y sólo si
+\[
+a-r<x<a+r.
+\]
+Restando $a$ en los tres miembros obtenemos
+\[
+-r<x-a<r.
+\]
+Por la caracterización del valor absoluto,
+\[
+-r<x-a<r
+\quad\Longleftrightarrow\quad
+|x-a|<r.
+\]
+Por tanto,
+\[
+x\in(a-r,a+r)
+\quad\Longleftrightarrow\quad
+|x-a|<r.
+\]
+El caso cerrado se demuestra de manera análoga utilizando desigualdades no estrictas.
+\end{proof}
+
+\begin{example}
+La desigualdad
+\[
+|x-3|<2
+\]
+equivale a
+\[
+-2<x-3<2,
+\]
+y sumando $3$ obtenemos
+\[
+1<x<5.
+\]
+Por tanto,
+\[
+|x-3|<2
+\quad\Longleftrightarrow\quad
+x\in(1,5).
+\]
+\end{example}
+
+Otra propiedad fundamental es que el valor absoluto es compatible con el producto.
+
+\begin{proposition}
+Para cualesquiera $x,y\in\mathbb{R}$ se cumple
+\[
+|xy|=|x||y|.
+\]
+\end{proposition}
+
+\begin{proof}
+Como $|x|^2=x^2$ y $|y|^2=y^2$, tenemos
+\[
+|xy|^2=x^2y^2=|x|^2|y|^2=(|x||y|)^2.
+\]
+Puesto que $|xy|\geq0$ y $|x||y|\geq0$, se sigue que
+\[
+|xy|=|x||y|.
+\]
+\end{proof}
+
+Una de las desigualdades fundamentales del análisis es la \indexemph{desigualdad del triángulo}. Su nombre proviene de su interpretación geométrica: la longitud de uno de los lados de un triángulo nunca puede superar la suma de las longitudes de los otros dos. En la recta real, esta propiedad se expresa mediante valores absolutos.
+
+\begin{proposition}[Desigualdad del triángulo]
+Para cualesquiera $x,y\in\mathbb{R}$ se cumple
+\[
+|x+y|\leq |x|+|y|.
+\]
+\end{proposition}
+
+\begin{proof}
+Como
+\[
+xy\leq |x||y|,
+\]
+tenemos
+\[
+(x+y)^2=x^2+2xy+y^2
+\leq x^2+2|x||y|+y^2
+=(|x|+|y|)^2.
+\]
+Además, tanto $|x+y|$ como $|x|+|y|$ son no negativos. Tomando raíces cuadradas obtenemos
+\[
+|x+y|\leq|x|+|y|.
+\]
+\end{proof}
+
+La desigualdad del triángulo posee una forma inversa que será utilizada reiteradamente para comparar distancias.
+
+\begin{proposition}[Desigualdad triangular inversa]
+Para cualesquiera $x,y\in\mathbb{R}$ se cumple
+\[
+|x-y|\geq \bigl||x|-|y|\bigr|.
+\]
+\end{proposition}
+
+\begin{proof}
+Por la desigualdad del triángulo,
+\[
+|x|=|(x-y)+y|\leq|x-y|+|y|,
+\]
+de donde
+\[
+|x|-|y|\leq|x-y|.
+\]
+Intercambiando $x$ e $y$ obtenemos
+\[
+|y|-|x|\leq|x-y|.
+\]
+Por tanto,
+\[
+-\lvert x-y\rvert\leq |x|-|y|\leq|x-y|,
+\]
+y, por la caracterización del valor absoluto,
+\[
+\bigl||x|-|y|\bigr|\leq|x-y|.
+\]
+\end{proof}
+
+\begin{example}
+Si $x=3$ y $y=-5$, entonces la desigualdad del triángulo establece
+\[
+|3+(-5)|\leq|3|+|-5|,
+\]
+es decir,
+\[
+2\leq8.
+\]
+\end{example}
+
+\begin{example}
+Para $x=-4$ y $y=7$ tenemos
+\[
+|x-y|=|-11|=11,
+\]
+mientras que
+\[
+\bigl||x|-|y|\bigr|=|4-7|=3.
+\]
+Por tanto,
+\[
+11\geq3,
+\]
+como establece la desigualdad triangular inversa.
+\end{example}
+
+\begin{example}
+La desigualdad
+\[
+|x-5|\leq3
+\]
+equivale a
+\[
+-3\leq x-5\leq3.
+\]
+Sumando $5$ obtenemos
+\[
+2\leq x\leq8,
+\]
+por lo que
+\[
+|x-5|\leq3
+\quad\Longleftrightarrow\quad
+x\in[2,8].
+\]
+\end{example}
+
+\begin{example}
+Sean $x,y,z\in\mathbb{R}$. Aplicando dos veces la desigualdad del triángulo obtenemos
+\[
+|x+y+z|\leq |x+y|+|z|
+\leq |x|+|y|+|z|.
+\]
+Esta propiedad puede extenderse inductivamente a cualquier número finito de sumandos.
+\end{example}
+
+\begin{proposition}[Desigualdad triangular finita]
+Para cualesquiera $x_1,\ldots,x_n\in\mathbb{R}$ se cumple
+\[
+\left|\sum_{k=1}^{n}x_k\right|
+\leq
+\sum_{k=1}^{n}|x_k|.
+\]
+\end{proposition}
+
+\begin{proof}
+La demostración se realiza por inducción sobre $n$. Para $n=1$ la igualdad es inmediata. Supongamos que el resultado es válido para $n$. Entonces, por la desigualdad del triángulo,
+\[
+\left|\sum_{k=1}^{n+1}x_k\right|
+=
+\left|\sum_{k=1}^{n}x_k+x_{n+1}\right|
+\leq
+\left|\sum_{k=1}^{n}x_k\right|+|x_{n+1}|.
+\]
+Aplicando la hipótesis de inducción,
+\[
+\left|\sum_{k=1}^{n+1}x_k\right|
+\leq
+\sum_{k=1}^{n}|x_k|+|x_{n+1}|
+=
+\sum_{k=1}^{n+1}|x_k|.
+\]
+\end{proof}
+
+Además de las desigualdades asociadas al valor absoluto, existen algunas desigualdades algebraicas elementales que aparecerán continuamente en análisis. Una de las más sencillas surge directamente del hecho de que el cuadrado de todo número real es no negativo.
+
+\begin{proposition}
+Para cualesquiera $a,b\in\mathbb{R}$ se cumple
+\[
+ab\leq\frac{a^2+b^2}{2}.
+\]
+\end{proposition}
+
+\begin{proof}
+Como
+\[
+(a-b)^2\geq0,
+\]
+se tiene
+\[
+a^2-2ab+b^2\geq0.
+\]
+Por tanto,
+\[
+2ab\leq a^2+b^2,
+\]
+y dividiendo entre $2$ obtenemos
+\[
+ab\leq\frac{a^2+b^2}{2}.
+\]
+\end{proof}
+
+Una consecuencia inmediata es otra estimación que será útil con frecuencia.
+
+\begin{proposition}
+Para cualesquiera $a,b\in\mathbb{R}$ se cumple
+\[
+(a+b)^2\leq2(a^2+b^2).
+\]
+\end{proposition}
+
+\begin{proof}
+Tenemos
+\[
+(a+b)^2=a^2+2ab+b^2.
+\]
+Como $2ab\leq a^2+b^2$, resulta
+\[
+(a+b)^2
+\leq
+a^2+(a^2+b^2)+b^2
+=
+2(a^2+b^2).
+\]
+\end{proof}
+
+Otra desigualdad fundamental compara la media geométrica con la media aritmética.
+
+\begin{proposition}[Desigualdad aritmético--geométrica]
+Si $a,b\geq0$, entonces
+\[
+\sqrt{ab}\leq\frac{a+b}{2}.
+\]
+La igualdad ocurre si y sólo si $a=b$.
+\end{proposition}
+
+\begin{proof}
+Como
+\[
+(\sqrt{a}-\sqrt{b})^2\geq0,
+\]
+tenemos
+\[
+a-2\sqrt{ab}+b\geq0.
+\]
+Por tanto,
+\[
+2\sqrt{ab}\leq a+b,
+\]
+y dividiendo entre $2$ obtenemos
+\[
+\sqrt{ab}\leq\frac{a+b}{2}.
+\]
+La igualdad ocurre precisamente cuando
+\[
+(\sqrt{a}-\sqrt{b})^2=0,
+\]
+es decir, cuando $a=b$.
+\end{proof}
+
+Esta desigualdad forma parte de una relación más amplia entre distintas medias.
+
+\begin{proposition}[Desigualdad de las medias]
+Si $a,b>0$, entonces
+\[
+\frac{2ab}{a+b}
+\leq
+\sqrt{ab}
+\leq
+\frac{a+b}{2}
+\leq
+\sqrt{\frac{a^2+b^2}{2}}.
+\]
+\end{proposition}
+
+\begin{proof}
+La desigualdad central ya fue demostrada. De
+\[
+2\sqrt{ab}\leq a+b
+\]
+y como todas las cantidades son positivas, obtenemos
+\[
+\frac{2ab}{a+b}\leq\sqrt{ab}.
+\]
+Por otra parte,
+\[
+(a+b)^2\leq2(a^2+b^2),
+\]
+por lo que
+\[
+\frac{(a+b)^2}{4}\leq\frac{a^2+b^2}{2}.
+\]
+Tomando raíces cuadradas,
+\[
+\frac{a+b}{2}\leq\sqrt{\frac{a^2+b^2}{2}}.
+\]
+\end{proof}
+
+Otra desigualdad elemental de gran utilidad es la \indexemph{desigualdad de Bernoulli}, que permite estimar potencias sin necesidad de desarrollarlas completamente.
+
+\begin{proposition}[Desigualdad de Bernoulli]
+Sea $a\geq-1$ y $n\in\mathbb{N}$. Entonces
+\[
+(1+a)^n\geq1+na.
+\]
+\end{proposition}
+
+\begin{proof}
+Procedemos por inducción sobre $n$. Para $n=1$,
+\[
+(1+a)^1=1+a,
+\]
+por lo que el resultado es cierto. Supongamos ahora que
+\[
+(1+a)^n\geq1+na.
+\]
+Como $a\geq-1$, tenemos $1+a\geq0$ y podemos multiplicar la desigualdad por $1+a$:
+\[
+(1+a)^{n+1}\geq(1+na)(1+a).
+\]
+Desarrollando,
+\[
+(1+na)(1+a)
+=
+1+(n+1)a+na^2.
+\]
+Como $na^2\geq0$,
+\[
+(1+a)^{n+1}\geq1+(n+1)a.
+\]
+Por el principio de inducción matemática, la desigualdad se cumple para todo $n\in\mathbb{N}$.
+\end{proof}
+
+\begin{example}
+Tomando $a=0.1$ y $n=5$, la desigualdad de Bernoulli proporciona
+\[
+(1.1)^5\geq1+5(0.1)=1.5.
+\]
+En efecto,
+\[
+(1.1)^5=1.61051\geq1.5.
+\]
+\end{example}
+
+Una de las desigualdades más importantes de las matemáticas es la \indexemph{desigualdad de Cauchy--Schwarz}. En el caso finito puede formularse exclusivamente en términos de números reales.
+
+\begin{proposition}[Desigualdad de Cauchy--Schwarz]
+Sean $a_1,\ldots,a_n,b_1,\ldots,b_n\in\mathbb{R}$. Entonces
+\[
+\left(\sum_{k=1}^{n}a_kb_k\right)^2
+\leq
+\left(\sum_{k=1}^{n}a_k^2\right)
+\left(\sum_{k=1}^{n}b_k^2\right).
+\]
+\end{proposition}
+
+\begin{proof}
+Si
+\[
+\sum_{k=1}^{n}b_k^2=0,
+\]
+entonces $b_k=0$ para todo $k$ y la desigualdad es inmediata. Supongamos, por tanto, que
+\[
+\sum_{k=1}^{n}b_k^2>0
+\]
+y definamos
+\[
+\lambda=
+\frac{\displaystyle\sum_{k=1}^{n}a_kb_k}
+{\displaystyle\sum_{k=1}^{n}b_k^2}.
+\]
+Como todo cuadrado es no negativo,
+\[
+0\leq\sum_{k=1}^{n}(a_k-\lambda b_k)^2.
+\]
+Desarrollando y sustituyendo el valor de $\lambda$ obtenemos
+\[
+0\leq
+\sum_{k=1}^{n}a_k^2
+-
+\frac{\left(\sum_{k=1}^{n}a_kb_k\right)^2}
+{\sum_{k=1}^{n}b_k^2}.
+\]
+Multiplicando por $\sum_{k=1}^{n}b_k^2>0$ resulta
+\[
+\left(\sum_{k=1}^{n}a_kb_k\right)^2
+\leq
+\left(\sum_{k=1}^{n}a_k^2\right)
+\left(\sum_{k=1}^{n}b_k^2\right).
+\]
+\end{proof}
+
+\begin{example}
+Para $(a_1,a_2)=(1,2)$ y $(b_1,b_2)=(3,4)$, Cauchy--Schwarz establece
+\[
+(1\cdot3+2\cdot4)^2
+\leq
+(1^2+2^2)(3^2+4^2).
+\]
+En efecto,
+\[
+121\leq125.
+\]
+\end{example}
+
+Como consecuencia de Cauchy--Schwarz obtenemos una desigualdad útil para sumas.
+
+\begin{proposition}
+Para cualesquiera $x_1,\ldots,x_n\in\mathbb{R}$ se cumple
+\[
+\left(\sum_{k=1}^{n}x_k\right)^2
+\leq
+n\sum_{k=1}^{n}x_k^2.
+\]
+\end{proposition}
+
+\begin{proof}
+Aplicando Cauchy--Schwarz a los números
+\[
+a_k=x_k,
+\qquad
+b_k=1,
+\]
+obtenemos
+\[
+\left(\sum_{k=1}^{n}x_k\right)^2
+\leq
+\left(\sum_{k=1}^{n}x_k^2\right)
+\left(\sum_{k=1}^{n}1^2\right).
+\]
+Como
+\[
+\sum_{k=1}^{n}1^2=n,
+\]
+se concluye que
+\[
+\left(\sum_{k=1}^{n}x_k\right)^2
+\leq
+n\sum_{k=1}^{n}x_k^2.
+\]
+\end{proof}
+
+Estas desigualdades constituyen herramientas elementales que aparecerán reiteradamente a lo largo del análisis. En particular, el valor absoluto y la desigualdad del triángulo permitirán formalizar la noción de distancia, mientras que Bernoulli, las desigualdades entre medias y Cauchy--Schwarz proporcionarán estimaciones fundamentales para el estudio posterior de sucesiones, límites y convergencia.
+
+\section{Conjuntos acotados}
+Cotas superiores e inferiores y caracterizaciones de acotación.
+
+\section{Máximo, mínimo, supremo e ínfimo}
+Diferencia entre cotas extremas alcanzadas y cotas mínimas o máximas.
+
+\section{Axioma de completitud}
+Propiedad del supremo, consecuencias y ejemplos de campos que no son completos.
+
+\section{Propiedad arquimediana}
+Existencia de enteros mayores que cualquier real y consecuencias para aproximaciones.
+
+\section{Densidad de \texorpdfstring{$\mathbb{Q}$}{Q} y de los irracionales}
+Construcción de racionales e irracionales en cualquier intervalo abierto no vacío.
