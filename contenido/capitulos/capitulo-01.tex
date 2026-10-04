@@ -1263,13 +1263,7 @@ n\sum_{k=1}^{n}x_k^2.
 Estas desigualdades constituyen herramientas elementales que aparecerán reiteradamente a lo largo del análisis. En particular, el valor absoluto y la desigualdad del triángulo permitirán formalizar la noción de distancia, mientras que Bernoulli, las desigualdades entre medias y Cauchy--Schwarz proporcionarán estimaciones fundamentales para el estudio posterior de sucesiones, límites y convergencia.
 
 \section{Conjuntos acotados}
-Cotas superiores e inferiores y caracterizaciones de acotación.
-
-\begin{remark}[Contexto histórico: Richard Dedekind (1831--1916)]
-Richard Dedekind (1831--1916) fue un matemático alemán, alumno de Gauss, cuyas contribuciones abarcaron los fundamentos de la aritmética y el análisis, así como la teoría algebraica de números. En 1858, mientras preparaba sus cursos de cálculo en Zúrich, se preguntó cómo justificar rigurosamente que la recta racional no tiene ``huecos''. Su respuesta fue estudiar particiones de los números racionales, hoy llamadas \emph{cortaduras de Dedekind}; publicó esta idea en \emph{Stetigkeit und irrationale Zahlen} (\emph{Continuidad y números irracionales}) en 1872. Una cortadura que no queda separada por ningún racional permite representar un número irracional. Así, la construcción de Dedekind ofrece una manera concreta de entender la completitud de los reales. El estudio de las cotas tiene una historia más amplia: MacTutor registra aportes anteriores de Bolzano, en 1817, al análisis de la existencia de cotas superiores mínimas. Por ello, no atribuimos a Dedekind el origen de todo el tema; sus ideas son especialmente útiles aquí para explicar por qué se considera que la recta real no presenta huecos \cite{mactutorDedekind,mactutorRealNumbers}.
-\end{remark}
-
-En esta sección comenzaremos con el lenguaje de las cotas y la acotación. En la siguiente distinguiremos entre una cota que pertenece al conjunto y una cota extrema que puede no pertenecerle; más adelante usaremos esa distinción para formular la propiedad de completitud de $\mathbb{R}$.
+En esta sección estudiaremos qué significa que un conjunto de números reales esté limitado por arriba o por abajo y qué operaciones conservan esas propiedades. Los conjuntos acotados aparecen una y otra vez porque nos permiten controlar los valores que puede tomar un conjunto. Esta idea será importante más adelante: en el capítulo sobre sucesiones será una hipótesis central en el teorema de Bolzano--Weierstrass, y en el capítulo de topología aparecerá junto con la cerradura en el teorema de Heine--Borel. Aquí construiremos primero el lenguaje y las propiedades elementales que necesitaremos para entender esos resultados posteriores.
 
 \begin{definition}[Cotas superiores]
 Sea $A\subseteq\mathbb{R}$. Un número $M\in\mathbb{R}$ se llama \indexemph{cota superior} de $A$ si
@@ -1295,17 +1289,25 @@ El \indexemph{conjunto de cotas inferiores} de $A$ se denota por
 Decimos que $A$ está \indexemph{acotado inferiormente} cuando $L(A)\neq\varnothing$.
 \end{definition}
 
-\begin{definition}[Conjunto acotado]
-Un conjunto $A\subseteq\mathbb{R}$ se llama \indexemph{acotado} si está acotado superior e inferiormente. Equivalentemente, existen $m,M\in\mathbb{R}$ con $m\leq M$ tales que
-\[
- m\leq x\leq M\qquad\text{para todo }x\in A.
-\]
-En otras palabras, $A$ está contenido en algún intervalo cerrado y acotado $[m,M]$.
-\end{definition}
-
 \begin{remark}
-Con estas definiciones, el conjunto vacío está acotado: las afirmaciones ``para todo $x\in\varnothing$'' son verdaderas vacíamente, de modo que $U(\varnothing)=L(\varnothing)=\mathbb{R}$. Cuando un teorema requiera que un conjunto sea no vacío, lo indicaremos de manera explícita.
+Para $A=\varnothing$, las condiciones que definen una cota se cumplen vacíamente para todo real. Por tanto,
+\[
+ U(\varnothing)=L(\varnothing)=\mathbb{R}.
+\]
+Así, el conjunto vacío está acotado superior e inferiormente. Sin embargo, la afirmación de que toda cota inferior está por debajo de toda cota superior requiere que $A$ no sea vacío.
 \end{remark}
+
+\begin{proposition}[Relación entre cotas inferiores y superiores]
+Si $A\neq\varnothing$, $m\in L(A)$ y $M\in U(A)$, entonces $m\leq M$. Es decir, toda cota inferior de $A$ queda a la izquierda de toda cota superior.
+\end{proposition}
+
+\begin{proof}
+Como $A$ no es vacío, existe $x\in A$. Por las definiciones de cota inferior y superior,
+\[
+ m\leq x\leq M,
+\]
+de donde se obtiene $m\leq M$ por transitividad. La hipótesis de que $A$ no sea vacío es necesaria: para $A=\varnothing$, los números $1\in L(A)$ y $0\in U(A)$ satisfacen $1\not\leq0$.
+\end{proof}
 
 \begin{example}
 Sea $A=(0,1)$. Entonces
@@ -1334,6 +1336,18 @@ El conjunto $\mathbb{R}$ no está acotado superior ni inferiormente. Dado cualqu
 \]
 \end{example}
 
+\begin{proposition}[Monotonía respecto de la inclusión]
+Si $A\subseteq B\subseteq\mathbb{R}$, entonces
+\[
+ U(B)\subseteq U(A),\qquad L(B)\subseteq L(A).
+\]
+En particular, si $B$ está acotado superiormente (o inferiormente), todo subconjunto $A$ de $B$ también lo está.
+\end{proposition}
+
+\begin{proof}
+Si $M\in U(B)$, entonces $x\leq M$ para todo $x\in B$, y en particular para todo $x\in A$; así, $M\in U(A)$. La inclusión de conjuntos de cotas inferiores se demuestra de la misma manera.
+\end{proof}
+
 \begin{proposition}[Cierre de los conjuntos de cotas]
 Sea $A\subseteq\mathbb{R}$.
 \begin{enumerate}
@@ -1347,16 +1361,40 @@ Así, una vez que se encuentra una cota superior, todo número mayor también es
 Si $M\in U(A)$, entonces $x\leq M$ para todo $x\in A$. De $M\leq N$ y la transitividad del orden se sigue $x\leq N$, luego $N\in U(A)$. El segundo inciso se demuestra del mismo modo: $n\leq m\leq x$ para todo $x\in A$, así que $n\in L(A)$.
 \end{proof}
 
-\begin{proposition}[Cotas de subconjuntos]
-Si $A\subseteq B\subseteq\mathbb{R}$, entonces
+\begin{proposition}[Acotación superior e inferior mediante intervalos]
+Un conjunto $A\subseteq\mathbb{R}$ está acotado superiormente si y solo si existe $M\in\mathbb{R}$ tal que
 \[
- U(B)\subseteq U(A),\qquad L(B)\subseteq L(A).
+ A\subseteq(-\infty,M].
 \]
-En particular, todo subconjunto de un conjunto acotado es acotado.
+Análogamente, $A$ está acotado inferiormente si y solo si existe $m\in\mathbb{R}$ tal que
+\[
+ A\subseteq[m,\infty).
+\]
 \end{proposition}
 
 \begin{proof}
-Sea $M\in U(B)$. Para cada $x\in A$ también se tiene $x\in B$, y por tanto $x\leq M$; esto prueba que $M\in U(A)$. La inclusión $L(B)\subseteq L(A)$ se obtiene de manera análoga. Si $B$ está acotado, existen una cota inferior $m$ y una cota superior $M$ comunes a todos sus elementos; las mismas desigualdades valen para los elementos de $A$.
+La primera equivalencia es exactamente la definición de cota superior escrita como inclusión de conjuntos: $x\leq M$ para todo $x\in A$ si y solo si cada elemento de $A$ pertenece a $(-\infty,M]$. La segunda se sigue del mismo modo de $m\leq x$.
+\end{proof}
+
+\begin{definition}[Conjunto acotado]
+Un conjunto $A\subseteq\mathbb{R}$ se llama \indexemph{acotado} si está acotado superior e inferiormente. Equivalentemente, existen $m,M\in\mathbb{R}$ con $m\leq M$ tales que
+\[
+ m\leq x\leq M\qquad\text{para todo }x\in A,
+\]
+o, lo que es lo mismo, $A\subseteq[m,M]$.
+Si $A$ no es vacío, la relación entre cotas inferiores y superiores asegura $m\leq M$; si $A=\varnothing$, podemos elegir $m=M=0$.
+\end{definition}
+
+\begin{proposition}[Caracterización de los conjuntos no acotados]
+Un conjunto $A\subseteq\mathbb{R}$ no está acotado superiormente si y solo si
+\[
+ \text{para todo }M\in\mathbb{R}\text{ existe }x\in A\text{ tal que }M<x.
+\]
+Análogamente, no está acotado inferiormente si y solo si para todo $m\in\mathbb{R}$ existe $x\in A$ tal que $x<m$.
+\end{proposition}
+
+\begin{proof}
+Por definición, estar acotado superiormente significa que existe $M\in\mathbb{R}$ para el cual $x\leq M$ para todo $x\in A$. Negar esta afirmación equivale a decir que para cada $M\in\mathbb{R}$ hay al menos un $x\in A$ con $x\not\leq M$, es decir, $M<x$. La demostración para la acotación inferior es análoga.
 \end{proof}
 
 \begin{proposition}[Caracterización mediante el valor absoluto]
@@ -1372,7 +1410,70 @@ Supongamos primero que $m\leq x\leq M$ para todo $x\in A$. Tomemos $C=|m|+|M|$, 
 Recíprocamente, si $|x|\leq C$, la caracterización del valor absoluto ya demostrada da $-C\leq x\leq C$. Por ello $-C$ y $C$ son, respectivamente, cotas inferior y superior de $A$.
 \end{proof}
 
-Estos resultados permiten reconocer cuándo un conjunto está contenido en una región finita de la recta y cómo se comportan sus cotas al pasar a subconjuntos. En la sección siguiente precisaremos qué ocurre cuando una cota pertenece al conjunto y qué significa que una cota sea la menor posible o la mayor posible.
+\begin{proposition}[Todo conjunto finito es acotado]
+Todo conjunto finito $A\subseteq\mathbb{R}$ está acotado.
+\end{proposition}
+
+\begin{proof}
+Si $A=\varnothing$, ya vimos que está acotado. Si $A=\{x_1,\ldots,x_n\}$, sea $C=\sum_{j=1}^{n}|x_j|$. Para cada $i$, se tiene $|x_i|\leq C$, pues los demás sumandos son no negativos. La caracterización mediante el valor absoluto prueba que $A$ está acotado.
+\end{proof}
+
+\begin{example}
+La acotación no implica que un conjunto sea finito. El conjunto
+\[
+ E=\left\{\frac1n:n\in\mathbb{N}\right\}
+\]
+es infinito —sus elementos son distintos— y está contenido en $(0,1]$, así que está acotado. Por otra parte, $\mathbb{R}$ es un conjunto infinito que no está acotado ni superior ni inferiormente. Por tanto, la infinitud por sí sola no determina si un conjunto está acotado.
+\end{example}
+
+\begin{proposition}[Uniones finitas]
+Si cada uno de los conjuntos $A_1,\ldots,A_n\subseteq\mathbb{R}$ está acotado superiormente, entonces $\bigcup_{j=1}^n A_j$ está acotado superiormente. La afirmación análoga vale para acotación inferior. En particular, la unión finita de conjuntos acotados es acotada.
+\end{proposition}
+
+\begin{proof}
+Para cada $j$ elijamos una cota superior $M_j$ de $A_j$ y pongamos $C=\sum_{j=1}^n|M_j|$. Si $x\in\bigcup_{j=1}^n A_j$, entonces $x\in A_k$ para algún $k$, y por tanto $x\leq M_k\leq |M_k|\leq C$. Así, $C$ es cota superior de la unión. Para la acotación inferior, si $m_j$ es una cota inferior de $A_j$, para $x\in A_k$ se tiene
+\[
+ -\sum_{j=1}^n|m_j|\leq-|m_k|\leq m_k\leq x,
+\]
+así que $-\sum_{j=1}^n|m_j|$ es cota inferior común. Si $n=0$, la unión es vacía y el resultado también se cumple.
+\end{proof}
+
+\begin{remark}[Intersecciones y subconjuntos]
+La monotonía respecto de la inclusión también resuelve el caso de las intersecciones: $A\cap B\subseteq A$ y $A\cap B\subseteq B$. Por ello, si $A$ está acotado superiormente (o inferiormente), también lo está $A\cap B$, cualquiera que sea $B\subseteq\mathbb{R}$. Si $A$ está acotado, la intersección también está acotada.
+\end{remark}
+
+\begin{proposition}[Suma, producto, escalares y traslaciones]
+Sean $A,B\subseteq\mathbb{R}$ conjuntos acotados, $\lambda,c\in\mathbb{R}$, y definamos
+\[
+ A+B=\{a+b:a\in A,\ b\in B\},\qquad
+ AB=\{ab:a\in A,\ b\in B\},
+\]
+\[
+ \lambda A=\{\lambda a:a\in A\},\qquad
+ A+c=\{a+c:a\in A\}.
+\]
+Entonces $A+B$, $AB$, $\lambda A$ y $A+c$ son acotados. Además, $A$ está acotado si y solo si su traslación $A+c$ está acotada.
+\end{proposition}
+
+\begin{proof}
+Tomemos $m_A\leq a\leq M_A$ y $m_B\leq b\leq M_B$ para todo $a\in A$ y $b\in B$. Entonces
+\[
+ m_A+m_B\leq a+b\leq M_A+M_B,
+\]
+lo que acota $A+B$. Por la caracterización mediante el valor absoluto, existen $C_A,C_B\geq0$ con $|a|\leq C_A$ y $|b|\leq C_B$. Así,
+\[
+ |ab|=|a||b|\leq C_A C_B,
+\]
+por lo que $AB$ está acotado. También $|\lambda a|\leq|\lambda|C_A$, de modo que $\lambda A$ está acotado. Finalmente, de $m_A\leq a\leq M_A$ se sigue $m_A+c\leq a+c\leq M_A+c$, lo que acota $A+c$. La implicación recíproca se obtiene al trasladar $A+c$ por $-c$.
+\end{proof}
+
+\begin{remark}[Acotación, cerradura y Heine--Borel]
+La acotación no implica que un conjunto sea cerrado: $(0,1)$ está acotado, pero no contiene sus extremos $0$ y $1$, que son puntos frontera. El concepto general de conjunto cerrado y el de compacidad se formalizarán en el capítulo de topología. Allí se demostrará el teorema de Heine--Borel: para conjuntos de reales, ser compacto equivale a ser cerrado y acotado; en términos de cubiertas, cada cubierta abierta de un conjunto cerrado y acotado admite una subcubierta finita. Así, la acotación es una de las dos condiciones necesarias, pero por sí sola no basta para concluir compacidad.
+
+El nombre del teorema reúne una historia matemática compartida. Heine probó en 1872 un resultado sobre continuidad uniforme en intervalos cerrados y acotados; Borel formuló explícitamente un teorema de cubiertas en su tesis, publicada en 1895, y otros matemáticos ampliaron después el resultado. La atribución histórica es más compleja que lo que sugiere el nombre tradicional \cite{mactutorHeine,mactutorBorel}. En un contexto anterior, las cortaduras de Dedekind ofrecieron una construcción rigurosa de los reales y una explicación de su completitud \cite{mactutorDedekind,mactutorRealNumbers}.
+\end{remark}
+
+En el siguiente apartado distinguiremos las cotas que pertenecen al conjunto de aquellas que no necesariamente se alcanzan, y formularemos con precisión máximo, mínimo, supremo e ínfimo.
 
 \section{Máximo, mínimo, supremo e ínfimo}
 Diferencia entre cotas extremas alcanzadas y cotas mínimas o máximas.
