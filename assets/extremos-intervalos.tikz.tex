@@ -1,0 +1,18 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  \node at (4.2,2.65) {$S=(a,b)$};
+  \draw[<->,gray] (0.6,2) -- (8,2);
+  \draw[very thick,blue!65] (2,2) -- (6.5,2);
+  \draw[fill=white,blue!65,thick] (2,2) circle (2.5pt);
+  \draw[fill=white,blue!65,thick] (6.5,2) circle (2.5pt);
+  \node[below=6pt] at (2,2) {$a=\inf S$};
+  \node[below=6pt] at (6.5,2) {$b=\sup S$};
+  \node at (4.2,1.1) {No hay mínimo ni máximo.};
+
+  \node at (4.2,0.35) {$S=[a,b]$};
+  \draw[<->,gray] (0.6,-0.3) -- (8,-0.3);
+  \draw[very thick,blue!65] (2,-0.3) -- (6.5,-0.3);
+  \fill[blue!65] (2,-0.3) circle (2.5pt);
+  \fill[blue!65] (6.5,-0.3) circle (2.5pt);
+  \node[below=6pt] at (2,-0.3) {$a=\inf S=\min S$};
+  \node[below=6pt] at (6.5,-0.3) {$b=\sup S=\max S$};
+\end{tikzpicture}

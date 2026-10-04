@@ -186,6 +186,7 @@
 \newaliascnt{axiom}{theorem}
 \newtheorem{axiom}[axiom]{Axioma}
 \aliascntresetthe{axiom}
+\newtheorem*{axiom*}{Axioma}
 \newaliascnt{definition}{theorem}
 \newtheorem{definition}[definition]{Definición}
 \aliascntresetthe{definition}

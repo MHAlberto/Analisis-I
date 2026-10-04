@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  % Las franjas son ventanas de aproximación; no representan todo S.
+  \node at (4.5,2.95) {$s=\sup S:\quad s-\varepsilon<x\leq s$};
+  \fill[teal!10] (3,2.02) rectangle (6.8,2.38);
+  \draw[<->,gray] (0.8,2.2) -- (8.2,2.2);
+  \draw[dashed,teal!70!black] (3,1.98) -- (3,2.42);
+  \draw[dashed,teal!70!black] (6.8,1.98) -- (6.8,2.42);
+  \fill[blue!65] (5.2,2.2) circle (2.6pt);
+  \node[below=6pt] at (3,2.2) {$s-\varepsilon$};
+  \node[below=6pt,blue!65!black] at (5.2,2.2) {$x\in S$};
+  \node[below=6pt] at (6.8,2.2) {$s$};
+
+  \node at (4.5,0.85) {$\ell=\inf S:\quad \ell\leq x<\ell+\varepsilon$};
+  \fill[orange!12] (2.2,-0.08) rectangle (6,0.28);
+  \draw[<->,gray] (0.8,0.1) -- (8.2,0.1);
+  \draw[dashed,orange!80!black] (2.2,-0.12) -- (2.2,0.32);
+  \draw[dashed,orange!80!black] (6,-0.12) -- (6,0.32);
+  \fill[blue!65] (3.8,0.1) circle (2.6pt);
+  \node[below=6pt] at (2.2,0.1) {$\ell$};
+  \node[below=6pt,blue!65!black] at (3.8,0.1) {$x\in S$};
+  \node[below=6pt] at (6,0.1) {$\ell+\varepsilon$};
+\end{tikzpicture}

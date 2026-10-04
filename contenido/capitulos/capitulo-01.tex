@@ -1467,28 +1467,557 @@ lo que acota $A+B$. Por la caracterización mediante el valor absoluto, existen 
 por lo que $AB$ está acotado. También $|\lambda a|\leq|\lambda|C_A$, de modo que $\lambda A$ está acotado. Finalmente, de $m_A\leq a\leq M_A$ se sigue $m_A+c\leq a+c\leq M_A+c$, lo que acota $A+c$. La implicación recíproca se obtiene al trasladar $A+c$ por $-c$.
 \end{proof}
 
-\begin{remark}[Acotación, cerradura y Heine--Borel]
-La acotación no implica que un conjunto sea cerrado: $(0,1)$ está acotado, pero no contiene sus extremos $0$ y $1$, que son puntos frontera. El concepto general de conjunto cerrado y el de compacidad se formalizarán en el capítulo de topología. Allí se demostrará el teorema de Heine--Borel: para conjuntos de reales, ser compacto equivale a ser cerrado y acotado; en términos de cubiertas, cada cubierta abierta de un conjunto cerrado y acotado admite una subcubierta finita. Así, la acotación es una de las dos condiciones necesarias, pero por sí sola no basta para concluir compacidad.
+\section{Máximo, mínimo, supremo e ínfimo}
+\label{sec:extremos-supremo-infimo}
 
-El nombre del teorema reúne una historia matemática compartida. Heine probó en 1872 un resultado sobre continuidad uniforme en intervalos cerrados y acotados; Borel formuló explícitamente un teorema de cubiertas en su tesis, publicada en 1895, y otros matemáticos ampliaron después el resultado. La atribución histórica es más compleja que lo que sugiere el nombre tradicional \cite{mactutorHeine,mactutorBorel}. En un contexto anterior, las cortaduras de Dedekind ofrecieron una construcción rigurosa de los reales y una explicación de su completitud \cite{mactutorDedekind,mactutorRealNumbers}.
+En esta sección estudiaremos cuándo un conjunto de números reales alcanza un valor mayor o igual, o menor o igual, que todos sus elementos. Las cotas introducidas en el apartado anterior permiten formular esta pregunta con precisión: si una cota pertenece al conjunto, obtenemos un máximo o un mínimo. También nos interesa encontrar la menor de todas las cotas superiores o la mayor de todas las cotas inferiores, aun cuando esos números no pertenezcan al conjunto. Estos últimos conceptos son el supremo y el ínfimo.
+
+La diferencia se aprecia al comparar $(0,1)$ con $[0,1]$. Ambos tienen las mismas cotas superiores e inferiores, pero solamente el segundo contiene los extremos $0$ y $1$. Después de formalizar esta distinción, introduciremos el axioma de completitud, estudiaremos por qué su análogo falla en $\mathbb{Q}$ y deduciremos algunas consecuencias, entre ellas la existencia de raíces y la propiedad arquimediana.
+
+\subsection{Máximo y mínimo}
+
+\begin{definition}[Máximo]
+Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $M$ se llama \indexemph{máximo} de $S$ si
+\[
+ M\in S
+ \qquad\text{y}\qquad
+ x\leq M\quad\text{para todo }x\in S.
+\]
+Cuando existe, lo denotamos por $\max S$. Así, un máximo es una cota superior que pertenece al conjunto.
+\end{definition}
+
+\begin{definition}[Mínimo]
+Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $m$ se llama \indexemph{mínimo} de $S$ si
+\[
+ m\in S
+ \qquad\text{y}\qquad
+ m\leq x\quad\text{para todo }x\in S.
+\]
+Cuando existe, lo denotamos por $\min S$. Así, un mínimo es una cota inferior que pertenece al conjunto.
+\end{definition}
+
+\begin{proposition}[Unicidad del máximo y del mínimo]
+Si un conjunto tiene máximo, este es único. Lo mismo ocurre con el mínimo.
+\end{proposition}
+
+\begin{proof}
+Si $M_1$ y $M_2$ son máximos de $S$, como $M_1\in S$ y $M_2$ es cota superior, se tiene $M_1\leq M_2$. Intercambiando sus papeles obtenemos $M_2\leq M_1$. La antisimetría implica $M_1=M_2$. Si $m_1$ y $m_2$ son mínimos, de su pertenencia a $S$ y de ser cotas inferiores se obtiene igualmente $m_1\leq m_2$ y $m_2\leq m_1$, por lo que $m_1=m_2$.
+\end{proof}
+
+\begin{example}[Un conjunto finito]
+Para $S=\{-3,0,2,5\}$ se tiene $\min S=-3$ y $\max S=5$. El número $6$ también es una cota superior de $S$, pero no es su máximo, pues $6\notin S$. De manera análoga, $-4$ es una cota inferior, pero no es el mínimo.
+\end{example}
+
+\begin{example}[Un intervalo cerrado]
+Si $a\leq b$, entonces $\min[a,b]=a$ y $\max[a,b]=b$. En particular, si $a=b$, el intervalo se reduce al conjunto $\{a\}$ y su máximo y su mínimo coinciden.
+\end{example}
+
+\begin{example}[Un intervalo abierto]
+Sea $a<b$. El intervalo $(a,b)$ no tiene máximo ni mínimo. En efecto, para cada $x\in(a,b)$,
+\[
+ a<\frac{a+x}{2}<x<\frac{x+b}{2}<b.
+\]
+Por tanto, siempre hay un elemento del intervalo menor que $x$ y otro mayor que $x$. Ninguno de sus elementos puede ser mínimo o máximo.
+\end{example}
+
+\begin{example}[Un extremo alcanzado]
+Si $a<b$, el intervalo $[a,b)$ tiene mínimo $a$, pero no tiene máximo: para cada $x\in[a,b)$, el número $(x+b)/2$ pertenece al intervalo y es mayor que $x$. Por su parte, $(a,b]$ tiene máximo $b$, pero no tiene mínimo, pues $(a+x)/2$ es un elemento menor que cualquier $x\in(a,b]$.
+\end{example}
+
+\begin{proposition}[Extremos de un conjunto finito]
+Todo subconjunto finito y no vacío de $\mathbb{R}$ tiene máximo y mínimo.
+\end{proposition}
+
+\begin{proof}
+Procedemos por inducción sobre el número de elementos. Si $S=\{x_1\}$, el número $x_1$ es tanto su máximo como su mínimo. Supongamos que $\{x_1,\ldots,x_n\}$ tiene máximo $M_n$ y mínimo $m_n$. Al agregar $x_{n+1}$, el mayor de $M_n$ y $x_{n+1}$ pertenece al nuevo conjunto y es mayor o igual que todos sus elementos; por tanto, es su máximo. El menor de $m_n$ y $x_{n+1}$ pertenece al nuevo conjunto y es menor o igual que todos sus elementos, así que es su mínimo. La totalidad del orden permite hacer ambas comparaciones.
+\end{proof}
+
+\begin{remark}
+La condición de no ser vacío es necesaria: un máximo y un mínimo deben pertenecer al conjunto. Además, la acotación por sí sola no garantiza que existan estos extremos, como muestra $(0,1)$.
 \end{remark}
 
-En el siguiente apartado distinguiremos las cotas que pertenecen al conjunto de aquellas que no necesariamente se alcanzan, y formularemos con precisión máximo, mínimo, supremo e ínfimo.
+\subsection{Supremo e ínfimo}
 
-\section{Máximo, mínimo, supremo e ínfimo}
-Diferencia entre cotas extremas alcanzadas y cotas mínimas o máximas.
+Recordemos que $U(S)$ es el conjunto de todas las cotas superiores de $S$ y $L(S)$ el de todas sus cotas inferiores. Ahora buscamos extremos de estos conjuntos de cotas.
 
-\section{Axioma de completitud}
-Propiedad del supremo, consecuencias y ejemplos de campos que no son completos.
+\begin{definition}[Supremo]
+Sea $S\subseteq\mathbb{R}$ un conjunto no vacío y acotado superiormente. Un número $s\in\mathbb{R}$ se llama \indexemph{supremo} de $S$, o \indexemph{mínima cota superior}, si
+\begin{enumerate}
+    \item $x\leq s$ para todo $x\in S$;
+    \item si $M$ es una cota superior de $S$, entonces $s\leq M$.
+\end{enumerate}
+Cuando existe, escribimos $s=\sup S$. En términos del conjunto de cotas,
+\[
+ \sup S=\min U(S).
+\]
+La primera condición dice que $s$ es una cota superior; la segunda, que es la menor de todas ellas.
+\end{definition}
 
-\section{Propiedad arquimediana}
-Existencia de enteros mayores que cualquier real y consecuencias para aproximaciones.
+\begin{definition}[Ínfimo]
+Sea $S\subseteq\mathbb{R}$ un conjunto no vacío y acotado inferiormente. Un número $\ell\in\mathbb{R}$ se llama \indexemph{ínfimo} de $S$, o \indexemph{máxima cota inferior}, si
+\begin{enumerate}
+    \item $\ell\leq x$ para todo $x\in S$;
+    \item si $m$ es una cota inferior de $S$, entonces $m\leq\ell$.
+\end{enumerate}
+Cuando existe, escribimos $\ell=\inf S$. Equivalentemente,
+\[
+ \inf S=\max L(S).
+\]
+El ínfimo es, por tanto, la mayor de todas las cotas inferiores.
+\end{definition}
+
+Estas definiciones permiten reconocer un supremo o un ínfimo, pero todavía no establecen que existan para todo conjunto con la acotación correspondiente. Esa existencia será el contenido del axioma de completitud.
+
+\begin{proposition}[Unicidad del supremo y del ínfimo]
+Si un conjunto tiene supremo, este es único. Si tiene ínfimo, también es único.
+\end{proposition}
+
+\begin{proof}
+Si $s_1$ y $s_2$ son supremos de $S$, ambos son cotas superiores. La minimalidad de $s_1$ da $s_1\leq s_2$ y la de $s_2$ da $s_2\leq s_1$, de donde $s_1=s_2$. Si $\ell_1$ y $\ell_2$ son ínfimos, ambos son cotas inferiores y su maximalidad da $\ell_1\leq\ell_2$ y $\ell_2\leq\ell_1$. Así, $\ell_1=\ell_2$.
+\end{proof}
+
+\begin{proposition}[Relación con el máximo y el mínimo]
+\label{prop:extremos-alcanzados}
+Sea $S\subseteq\mathbb{R}$ un conjunto no vacío.
+\begin{enumerate}
+    \item Si $S$ tiene máximo $M$, entonces tiene supremo y $\sup S=M$.
+    \item Si $S$ tiene mínimo $m$, entonces tiene ínfimo y $\inf S=m$.
+    \item Si existe $\sup S$, entonces $S$ tiene máximo si y solo si $\sup S\in S$.
+    \item Si existe $\inf S$, entonces $S$ tiene mínimo si y solo si $\inf S\in S$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Un máximo $M$ es cota superior de $S$. Además, si $C$ es cualquier cota superior, como $M\in S$, se tiene $M\leq C$. Esto prueba que $M=\sup S$. Si $m$ es el mínimo y $c$ una cota inferior, de $m\in S$ se obtiene $c\leq m$, por lo que $m=\inf S$.
+
+Si $\sup S$ pertenece a $S$, su condición de cota superior lo convierte en máximo. Recíprocamente, si hay máximo, por la primera afirmación coincide con el supremo y pertenece a $S$. El argumento para el ínfimo y el mínimo es el mismo, invirtiendo las desigualdades.
+\end{proof}
+
+\begin{proposition}[Caracterización mediante $\varepsilon$]
+\label{prop:caracterizacion-extremos-epsilon}
+Sea $S\subseteq\mathbb{R}$ un conjunto no vacío.
+\begin{enumerate}
+    \item Un número $s$ es el supremo de $S$ si y solo si es una cota superior y
+    \[
+     \text{para todo }\varepsilon>0\text{ existe }x\in S
+     \text{ tal que }s-\varepsilon<x\leq s.
+    \]
+    \item Un número $\ell$ es el ínfimo de $S$ si y solo si es una cota inferior y
+    \[
+     \text{para todo }\varepsilon>0\text{ existe }x\in S
+     \text{ tal que }\ell\leq x<\ell+\varepsilon.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Supongamos que $s=\sup S$ y tomemos $\varepsilon>0$. Como $s-\varepsilon<s$, el número $s-\varepsilon$ no puede ser cota superior de $S$: si lo fuera, la minimalidad de $s$ daría $s\leq s-\varepsilon$. Por tanto, existe $x\in S$ con $s-\varepsilon<x$, y la condición de cota superior da $x\leq s$.
+
+Recíprocamente, supongamos que $s$ es cota superior y satisface la condición indicada. Si una cota superior $M$ cumpliera $M<s$, al tomar $\varepsilon=s-M>0$ encontraríamos $x\in S$ con $M=s-\varepsilon<x$, contradiciendo que $M$ es cota superior. Así, $s\leq M$ para toda cota superior $M$, y $s=\sup S$.
+
+Para el ínfimo, si $\ell=\inf S$, el número $\ell+\varepsilon$ no puede ser cota inferior, pues es mayor que la máxima cota inferior. Existe entonces $x\in S$ con $x<\ell+\varepsilon$, y además $\ell\leq x$. En sentido inverso, si $\ell$ es cota inferior y satisface esa aproximación, una cota inferior $m>\ell$ daría, al tomar $\varepsilon=m-\ell$, un elemento $x\in S$ con $x<m$. Esto contradice que $m$ es cota inferior, y prueba que toda cota inferior es menor o igual que $\ell$.
+\end{proof}
+
+La caracterización anterior dice que hay elementos del conjunto a una distancia menor que $\varepsilon$ del supremo, sin superarlo, o del ínfimo, sin quedar por debajo de él. El elemento elegido puede depender de $\varepsilon$; si el extremo pertenece al conjunto, puede elegirse ese mismo elemento para todo $\varepsilon>0$. Para demostrar que un número es el supremo deben comprobarse ambas condiciones: ser cota superior y poder aproximarlo desde el conjunto.
+
+\begin{figuranotas}{Aproximación al supremo y al ínfimo. Cada franja contiene al menos un elemento de $S$ para todo $\varepsilon>0$; no se afirma que la franja entera pertenezca a $S$.}{fig:aproximacion-supremo-infimo}
+\input{assets/aproximacion-supremo-infimo.tikz.tex}
+\end{figuranotas}
+
+\begin{example}[Supremo e ínfimo de intervalos]
+Sean $a<b$. Para cada uno de los intervalos $(a,b)$, $[a,b]$, $[a,b)$ y $(a,b]$, el supremo es $b$ y el ínfimo es $a$.
+
+Comprobémoslo primero para $(a,b)$. El número $b$ es cota superior. Dado $\varepsilon>0$, pongamos
+\[
+ \delta=\min\left\{\frac{\varepsilon}{2},\frac{b-a}{2}\right\}.
+\]
+Entonces $0<\delta<\varepsilon$ y $\delta<b-a$, de modo que $x=b-\delta$ pertenece a $(a,b)$ y satisface $b-\varepsilon<x<b$. Por la caracterización anterior, $\sup(a,b)=b$. Asimismo, $y=a+\delta$ pertenece al intervalo y cumple $a<y<a+\varepsilon$, por lo que $\inf(a,b)=a$.
+
+Los otros tres intervalos contienen $(a,b)$ y están contenidos en $[a,b]$. Por ello, $a$ y $b$ siguen siendo cotas y los mismos elementos $x$ e $y$ verifican la aproximación. La pertenencia de los extremos determina cuáles son además mínimo o máximo:
+\[
+\begin{array}{c|c|c|c|c}
+ S & \inf S & \sup S & \min S & \max S\\ \hline
+ (a,b) & a & b & \text{no existe} & \text{no existe}\\
+ [a,b] & a & b & a & b\\
+ [a,b) & a & b & a & \text{no existe}\\
+ (a,b] & a & b & \text{no existe} & b
+\end{array}
+\]
+\end{example}
+
+\begin{figuranotas}{Los intervalos abierto y cerrado tienen el mismo ínfimo y el mismo supremo. Los puntos rellenos indican que el extremo se alcanza.}{fig:extremos-intervalos}
+\input{assets/extremos-intervalos.tikz.tex}
+\end{figuranotas}
+
+\begin{example}[Un conjunto que no es un intervalo]
+Sea $S=\{-2\}\cup(0,3)$. El número $-2$ es su mínimo y, por tanto, su ínfimo. Su supremo es $3$: es cota superior, y los elementos de $(0,3)$ pueden aproximarse a $3$ por la izquierda. No tiene máximo, pues $3\notin S$. Así, el supremo y el ínfimo también describen conjuntos con partes separadas.
+\end{example}
+
+\begin{example}[Acotación en un solo sentido]
+El conjunto $S=[0,\infty)$ tiene mínimo e ínfimo iguales a $0$. No tiene supremo real ni máximo, porque para cualquier $M\in\mathbb{R}$ el número $|M|+1$ pertenece a $S$ y es mayor que $M$. Análogamente, $(-\infty,0]$ tiene máximo y supremo iguales a $0$, pero no tiene ínfimo real ni mínimo.
+\end{example}
+
+\begin{example}[El conjunto vacío]
+Aunque $\varnothing$ está acotado y $U(\varnothing)=L(\varnothing)=\mathbb{R}$, no tiene máximo ni mínimo, pues no tiene elementos. Tampoco tiene supremo ni ínfimo reales: $\mathbb{R}$ no tiene un menor elemento ni un mayor elemento. En efecto, dado cualquier $r\in\mathbb{R}$, se tiene $r-1<r<r+1$. En esta sección trabajamos con supremos e ínfimos que son números reales; no asignamos valores infinitos al conjunto vacío ni a conjuntos no acotados.
+\end{example}
+
+\subsection{El axioma de completitud}
+
+Estamos en condiciones de formular la propiedad que garantiza la existencia de la mínima cota superior. Esta propiedad añade información a la estructura de campo ordenado: expresa con precisión la idea de que en la recta real no quedan huecos como los que encontraremos en los racionales.
+
+\begin{axiom*}[Completitud o propiedad del supremo]
+Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado superiormente tiene un supremo en $\mathbb{R}$.
+\end{axiom*}
+\index{axioma de completitud}
+
+Las dos hipótesis son esenciales. El conjunto vacío no tiene supremo real y un conjunto no acotado superiormente no puede tener una mínima cota superior. El axioma tampoco afirma que el supremo pertenezca al conjunto, como muestra $(0,1)$.
+
+\begin{theorem}[Existencia del ínfimo]
+Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado inferiormente tiene un ínfimo en $\mathbb{R}$. Además,
+\[
+ \inf S=-\sup(-S),
+ \qquad
+ -S=\{-x:x\in S\}.
+\]
+\end{theorem}
+
+\begin{proof}
+Sea $m$ una cota inferior de $S$. Entonces $m\leq x$ para todo $x\in S$, de donde $-x\leq-m$. Por ello, $-S$ es no vacío y está acotado superiormente. Por el axioma de completitud existe $c=\sup(-S)$.
+
+Como $-x\leq c$ para todo $x\in S$, el número $\ell=-c$ es cota inferior de $S$. Si $b$ es cualquier otra cota inferior, de $b\leq x$ se obtiene $-x\leq-b$ para todo $x\in S$. Así, $-b$ es cota superior de $-S$ y $c\leq-b$, es decir, $b\leq-c=\ell$. Esto prueba que $\ell=\inf S$.
+\end{proof}
+
+\begin{corollary}[Cambio de signo]
+Si $S$ es no vacío y está acotado superiormente, entonces
+\[
+ \inf(-S)=-\sup S.
+\]
+En particular, si $S$ es no vacío y acotado, existen ambos extremos y
+\[
+ \sup(-S)=-\inf S,
+ \qquad
+ \inf(-S)=-\sup S.
+\]
+\end{corollary}
+
+\begin{proof}
+El conjunto $-S$ está acotado inferiormente. Aplicando el teorema anterior a $-S$ y usando $-(-S)=S$, obtenemos $\inf(-S)=-\sup S$. La otra identidad es la del teorema.
+\end{proof}
+
+\subsection{Propiedades básicas del supremo y del ínfimo}
+
+\begin{proposition}[Cotas óptimas de un conjunto acotado]
+Sea $S\subseteq\mathbb{R}$ no vacío y acotado, y escribamos $\ell=\inf S$ y $s=\sup S$. Entonces
+\[
+ \ell\leq x\leq s\quad\text{para todo }x\in S,
+\]
+\[
+ L(S)=(-\infty,\ell],
+ \qquad
+ U(S)=[s,\infty).
+\]
+En particular, $\ell\leq s$. Además, $\ell=s$ si y solo si $S$ tiene exactamente un elemento.
+\end{proposition}
+
+\begin{proof}
+Las primeras desigualdades son las condiciones de cota inferior y superior. Si $m\in L(S)$, la maximalidad de $\ell$ da $m\leq\ell$. Recíprocamente, si $m\leq\ell$, entonces $m\leq\ell\leq x$ para todo $x\in S$, así que $m\in L(S)$. Esto prueba la identidad para $L(S)$. La identidad para $U(S)$ se obtiene de modo análogo: $M\in U(S)$ implica $s\leq M$, y $s\leq M$ implica $x\leq s\leq M$ para todo $x\in S$.
+
+Como $S$ no es vacío, podemos elegir $x_0\in S$ y obtener $\ell\leq x_0\leq s$, por lo que $\ell\leq s$. Si $\ell=s=c$, todo $x\in S$ cumple $c\leq x\leq c$ y, por antisimetría, $x=c$. La no vacuidad permite concluir que $S=\{c\}$. Recíprocamente, para $S=\{c\}$ se tiene $\inf S=\sup S=c$.
+\end{proof}
+
+\begin{proposition}[Monotonía respecto de la inclusión]
+Sean $A$ y $B$ subconjuntos no vacíos de $\mathbb{R}$ con $A\subseteq B$.
+\begin{enumerate}
+    \item Si $B$ está acotado superiormente, entonces $\sup A\leq\sup B$.
+    \item Si $B$ está acotado inferiormente, entonces $\inf B\leq\inf A$.
+\end{enumerate}
+En particular, si $B$ está acotado,
+\[
+ \inf B\leq\inf A\leq\sup A\leq\sup B.
+\]
+\end{proposition}
+
+\begin{proof}
+La inclusión asegura que $A$ tiene la acotación correspondiente. Además, $\sup B$ es cota superior de $A$, por lo que la minimalidad de $\sup A$ da $\sup A\leq\sup B$. Del mismo modo, $\inf B$ es cota inferior de $A$, y la maximalidad de $\inf A$ da $\inf B\leq\inf A$. La desigualdad intermedia se probó en la proposición anterior.
+\end{proof}
+
+\begin{proposition}[Uniones finitas]
+Sean $S_1,\ldots,S_n$ conjuntos no vacíos y acotados, con $n\geq1$. Entonces
+\[
+ \sup\left(\bigcup_{j=1}^{n}S_j\right)
+ =\max\{\sup S_1,\ldots,\sup S_n\},
+\]
+\[
+ \inf\left(\bigcup_{j=1}^{n}S_j\right)
+ =\min\{\inf S_1,\ldots,\inf S_n\}.
+\]
+La primera igualdad requiere únicamente acotación superior de cada $S_j$; la segunda, únicamente acotación inferior.
+\end{proposition}
+
+\begin{proof}
+El número $s=\max\{\sup S_1,\ldots,\sup S_n\}$ existe por tratarse del máximo de un conjunto finito no vacío. Si $x$ pertenece a la unión, pertenece a algún $S_k$ y $x\leq\sup S_k\leq s$. Así, $s$ es cota superior de la unión. Toda cota superior $M$ de la unión es cota superior de cada $S_j$, por lo que $\sup S_j\leq M$ para todo $j$. Entonces $s\leq M$, y $s$ es el supremo de la unión.
+
+Análogamente, $\ell=\min\{\inf S_1,\ldots,\inf S_n\}$ es cota inferior de la unión. Toda cota inferior $m$ de la unión lo es de cada $S_j$, de modo que $m\leq\inf S_j$ para todo $j$ y, en consecuencia, $m\leq\ell$. Esto prueba la segunda igualdad.
+\end{proof}
+
+\begin{proposition}[Traslaciones y multiplicación por escalares]
+Sea $S\subseteq\mathbb{R}$ no vacío y acotado, con $s=\sup S$ y $\ell=\inf S$. Para $c,\lambda\in\mathbb{R}$,
+\[
+ \sup(S+c)=s+c,
+ \qquad
+ \inf(S+c)=\ell+c,
+\]
+y
+\[
+ \sup(\lambda S)=
+ \begin{cases}
+  \lambda s,&\lambda\geq0,\\
+  \lambda\ell,&\lambda<0,
+ \end{cases}
+ \qquad
+ \inf(\lambda S)=
+ \begin{cases}
+  \lambda\ell,&\lambda\geq0,\\
+  \lambda s,&\lambda<0.
+ \end{cases}
+\]
+\end{proposition}
+
+\begin{proof}
+Un número $M$ es cota superior de $S+c$ si y solo si $M-c$ es cota superior de $S$. Por ello, $s+c$ es cota superior de $S+c$ y toda otra cota superior $M$ cumple $s\leq M-c$, es decir, $s+c\leq M$. Para las cotas inferiores se usa la misma equivalencia y se obtiene $\inf(S+c)=\ell+c$.
+
+Si $\lambda>0$, un número $M$ es cota superior de $\lambda S$ si y solo si $M/\lambda$ es cota superior de $S$; la división preserva el orden. Así, $\sup(\lambda S)=\lambda s$. La misma equivalencia para cotas inferiores da $\inf(\lambda S)=\lambda\ell$. Si $\lambda<0$, escribimos $\lambda S=(-\lambda)(-S)$ y aplicamos el caso positivo junto con las identidades de cambio de signo. Finalmente, si $\lambda=0$, la no vacuidad de $S$ da $0S=\{0\}$, cuyo supremo e ínfimo son ambos $0$.
+\end{proof}
+
+\subsection{La falta de completitud de los racionales}
+
+El siguiente ejemplo muestra por qué el axioma de completitud aporta una propiedad adicional a los axiomas de campo ordenado. Los racionales satisfacen estos últimos, pero no la propiedad del supremo cuando se exige que la mínima cota superior también sea racional.
+
+\begin{example}[Dos conjuntos acotados]
+Consideremos
+\[
+ S=\{x\in\mathbb{R}:x^2<2\},
+ \qquad
+ A=\{x\in\mathbb{Q}:x^2<2\}.
+\]
+Ambos son no vacíos porque contienen a $1$. También están acotados: si $x\geq2$ o $x\leq-2$, entonces $x^2\geq4$, así que todo elemento de cualquiera de los dos conjuntos satisface $-2<x<2$. En particular, $2$ es una cota superior de $S$ y una cota superior racional de $A$.
+\end{example}
+
+\begin{example}[Ausencia de supremo en $\mathbb{Q}$]
+Para el conjunto racional $A$ del ejemplo anterior, definamos sus cotas superiores \emph{dentro de los racionales} por
+\[
+ U_{\mathbb{Q}}(A)=
+ \{c\in\mathbb{Q}:x\leq c\text{ para todo }x\in A\}.
+\]
+Este conjunto es no vacío, pero no tiene mínimo. Por tanto, $A$ no tiene supremo en $\mathbb{Q}$.
+
+Supongamos, para obtener una contradicción, que $c$ es el menor elemento de $U_{\mathbb{Q}}(A)$. Como $1\in A$, se tiene $c\geq1$. Además, $c^2\neq2$: si $c=p/q$ con enteros positivos coprimos y $p^2=2q^2$, entonces $p^2$ sería par y también $p$. Escribiendo $p=2k$, obtendríamos $q^2=2k^2$, por lo que $q$ también sería par. Esto contradice que $p$ y $q$ sean coprimos.
+
+Pongamos
+\[
+ d=\frac{2c+2}{c+2}.
+\]
+El número $d$ es racional y positivo. Un cálculo da
+\[
+ d-c=\frac{2-c^2}{c+2},
+ \qquad
+ d^2-2=\frac{2(c^2-2)}{(c+2)^2}.
+\]
+Estas identidades permiten tratar las dos posibilidades para $c^2$.
+\begin{enumerate}
+    \item Si $c^2<2$, la primera identidad da $d>c$ y la segunda da $d^2<2$. Así, $d\in A$ es mayor que una cota superior de $A$, lo cual es imposible.
+    \item Si $c^2>2$, las identidades dan $0<d<c$ y $d^2>2$. El número $d$ es cota superior de $A$: si algún $x\in A$ cumpliera $x\geq d>0$, tendríamos $x^2\geq d^2>2$, una contradicción. Entonces $d$ es una cota superior racional menor que $c$, contradiciendo su minimalidad.
+\end{enumerate}
+En ambos casos llegamos a una contradicción. Concluimos que $U_{\mathbb{Q}}(A)$ no tiene mínimo.
+\end{example}
+
+\begin{remark}
+La transformación utilizada se puede escribir como
+\[
+ d=\frac{2p+2q}{p+2q}
+ \quad\text{cuando }c=\frac pq.
+\]
+Su utilidad es que conserva el signo de $c^2-2$ en $d^2-2$, mientras que el signo de $d-c$ es el opuesto. Más generalmente, si $m,n$ son enteros positivos con $m^2>2n^2$, se puede usar
+\[
+ d=\frac{mp+2nq}{np+mq},
+ \qquad
+ d-c=\frac{n(2q^2-p^2)}{q(np+mq)},
+\]
+\[
+ d^2-2=\frac{(m^2-2n^2)(p^2-2q^2)}{(np+mq)^2}.
+\]
+Las mismas dos contradicciones prueban el resultado. El caso anterior corresponde a $m=2$ y $n=1$.
+\end{remark}
+
+El ejemplo distingue dos preguntas: buscar una mínima cota superior en $\mathbb{Q}$ y buscarla en $\mathbb{R}$. Como $A$ también es un subconjunto no vacío y acotado superiormente de $\mathbb{R}$, el axioma de completitud garantiza un supremo real. Lo que hemos probado es que ese supremo no puede ser racional.
+
+\subsection{Completitud y existencia de raíces}
+
+\begin{example}[Construcción de la raíz cuadrada de $2$]
+\label{ej:raiz-dos-completitud}
+Sea $S=\{x\in\mathbb{R}:x^2<2\}$. Ya sabemos que $S$ es no vacío y está acotado superiormente. El axioma de completitud garantiza la existencia de $c=\sup S$. Como $1\in S$ y $2$ es una cota superior, se tiene $1\leq c\leq2$. Probaremos que $c^2=2$.
+\begin{enumerate}
+    \item Supongamos que $c^2<2$ y pongamos $\delta=2-c^2$. Entonces $0<\delta\leq1$. Definamos
+    \[
+     t=c+\frac{\delta}{4c}>c.
+    \]
+    Como $c\geq1$ y $\delta\leq1$,
+    \[
+     t^2
+     =c^2+\frac{\delta}{2}+\frac{\delta^2}{16c^2}
+     \leq c^2+\frac{\delta}{2}+\frac{\delta}{16}
+     <c^2+\delta=2.
+    \]
+    Por tanto, $t\in S$ y $t>c$, lo que contradice que $c$ sea cota superior.
+    \item Supongamos que $c^2>2$ y pongamos $\delta=c^2-2>0$. Ahora definamos
+    \[
+     t=c-\frac{\delta}{2c}
+      =\frac{c^2+2}{2c}.
+    \]
+    Así, $0<t<c$, y
+    \[
+     t^2=c^2-\delta+\frac{\delta^2}{4c^2}
+         =2+\frac{\delta^2}{4c^2}>2.
+    \]
+    El número $t$ es cota superior de $S$: si $x\in S$ y $x\geq t>0$, entonces $x^2\geq t^2>2$, una contradicción. Hemos obtenido una cota superior menor que $c$, lo que contradice que $c=\sup S$.
+\end{enumerate}
+Las dos desigualdades estrictas son imposibles, de modo que $c^2=2$. Este número positivo es lo que denotamos por $\sqrt2$.
+\end{example}
+
+El argumento anterior obtiene la raíz a partir de la completitud, sin presuponer su existencia. Para extenderlo a otras raíces conviene observar primero cómo se comparan las potencias de números no negativos.
+
+\begin{lemma}[Orden de las potencias no negativas]
+Si $n\in\mathbb{N}$ y $0\leq u<v$, entonces $u^n<v^n$.
+\end{lemma}
+
+\begin{proof}
+Usamos la factorización
+\[
+ v^n-u^n=(v-u)\sum_{k=0}^{n-1}v^{n-1-k}u^k.
+\]
+El primer factor es positivo. Los sumandos son no negativos y el primero, $v^{n-1}$, es positivo; para $n=1$ la suma es $1$. Por tanto, la diferencia es positiva.
+\end{proof}
+
+\begin{theorem}[Existencia y unicidad de raíces positivas]
+Para cada $a>0$ y cada $n\in\mathbb{N}$ existe un único $c>0$ tal que $c^n=a$. Este número se llama \indexemph{raíz enésima positiva} de $a$ y se denota por $\sqrt[n]{a}$.
+\end{theorem}
+
+\begin{proof}
+Sea $S=\{x\in\mathbb{R}:x\geq0,\ x^n<a\}$. Contiene a $0$ y está acotado superiormente por $a+1$: si $x\geq a+1>1$, entonces $x^n\geq x>a$. Por completitud existe $c=\sup S$. Además, el número
+\[
+ r=\frac{\min\{1,a\}}2
+\]
+satisface $0<r<1$ y $r^n\leq r<a$, por lo que $r\in S$ y $c\geq r>0$.
+
+Si $c^n<a$, pongamos $\delta=a-c^n>0$ y elijamos
+\[
+ h=\min\left\{1,\frac{\delta}{2n(c+1)^{n-1}}\right\}>0.
+\]
+Como $h\leq1$, la factorización de la diferencia de potencias da
+\[
+ (c+h)^n-c^n
+ =h\sum_{k=0}^{n-1}(c+h)^{n-1-k}c^k
+ \leq hn(c+1)^{n-1}
+ \leq\frac{\delta}{2}.
+\]
+Por tanto, $(c+h)^n<a$, de modo que $c+h\in S$ es mayor que $c$, una contradicción.
+
+Si $c^n>a$, pongamos $\delta=c^n-a>0$ y tomemos
+\[
+ h=\min\left\{\frac c2,\frac{\delta}{2n c^{n-1}}\right\}>0,
+ \qquad t=c-h.
+\]
+Se tiene $0<t<c$ y
+\[
+ c^n-t^n
+ =h\sum_{k=0}^{n-1}c^{n-1-k}t^k
+ \leq hn c^{n-1}
+ \leq\frac{\delta}{2}.
+\]
+Así, $t^n\geq c^n-\delta/2>a$. Si $x\in S$ cumpliera $x\geq t$, el orden de las potencias daría $x^n\geq t^n>a$, una contradicción. Luego $t$ es cota superior de $S$ y es menor que $c$, lo cual también es imposible. Concluimos que $c^n=a$.
+
+Finalmente, dos raíces positivas distintas podrían ordenarse como $u<v$, y el lema daría $u^n<v^n$. Por tanto, no pueden tener ambas potencia enésima igual a $a$. Esto prueba la unicidad.
+\end{proof}
+
+\begin{remark}[Raíces cuadradas]
+Para $n=2$ obtenemos $\sqrt a>0$. Las soluciones reales de $x^2=a$, con $a>0$, son $\sqrt a$ y $-\sqrt a$, pues
+\[
+ x^2-a=(x-\sqrt a)(x+\sqrt a)=0.
+\]
+La notación $\sqrt a$ designa la raíz no negativa; en particular, $\sqrt0=0$. Así se justifica la existencia de las raíces empleadas en los apartados de números y desigualdades.
+\end{remark}
+
+\begin{example}[Conjuntos definidos por potencias]
+Consideremos
+\[
+ A=\{x\in\mathbb{R}:x^3<2\},
+ \qquad
+ B=\{x\in\mathbb{R}:x^2<10\}.
+\]
+El conjunto $A$ es no vacío y está acotado superiormente por $2$. No está acotado inferiormente, pues contiene todos los números negativos: dado $m\in\mathbb{R}$, el número $-|m|-1$ pertenece a $A$ y es menor que $m$. Usando la raíz positiva de $2$ y el orden de las potencias no negativas,
+\[
+ A=(-\infty,\sqrt[3]{2}).
+\]
+Por tanto, $\sup A=\sqrt[3]{2}$, pero no tiene máximo, mínimo ni ínfimo real.
+
+Por su parte, $B$ contiene a $0$ y está acotado, pues $x^2<10$ implica $-4<x<4$. Más precisamente,
+\[
+ B=(-\sqrt{10},\sqrt{10}),
+\]
+y, por los resultados sobre intervalos,
+\[
+ \inf B=-\sqrt{10},
+ \qquad
+ \sup B=\sqrt{10}.
+\]
+Ninguno de estos dos extremos pertenece a $B$, así que $B$ no tiene máximo ni mínimo.
+\end{example}
+
+\subsection{La propiedad arquimediana}
+
+Otra consecuencia del axioma de completitud es que los números naturales no están acotados superiormente en $\mathbb{R}$. Esta propiedad permite superar cualquier número real mediante un natural y obtener recíprocos positivos tan pequeños como se quiera.
+
+\begin{theorem}[Propiedad arquimediana]
+\label{teo:propiedad-arquimediana}
+Para todo $x\in\mathbb{R}$ existe $n\in\mathbb{N}$ tal que $x<n$.
+\end{theorem}
+\index{propiedad arquimediana}
+
+\begin{proof}
+Si $\mathbb{N}$ estuviera acotado superiormente, por completitud tendría un supremo $s$. Como $s-1<s$, el número $s-1$ no sería cota superior y existiría $n\in\mathbb{N}$ con $s-1<n$. Pero entonces $n+1\in\mathbb{N}$ y $s<n+1$, contradiciendo que $s$ sea cota superior. Por tanto, $\mathbb{N}$ no está acotado superiormente. La caracterización de la falta de acotación prueba la afirmación.
+\end{proof}
+
+\begin{corollary}[Recíprocos arbitrariamente pequeños]
+Para todo $\varepsilon>0$ existe $n\in\mathbb{N}$ tal que
+\[
+ 0<\frac1n<\varepsilon.
+\]
+Más generalmente, dados $a,b>0$, existe $n\in\mathbb{N}$ tal que $b<na$.
+\end{corollary}
+
+\begin{proof}
+Aplicando la propiedad arquimediana a $1/\varepsilon$, obtenemos $n>1/\varepsilon>0$. Al tomar recíprocos se invierte el orden, por lo que $0<1/n<\varepsilon$. Para la segunda afirmación basta elegir $n>b/a$ y multiplicar por $a>0$.
+\end{proof}
+
+\begin{example}[Un conjunto infinito acotado]
+Sea
+\[
+ E=\left\{\frac1n:n\in\mathbb{N}\right\}.
+\]
+Como $0<1/n\leq1$ y $1\in E$, se tiene $\max E=\sup E=1$. El número $0$ es cota inferior y el corolario anterior garantiza que para todo $\varepsilon>0$ hay un elemento de $E$ entre $0$ y $\varepsilon$. Por la caracterización mediante $\varepsilon$, $\inf E=0$.
+
+El conjunto no tiene mínimo, pues $0\notin E$. También puede comprobarse directamente: para cada $1/n\in E$, el elemento $1/(n+1)$ pertenece a $E$ y es menor. Este ejemplo muestra que un conjunto infinito puede estar acotado, tener supremo e ínfimo y alcanzar solamente uno de ellos.
+\end{example}
+
+La propiedad arquimediana será una herramienta para construir racionales dentro de cualquier intervalo abierto no vacío. Antes de pasar a esa cuestión, conviene recordar las dos tareas que aparecen al calcular un supremo o un ínfimo: verificar que el número propuesto es una cota y probar que ninguna cota más ajustada es posible.
+
+\section{Distribución de los números}
 
 \section{Densidad de \texorpdfstring{$\mathbb{Q}$}{Q} y de los irracionales}
 Construcción de racionales e irracionales en cualquier intervalo abierto no vacío.
 
 \section{Problemas}
-Los siguientes 17 problemas practican los apartados del capítulo que ya están desarrollados: conjuntos numéricos, axiomas de campo, orden, intervalos, valor absoluto y desigualdades.
+Los siguientes 21 problemas practican los apartados del capítulo que ya están desarrollados: conjuntos numéricos, axiomas de campo, orden, intervalos, valor absoluto, desigualdades, acotación y extremos de conjuntos.
 
 \subsection{Números y estructura de campo}
 
@@ -1602,4 +2131,37 @@ Aplica Cauchy--Schwarz a los vectores $(1,-1,2)$ y $(2,3,-1)$. Escribe la desigu
 
 \begin{problem}
 Demuestra que si $|x|\leq2$, entonces $x^2\leq4$. Usa la identidad entre el cuadrado del valor absoluto y $x^2$.
+\end{problem}
+
+\subsection{Máximo, mínimo, supremo e ínfimo}
+
+\begin{problem}
+Para cada uno de los siguientes conjuntos, determina sus conjuntos de cotas superiores e inferiores, su supremo y su ínfimo, e indica si tiene máximo o mínimo:
+\[
+ A=[-3,2),\qquad
+ B=\{-4,-1,2\},\qquad
+ C=\{-2\}\cup(1,4),\qquad
+ D=[1,\infty).
+\]
+Justifica también la ausencia de cualquiera de los extremos y representa $A$ y $C$ en la recta real.
+\end{problem}
+
+\begin{problem}
+Sea $S=\{x\in\mathbb{R}:x^2<9\}$. Demuestra que $\sup S=3$ y $\inf S=-3$ mediante la caracterización con $\varepsilon$. Explica por qué $S$ no tiene máximo ni mínimo.
+\end{problem}
+
+\begin{problem}
+Sean $A$ y $B$ conjuntos no vacíos y acotados, y supongamos que $a\leq b$ para todo $a\in A$ y todo $b\in B$. Demuestra que
+\[
+ \sup A\leq\inf B.
+\]
+¿Se obtiene necesariamente $\sup A<\inf B$ si se supone $a<b$ para todos esos pares? Examina los conjuntos $A=(-1,0)$ y $B=(0,1)$.
+\end{problem}
+
+\begin{problem}
+Para $E=\{1/n:n\in\mathbb{N}\}$, determina el supremo y el ínfimo de los conjuntos
+\[
+ -E,\qquad 2E+3,\qquad -2E+3.
+\]
+Indica cuáles de esos extremos se alcanzan. Justifica tus respuestas mediante las propiedades de traslación, multiplicación por escalares y cambio de signo.
 \end{problem}
