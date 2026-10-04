@@ -1265,6 +1265,115 @@ Estas desigualdades constituyen herramientas elementales que aparecerán reitera
 \section{Conjuntos acotados}
 Cotas superiores e inferiores y caracterizaciones de acotación.
 
+\begin{remark}[Contexto histórico: Richard Dedekind (1831--1916)]
+Richard Dedekind (1831--1916) fue un matemático alemán, alumno de Gauss, cuyas contribuciones abarcaron los fundamentos de la aritmética y el análisis, así como la teoría algebraica de números. En 1858, mientras preparaba sus cursos de cálculo en Zúrich, se preguntó cómo justificar rigurosamente que la recta racional no tiene ``huecos''. Su respuesta fue estudiar particiones de los números racionales, hoy llamadas \emph{cortaduras de Dedekind}; publicó esta idea en \emph{Stetigkeit und irrationale Zahlen} (\emph{Continuidad y números irracionales}) en 1872. Una cortadura que no queda separada por ningún racional permite representar un número irracional. Así, la construcción de Dedekind ofrece una manera concreta de entender la completitud de los reales. El estudio de las cotas tiene una historia más amplia: MacTutor registra aportes anteriores de Bolzano, en 1817, al análisis de la existencia de cotas superiores mínimas. Por ello, no atribuimos a Dedekind el origen de todo el tema; sus ideas son especialmente útiles aquí para explicar por qué se considera que la recta real no presenta huecos \cite{mactutorDedekind,mactutorRealNumbers}.
+\end{remark}
+
+En esta sección comenzaremos con el lenguaje de las cotas y la acotación. En la siguiente distinguiremos entre una cota que pertenece al conjunto y una cota extrema que puede no pertenecerle; más adelante usaremos esa distinción para formular la propiedad de completitud de $\mathbb{R}$.
+
+\begin{definition}[Cotas superiores]
+Sea $A\subseteq\mathbb{R}$. Un número $M\in\mathbb{R}$ se llama \indexemph{cota superior} de $A$ si
+\[
+ x\leq M\qquad\text{para todo }x\in A.
+\]
+El \indexemph{conjunto de cotas superiores} de $A$ se denota por
+\[
+ U(A)=\{M\in\mathbb{R}: x\leq M\text{ para todo }x\in A\}.
+\]
+Decimos que $A$ está \indexemph{acotado superiormente} cuando $U(A)\neq\varnothing$.
+\end{definition}
+
+\begin{definition}[Cotas inferiores]
+Sea $A\subseteq\mathbb{R}$. Un número $m\in\mathbb{R}$ se llama \indexemph{cota inferior} de $A$ si
+\[
+ m\leq x\qquad\text{para todo }x\in A.
+\]
+El \indexemph{conjunto de cotas inferiores} de $A$ se denota por
+\[
+ L(A)=\{m\in\mathbb{R}: m\leq x\text{ para todo }x\in A\}.
+\]
+Decimos que $A$ está \indexemph{acotado inferiormente} cuando $L(A)\neq\varnothing$.
+\end{definition}
+
+\begin{definition}[Conjunto acotado]
+Un conjunto $A\subseteq\mathbb{R}$ se llama \indexemph{acotado} si está acotado superior e inferiormente. Equivalentemente, existen $m,M\in\mathbb{R}$ con $m\leq M$ tales que
+\[
+ m\leq x\leq M\qquad\text{para todo }x\in A.
+\]
+En otras palabras, $A$ está contenido en algún intervalo cerrado y acotado $[m,M]$.
+\end{definition}
+
+\begin{remark}
+Con estas definiciones, el conjunto vacío está acotado: las afirmaciones ``para todo $x\in\varnothing$'' son verdaderas vacíamente, de modo que $U(\varnothing)=L(\varnothing)=\mathbb{R}$. Cuando un teorema requiera que un conjunto sea no vacío, lo indicaremos de manera explícita.
+\end{remark}
+
+\begin{example}
+Sea $A=(0,1)$. Entonces
+\[
+ U(A)=[1,\infty),\qquad L(A)=(-\infty,0].
+\]
+En efecto, todo $M\geq1$ es mayor que cada elemento de $A$. Si $M<1$, cuando $M<0$ podemos tomar $x=1/2$, y cuando $0\leq M<1$ podemos tomar $x=(M+1)/2$; en ambos casos $x\in A$ y $x>M$, por lo que $M$ no es cota superior. Para las cotas inferiores, todo $m\leq0$ sirve. Si $m>0$, cuando $m<2$ tomamos $x=m/2$, y cuando $m\geq2$ tomamos $x=1/2$; en ambos casos $x\in A$ y $x<m$, así que $m$ no es cota inferior.
+\end{example}
+
+\begin{figuranotas}{El intervalo $A=(0,1)$ y sus conjuntos de cotas inferiores y superiores.}{fig:cotas-intervalo-abierto}
+\input{assets/cotas-intervalo-abierto.tikz.tex}
+\end{figuranotas}
+
+\begin{example}
+Para el conjunto finito $B=\{2,5,7\}$ se tiene
+\[
+ U(B)=[7,\infty),\qquad L(B)=(-\infty,2].
+\]
+Por ejemplo, $9$ es una cota superior y $1$ es una cota inferior; en cambio, $6$ no es cota superior porque $7\in B$ y $6<7$.
+\end{example}
+
+\begin{example}
+El conjunto $\mathbb{R}$ no está acotado superior ni inferiormente. Dado cualquier $M\in\mathbb{R}$, el número $M+1$ pertenece a $\mathbb{R}$ y es mayor que $M$; por tanto, $M$ no es una cota superior. Análogamente, para cada $m\in\mathbb{R}$, el número $m-1$ es menor que $m$, así que $m$ no es una cota inferior. En consecuencia,
+\[
+ U(\mathbb{R})=L(\mathbb{R})=\varnothing.
+\]
+\end{example}
+
+\begin{proposition}[Cierre de los conjuntos de cotas]
+Sea $A\subseteq\mathbb{R}$.
+\begin{enumerate}
+  \item Si $M\in U(A)$ y $N\geq M$, entonces $N\in U(A)$.
+  \item Si $m\in L(A)$ y $n\leq m$, entonces $n\in L(A)$.
+\end{enumerate}
+Así, una vez que se encuentra una cota superior, todo número mayor también es cota superior; y todo número menor que una cota inferior también es cota inferior.
+\end{proposition}
+
+\begin{proof}
+Si $M\in U(A)$, entonces $x\leq M$ para todo $x\in A$. De $M\leq N$ y la transitividad del orden se sigue $x\leq N$, luego $N\in U(A)$. El segundo inciso se demuestra del mismo modo: $n\leq m\leq x$ para todo $x\in A$, así que $n\in L(A)$.
+\end{proof}
+
+\begin{proposition}[Cotas de subconjuntos]
+Si $A\subseteq B\subseteq\mathbb{R}$, entonces
+\[
+ U(B)\subseteq U(A),\qquad L(B)\subseteq L(A).
+\]
+En particular, todo subconjunto de un conjunto acotado es acotado.
+\end{proposition}
+
+\begin{proof}
+Sea $M\in U(B)$. Para cada $x\in A$ también se tiene $x\in B$, y por tanto $x\leq M$; esto prueba que $M\in U(A)$. La inclusión $L(B)\subseteq L(A)$ se obtiene de manera análoga. Si $B$ está acotado, existen una cota inferior $m$ y una cota superior $M$ comunes a todos sus elementos; las mismas desigualdades valen para los elementos de $A$.
+\end{proof}
+
+\begin{proposition}[Caracterización mediante el valor absoluto]
+Un conjunto $A\subseteq\mathbb{R}$ está acotado si y solo si existe $C\geq0$ tal que
+\[
+ |x|\leq C\qquad\text{para todo }x\in A.
+\]
+\end{proposition}
+
+\begin{proof}
+Supongamos primero que $m\leq x\leq M$ para todo $x\in A$. Tomemos $C=|m|+|M|$, que es no negativo. Si $x\geq0$, entonces $x\leq M$ y necesariamente $M\geq0$, por lo que $|x|=x\leq |M|\leq C$. Si $x<0$, entonces $m\leq x<0$, y así $|x|=-x\leq -m=|m|\leq C$. En ambos casos $|x|\leq C$.
+
+Recíprocamente, si $|x|\leq C$, la caracterización del valor absoluto ya demostrada da $-C\leq x\leq C$. Por ello $-C$ y $C$ son, respectivamente, cotas inferior y superior de $A$.
+\end{proof}
+
+Estos resultados permiten reconocer cuándo un conjunto está contenido en una región finita de la recta y cómo se comportan sus cotas al pasar a subconjuntos. En la sección siguiente precisaremos qué ocurre cuando una cota pertenece al conjunto y qué significa que una cota sea la menor posible o la mayor posible.
+
 \section{Máximo, mínimo, supremo e ínfimo}
 Diferencia entre cotas extremas alcanzadas y cotas mínimas o máximas.
 

@@ -1,0 +1,24 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  % A=(0,1): los puntos 0 y 1 no pertenecen al conjunto.
+  \node[anchor=east] at (0.45,2) {$A=(0,1)$};
+  \draw[<->,gray] (0.8,2) -- (6.8,2);
+  \draw[very thick,blue!65] (2.2,2) -- (4.8,2);
+  \draw[fill=white,blue!65,thick] (2.2,2) circle (2.4pt);
+  \draw[fill=white,blue!65,thick] (4.8,2) circle (2.4pt);
+  \node[below=4pt] at (2.2,2) {$0$};
+  \node[below=4pt] at (4.8,2) {$1$};
+
+  % Las cotas superiores comienzan en 1 e incluyen ese extremo.
+  \node[anchor=east] at (0.45,1) {$U(A)$};
+  \draw[<->,gray] (0.8,1) -- (6.8,1);
+  \draw[very thick,teal!70!black,->] (4.8,1) -- (6.65,1);
+  \fill[teal!70!black] (4.8,1) circle (2.4pt);
+  \node[below=4pt] at (4.8,1) {$1$};
+
+  % Las cotas inferiores terminan en 0 e incluyen ese extremo.
+  \node[anchor=east] at (0.45,0) {$L(A)$};
+  \draw[<->,gray] (0.8,0) -- (6.8,0);
+  \draw[very thick,orange!85!black,<-] (2.2,0) -- (0.95,0);
+  \fill[orange!85!black] (2.2,0) circle (2.4pt);
+  \node[below=4pt] at (2.2,0) {$0$};
+\end{tikzpicture}
