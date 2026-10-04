@@ -1,0 +1,150 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{apostol1974}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=125cfbd85cc6e304e8467fb8dded9ad1}{%
+           family={Apostol},
+           familyi={A\bibinitperiod},
+           given={Tom\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, MA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{fullhash}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{fullhashraw}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{bibnamehash}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{authorbibnamehash}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{authornamehash}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{authorfullhash}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \strng{authorfullhashraw}{125cfbd85cc6e304e8467fb8dded9ad1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Mathematical Analysis: A Modern Approach to Advanced Calculus}
+      \field{year}{1974}
+    \endentry
+    \entry{rudin1976}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=33be2fc2739d3493c6d6cc5d56a4c41e}{%
+           family={Rudin},
+           familyi={R\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill}%
+      }
+      \strng{namehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{fullhash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{fullhashraw}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{bibnamehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authorbibnamehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authornamehash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authorfullhash}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \strng{authorfullhashraw}{33be2fc2739d3493c6d6cc5d56a4c41e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{series}{International Series in Pure and Applied Mathematics}
+      \field{title}{Principles of Mathematical Analysis}
+      \field{year}{1976}
+    \endentry
+    \entry{spivak2008}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ee3293a9c2577bc8e7bb84e4d67e85c5}{%
+           family={Spivak},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Houston, TX}%
+      }
+      \list{publisher}{1}{%
+        {Publish or Perish}%
+      }
+      \strng{namehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{fullhash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{fullhashraw}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{bibnamehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authorbibnamehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authornamehash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authorfullhash}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \strng{authorfullhashraw}{ee3293a9c2577bc8e7bb84e4d67e85c5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{title}{Calculus}
+      \field{year}{2008}
+    \endentry
+    \entry{abbott2015}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b8c23829054861a238e88f310c7efba3}{%
+           family={Abbott},
+           familyi={A\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b8c23829054861a238e88f310c7efba3}
+      \strng{fullhash}{b8c23829054861a238e88f310c7efba3}
+      \strng{fullhashraw}{b8c23829054861a238e88f310c7efba3}
+      \strng{bibnamehash}{b8c23829054861a238e88f310c7efba3}
+      \strng{authorbibnamehash}{b8c23829054861a238e88f310c7efba3}
+      \strng{authornamehash}{b8c23829054861a238e88f310c7efba3}
+      \strng{authorfullhash}{b8c23829054861a238e88f310c7efba3}
+      \strng{authorfullhashraw}{b8c23829054861a238e88f310c7efba3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{series}{Undergraduate Texts in Mathematics}
+      \field{title}{Understanding Analysis}
+      \field{year}{2015}
+      \verb{doi}
+      \verb 10.1007/978-1-4939-2712-8
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
