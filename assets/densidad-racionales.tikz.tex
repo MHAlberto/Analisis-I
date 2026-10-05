@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+  \draw[<->,gray] (0,0) -- (11,0);
+  % La separación entre puntos de la malla representa 1/n.
+  \foreach \x in {2.2,5.5,8.8} {
+    \draw[gray] (\x,-0.12) -- (\x,0.12);
+  }
+  \draw[very thick,blue!65] (3.5,0) -- (7.1,0);
+  \draw[draw=blue!65,fill=white,thick] (3.5,0) circle (2.6pt);
+  \draw[draw=blue!65,fill=white,thick] (7.1,0) circle (2.6pt);
+  \fill[teal!75!black] (5.5,0) circle (2.8pt);
+  \node[above=6pt] at (3.5,0) {$a$};
+  \node[above=6pt] at (7.1,0) {$b$};
+  \node[below=7pt] at (2.2,0) {$\dfrac{m-1}{n}$};
+  \node[below=7pt,teal!75!black] at (5.5,0) {$\dfrac mn\in\mathbb{Q}$};
+  \node[below=7pt] at (8.8,0) {$\dfrac{m+1}{n}$};
+  \draw[decorate,decoration={brace,amplitude=4pt},teal!75!black]
+    (2.2,0.9) -- (5.5,0.9)
+    node[midway,above=6pt] {$1/n$};
+  \draw[decorate,decoration={brace,amplitude=4pt},blue!65!black]
+    (3.5,1.7) -- (7.1,1.7)
+    node[midway,above=6pt] {$b-a>1/n$};
+\end{tikzpicture}

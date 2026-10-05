@@ -1470,11 +1470,9 @@ por lo que $AB$ está acotado. También $|\lambda a|\leq|\lambda|C_A$, de modo q
 \section{Máximo, mínimo, supremo e ínfimo}
 \label{sec:extremos-supremo-infimo}
 
-En esta sección estudiaremos cuándo un conjunto de números reales alcanza un valor mayor o igual, o menor o igual, que todos sus elementos. Las cotas introducidas en el apartado anterior permiten formular esta pregunta con precisión: si una cota pertenece al conjunto, obtenemos un máximo o un mínimo. También nos interesa encontrar la menor de todas las cotas superiores o la mayor de todas las cotas inferiores, aun cuando esos números no pertenezcan al conjunto. Estos últimos conceptos son el supremo y el ínfimo.
+Una cota indica hasta dónde llegan los elementos de un conjunto, pero puede haber muchas cotas y ninguna de ellas tiene por qué pertenecer al conjunto. En esta sección estudiaremos cuatro formas de precisar sus extremos. El máximo y el mínimo son elementos del conjunto que están, respectivamente, por encima y por debajo de todos los demás. El supremo y el ínfimo son las cotas más ajustadas, aunque el conjunto no las alcance.
 
-La diferencia se aprecia al comparar $(0,1)$ con $[0,1]$. Ambos tienen las mismas cotas superiores e inferiores, pero solamente el segundo contiene los extremos $0$ y $1$. Después de formalizar esta distinción, introduciremos el axioma de completitud, estudiaremos por qué su análogo falla en $\mathbb{Q}$ y deduciremos algunas consecuencias, entre ellas la existencia de raíces y la propiedad arquimediana.
-
-\subsection{Máximo y mínimo}
+La diferencia se aprecia al comparar $(0,1)$ con $[0,1]$. Ambos tienen ínfimo $0$ y supremo $1$, pero solo el segundo tiene mínimo y máximo. Partiremos de esta distinción, aprenderemos a reconocer los extremos y estudiaremos cómo cambian al incluir conjuntos, tomar uniones, sumar o multiplicar por un escalar. El axioma de completitud garantizará la existencia del supremo y del ínfimo bajo las hipótesis correspondientes.
 
 \begin{definition}[Máximo]
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $M$ se llama \indexemph{máximo} de $S$ si
@@ -1533,13 +1531,12 @@ Procedemos por inducción sobre el número de elementos. Si $S=\{x_1\}$, el núm
 \end{proof}
 
 \begin{remark}
-La condición de no ser vacío es necesaria: un máximo y un mínimo deben pertenecer al conjunto. Además, la acotación por sí sola no garantiza que existan estos extremos, como muestra $(0,1)$.
+La condición de no ser vacío es necesaria: un máximo y un mínimo deben pertenecer al conjunto. Además, la acotación por sí sola no garantiza que existan estos extremos, como muestra $(0,1)$. Para descartar un máximo basta encontrar, para cada elemento, otro elemento mayor; para descartar un mínimo, basta encontrar otro menor.
 \end{remark}
 
-\subsection{Supremo e ínfimo}
+Cuando el conjunto no alcanza un extremo, todavía podemos buscar la cota que mejor lo describe. Recordemos que $U(S)$ es el conjunto de todas sus cotas superiores y $L(S)$ el de todas sus cotas inferiores. Buscar el supremo consiste en encontrar el menor elemento de $U(S)$; buscar el ínfimo, en encontrar el mayor elemento de $L(S)$.
 
-Recordemos que $U(S)$ es el conjunto de todas las cotas superiores de $S$ y $L(S)$ el de todas sus cotas inferiores. Ahora buscamos extremos de estos conjuntos de cotas.
-
+\begin{samepage}
 \begin{definition}[Supremo]
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío y acotado superiormente. Un número $s\in\mathbb{R}$ se llama \indexemph{supremo} de $S$, o \indexemph{mínima cota superior}, si
 \begin{enumerate}
@@ -1552,6 +1549,7 @@ Cuando existe, escribimos $s=\sup S$. En términos del conjunto de cotas,
 \]
 La primera condición dice que $s$ es una cota superior; la segunda, que es la menor de todas ellas.
 \end{definition}
+\end{samepage}
 
 \begin{definition}[Ínfimo]
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío y acotado inferiormente. Un número $\ell\in\mathbb{R}$ se llama \indexemph{ínfimo} de $S$, o \indexemph{máxima cota inferior}, si
@@ -1592,6 +1590,8 @@ Un máximo $M$ es cota superior de $S$. Además, si $C$ es cualquier cota superi
 
 Si $\sup S$ pertenece a $S$, su condición de cota superior lo convierte en máximo. Recíprocamente, si hay máximo, por la primera afirmación coincide con el supremo y pertenece a $S$. El argumento para el ínfimo y el mínimo es el mismo, invirtiendo las desigualdades.
 \end{proof}
+
+La condición de ser la menor cota superior también puede expresarse así: cualquier número menor que el supremo deja algún elemento del conjunto por encima de él. Para el ínfimo ocurre lo análogo: cualquier número mayor deja algún elemento por debajo. La siguiente caracterización convierte esta idea en una herramienta para calcular extremos.
 
 \begin{proposition}[Caracterización mediante $\varepsilon$]
 \label{prop:caracterizacion-extremos-epsilon}
@@ -1645,12 +1645,14 @@ Los otros tres intervalos contienen $(a,b)$ y están contenidos en $[a,b]$. Por 
 \]
 \end{example}
 
-\begin{figuranotas}{Los intervalos abierto y cerrado tienen el mismo ínfimo y el mismo supremo. Los puntos rellenos indican que el extremo se alcanza.}{fig:extremos-intervalos}
+\begin{figuranotas}{Los cuatro intervalos tienen ínfimo $a$ y supremo $b$. Un punto relleno indica que el extremo pertenece al conjunto y es, además, mínimo o máximo; un punto hueco indica que no se alcanza.}{fig:extremos-intervalos}
 \input{assets/extremos-intervalos.tikz.tex}
 \end{figuranotas}
 
 \begin{example}[Un conjunto que no es un intervalo]
-Sea $S=\{-2\}\cup(0,3)$. El número $-2$ es su mínimo y, por tanto, su ínfimo. Su supremo es $3$: es cota superior, y los elementos de $(0,3)$ pueden aproximarse a $3$ por la izquierda. No tiene máximo, pues $3\notin S$. Así, el supremo y el ínfimo también describen conjuntos con partes separadas.
+Sea $S=\{-2\}\cup(0,3)$. El número $-2$ pertenece a $S$ y es menor que todos sus demás elementos; por tanto, $\min S=\inf S=-2$.
+
+Por otro lado, $3$ es cota superior. Dado $\varepsilon>0$, elijamos $\delta=\min\{\varepsilon/2,3/2\}$. Entonces $x=3-\delta$ pertenece a $(0,3)\subseteq S$ y cumple $3-\varepsilon<x<3$. La caracterización con $\varepsilon$ da $\sup S=3$. Como $3\notin S$, no hay máximo. El supremo y el ínfimo describen los extremos del conjunto completo, aunque este tenga partes separadas.
 \end{example}
 
 \begin{example}[Acotación en un solo sentido]
@@ -1661,9 +1663,7 @@ El conjunto $S=[0,\infty)$ tiene mínimo e ínfimo iguales a $0$. No tiene supre
 Aunque $\varnothing$ está acotado y $U(\varnothing)=L(\varnothing)=\mathbb{R}$, no tiene máximo ni mínimo, pues no tiene elementos. Tampoco tiene supremo ni ínfimo reales: $\mathbb{R}$ no tiene un menor elemento ni un mayor elemento. En efecto, dado cualquier $r\in\mathbb{R}$, se tiene $r-1<r<r+1$. En esta sección trabajamos con supremos e ínfimos que son números reales; no asignamos valores infinitos al conjunto vacío ni a conjuntos no acotados.
 \end{example}
 
-\subsection{El axioma de completitud}
-
-Estamos en condiciones de formular la propiedad que garantiza la existencia de la mínima cota superior. Esta propiedad añade información a la estructura de campo ordenado: expresa con precisión la idea de que en la recta real no quedan huecos como los que encontraremos en los racionales.
+Los ejemplos anteriores permiten reconocer extremos concretos. Para asegurar que todo conjunto no vacío con la acotación adecuada tiene un supremo, necesitamos una propiedad adicional de los reales. Esa es la función del axioma de completitud.
 
 \begin{axiom*}[Completitud o propiedad del supremo]
 Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado superiormente tiene un supremo en $\mathbb{R}$.
@@ -1704,7 +1704,7 @@ En particular, si $S$ es no vacío y acotado, existen ambos extremos y
 El conjunto $-S$ está acotado inferiormente. Aplicando el teorema anterior a $-S$ y usando $-(-S)=S$, obtenemos $\inf(-S)=-\sup S$. La otra identidad es la del teorema.
 \end{proof}
 
-\subsection{Propiedades básicas del supremo y del ínfimo}
+Ahora podemos describir todas las cotas a partir de solo dos números: el ínfimo y el supremo.
 
 \begin{proposition}[Cotas óptimas de un conjunto acotado]
 Sea $S\subseteq\mathbb{R}$ no vacío y acotado, y escribamos $\ell=\inf S$ y $s=\sup S$. Entonces
@@ -1725,6 +1725,8 @@ Las primeras desigualdades son las condiciones de cota inferior y superior. Si $
 Como $S$ no es vacío, podemos elegir $x_0\in S$ y obtener $\ell\leq x_0\leq s$, por lo que $\ell\leq s$. Si $\ell=s=c$, todo $x\in S$ cumple $c\leq x\leq c$ y, por antisimetría, $x=c$. La no vacuidad permite concluir que $S=\{c\}$. Recíprocamente, para $S=\{c\}$ se tiene $\inf S=\sup S=c$.
 \end{proof}
 
+Al pasar a un subconjunto pueden desaparecer elementos cercanos a los extremos. El supremo puede disminuir y el ínfimo puede aumentar, como precisa el siguiente resultado.
+
 \begin{proposition}[Monotonía respecto de la inclusión]
 Sean $A$ y $B$ subconjuntos no vacíos de $\mathbb{R}$ con $A\subseteq B$.
 \begin{enumerate}
@@ -1740,6 +1742,18 @@ En particular, si $B$ está acotado,
 \begin{proof}
 La inclusión asegura que $A$ tiene la acotación correspondiente. Además, $\sup B$ es cota superior de $A$, por lo que la minimalidad de $\sup A$ da $\sup A\leq\sup B$. Del mismo modo, $\inf B$ es cota inferior de $A$, y la maximalidad de $\inf A$ da $\inf B\leq\inf A$. La desigualdad intermedia se probó en la proposición anterior.
 \end{proof}
+
+\begin{remark}[Intersecciones]
+Si $A$ y $B$ son acotados y $A\cap B\neq\varnothing$, las inclusiones $A\cap B\subseteq A$ y $A\cap B\subseteq B$ dan
+\[
+ \sup(A\cap B)\leq\min\{\sup A,\sup B\},
+ \qquad
+ \max\{\inf A,\inf B\}\leq\inf(A\cap B).
+\]
+Estas desigualdades pueden ser estrictas. Para $A=\{0,2,4\}$ y $B=\{1,2,5\}$, la intersección es $\{2\}$: su supremo es $2<4$ y su ínfimo es $2>1$.
+\end{remark}
+
+En una unión finita, en cambio, los extremos se obtienen comparando los extremos de los conjuntos que la forman.
 
 \begin{proposition}[Uniones finitas]
 Sean $S_1,\ldots,S_n$ conjuntos no vacíos y acotados, con $n\geq1$. Entonces
@@ -1759,6 +1773,8 @@ El número $s=\max\{\sup S_1,\ldots,\sup S_n\}$ existe por tratarse del máximo 
 
 Análogamente, $\ell=\min\{\inf S_1,\ldots,\inf S_n\}$ es cota inferior de la unión. Toda cota inferior $m$ de la unión lo es de cada $S_j$, de modo que $m\leq\inf S_j$ para todo $j$ y, en consecuencia, $m\leq\ell$. Esto prueba la segunda igualdad.
 \end{proof}
+
+También podemos calcular extremos después de operar con los elementos del conjunto. Una traslación mueve ambos extremos la misma distancia. Un escalar positivo conserva su orden y uno negativo lo invierte.
 
 \begin{proposition}[Traslaciones y multiplicación por escalares]
 Sea $S\subseteq\mathbb{R}$ no vacío y acotado, con $s=\sup S$ y $\ell=\inf S$. Para $c,\lambda\in\mathbb{R}$,
@@ -1789,9 +1805,108 @@ Un número $M$ es cota superior de $S+c$ si y solo si $M-c$ es cota superior de 
 Si $\lambda>0$, un número $M$ es cota superior de $\lambda S$ si y solo si $M/\lambda$ es cota superior de $S$; la división preserva el orden. Así, $\sup(\lambda S)=\lambda s$. La misma equivalencia para cotas inferiores da $\inf(\lambda S)=\lambda\ell$. Si $\lambda<0$, escribimos $\lambda S=(-\lambda)(-S)$ y aplicamos el caso positivo junto con las identidades de cambio de signo. Finalmente, si $\lambda=0$, la no vacuidad de $S$ da $0S=\{0\}$, cuyo supremo e ínfimo son ambos $0$.
 \end{proof}
 
-\subsection{La falta de completitud de los racionales}
+\begin{example}[Una transformación que invierte los extremos]
+Sea $S=[-1,2)$ y consideremos $T=-2S+3=\{-2x+3:x\in S\}$. Al multiplicar por $-2$ y sumar $3$, las desigualdades $-1\leq x<2$ se convierten en $-1<-2x+3\leq5$, y recíprocamente. Así,
+\[
+ T=(-1,5],\qquad \inf T=-1,\qquad \sup T=\max T=5.
+\]
+El mínimo de $S$ se transforma en el máximo de $T$. El supremo de $S$, que no se alcanza, se transforma en el ínfimo de $T$, que tampoco se alcanza.
+\end{example}
 
-El siguiente ejemplo muestra por qué el axioma de completitud aporta una propiedad adicional a los axiomas de campo ordenado. Los racionales satisfacen estos últimos, pero no la propiedad del supremo cuando se exige que la mínima cota superior también sea racional.
+\begin{proposition}[Extremos de una suma de conjuntos]
+Sean $A,B\subseteq\mathbb{R}$ no vacíos y acotados. Entonces
+\[
+ \sup(A+B)=\sup A+\sup B,\qquad
+ \inf(A+B)=\inf A+\inf B.
+\]
+Si ambos conjuntos tienen máximo, $\max(A+B)=\max A+\max B$. Si ambos tienen mínimo, $\min(A+B)=\min A+\min B$.
+\end{proposition}
+
+\begin{proof}
+Escribamos $s_A=\sup A$ y $s_B=\sup B$. Para todo $a\in A$ y $b\in B$, se tiene $a+b\leq s_A+s_B$, de modo que la suma de los supremos es cota superior de $A+B$.
+
+Dado $\varepsilon>0$, la caracterización de los supremos permite elegir $a\in A$ y $b\in B$ con
+\[
+ s_A-\frac{\varepsilon}{2}<a\leq s_A,\qquad
+ s_B-\frac{\varepsilon}{2}<b\leq s_B.
+\]
+Al sumar,
+\[
+ s_A+s_B-\varepsilon<a+b\leq s_A+s_B.
+\]
+Como $a+b\in A+B$, la misma caracterización demuestra la identidad para el supremo.
+
+Si $\ell_A=\inf A$ y $\ell_B=\inf B$, todo elemento de $A+B$ es mayor o igual que $\ell_A+\ell_B$. Para cada $\varepsilon>0$, elegimos $a\in A$ y $b\in B$ con $\ell_A\leq a<\ell_A+\varepsilon/2$ y $\ell_B\leq b<\ell_B+\varepsilon/2$. Entonces
+\[
+ \ell_A+\ell_B\leq a+b<\ell_A+\ell_B+\varepsilon,
+\]
+lo que prueba la identidad para el ínfimo.
+
+Cuando los máximos existen, su suma pertenece a $A+B$ y coincide con el supremo; por tanto, es el máximo. El argumento para los mínimos es análogo.
+\end{proof}
+
+Los siguientes ejemplos reúnen las comprobaciones anteriores: identificar las cotas óptimas y decidir cuáles pertenecen al conjunto.
+
+\begin{example}[Conjuntos definidos por potencias]
+Usaremos las raíces positivas, cuya existencia se justificará en \cref{teo:raices-positivas}. Consideremos
+\[
+ A=\{x\in\mathbb{R}:x^3<2\},
+ \qquad
+ B=\{x\in\mathbb{R}:x^2<10\}.
+\]
+El conjunto $A$ es no vacío y está acotado superiormente por $2$. No está acotado inferiormente, pues contiene todos los números negativos: dado $m\in\mathbb{R}$, el número $-|m|-1$ pertenece a $A$ y es menor que $m$. Usando la raíz positiva de $2$ y el orden de las potencias no negativas,
+\[
+ A=(-\infty,\sqrt[3]{2}).
+\]
+Por tanto, $\sup A=\sqrt[3]{2}$, pero no tiene máximo, mínimo ni ínfimo real.
+
+Por su parte, $B$ contiene a $0$ y está acotado, pues $x^2<10$ implica $-4<x<4$. Más precisamente,
+\[
+ B=(-\sqrt{10},\sqrt{10}),
+\]
+y, por los resultados sobre intervalos,
+\[
+ \inf B=-\sqrt{10},
+ \qquad
+ \sup B=\sqrt{10}.
+\]
+Ninguno de estos dos extremos pertenece a $B$, así que $B$ no tiene máximo ni mínimo.
+\end{example}
+
+\begin{example}[Un conjunto infinito acotado]
+Sea
+\[
+ E=\left\{\frac1n:n\in\mathbb{N}\right\}.
+\]
+Como $0<1/n\leq1$ y $1\in E$, se tiene $\max E=\sup E=1$. Además, $0$ es una cota inferior. Para comprobar que es la mayor, usemos la existencia del ínfimo: sea $\ell=\inf E$, de modo que $\ell\geq0$.
+
+Si $\ell>0$, la caracterización con $\varepsilon=\ell$ daría un elemento $1/n\in E$ tal que
+\[
+ \ell\leq\frac1n<2\ell.
+\]
+Pero entonces $1/(2n)\in E$ y $1/(2n)<\ell$, contradiciendo que $\ell$ es cota inferior. Por tanto, $\inf E=0$.
+
+El conjunto no tiene mínimo, pues $0\notin E$. También puede comprobarse directamente: para cada $1/n\in E$, el elemento $1/(n+1)$ pertenece a $E$ y es menor. Así, un conjunto infinito puede estar acotado y alcanzar su supremo sin alcanzar su ínfimo.
+\end{example}
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\captionsetup{hypcap=false}
+\input{assets/extremos-conjuntos.tikz.tex}
+\captionof{figure}{Extremos de dos conjuntos que no son intervalos. En $S=\{-2\}\cup(0,3)$ se alcanza el ínfimo; en $E=\{1/n:n\in\mathbb{N}\}$ se alcanza el supremo. En la segunda recta se muestran solo algunos elementos de $E$.}
+\label{fig:extremos-conjuntos}
+\end{minipage}
+\end{center}
+
+Al calcular un supremo o un ínfimo conviene separar dos comprobaciones: el número propuesto debe ser una cota y ninguna cota más ajustada debe servir. Para decidir si hay máximo o mínimo, queda una pregunta adicional: ¿pertenece ese extremo al conjunto?
+
+\section{Distribución de los números}
+\label{sec:distribucion-numeros}
+
+Las nociones de supremo e ínfimo permiten comparar la estructura de los racionales con la de los reales. Veremos primero que un conjunto de racionales puede estar acotado sin tener una mínima cota superior racional. Después usaremos la completitud de $\mathbb{R}$ para justificar la existencia de raíces y demostrar que los naturales superan cualquier número real. Estas herramientas nos permitirán estudiar, en la sección siguiente, cómo se distribuyen los racionales y los irracionales a lo largo de la recta.
+
+Los racionales satisfacen los axiomas de campo ordenado, pero no la propiedad del supremo cuando se exige que la mínima cota superior también sea racional. El siguiente ejemplo muestra esta diferencia.
 
 \begin{example}[Dos conjuntos acotados]
 Consideremos
@@ -1851,8 +1966,6 @@ Las mismas dos contradicciones prueban el resultado. El caso anterior correspond
 
 El ejemplo distingue dos preguntas: buscar una mínima cota superior en $\mathbb{Q}$ y buscarla en $\mathbb{R}$. Como $A$ también es un subconjunto no vacío y acotado superiormente de $\mathbb{R}$, el axioma de completitud garantiza un supremo real. Lo que hemos probado es que ese supremo no puede ser racional.
 
-\subsection{Completitud y existencia de raíces}
-
 \begin{example}[Construcción de la raíz cuadrada de $2$]
 \label{ej:raiz-dos-completitud}
 Sea $S=\{x\in\mathbb{R}:x^2<2\}$. Ya sabemos que $S$ es no vacío y está acotado superiormente. El axioma de completitud garantiza la existencia de $c=\sup S$. Como $1\in S$ y $2$ es una cota superior, se tiene $1\leq c\leq2$. Probaremos que $c^2=2$.
@@ -1899,6 +2012,7 @@ El primer factor es positivo. Los sumandos son no negativos y el primero, $v^{n-
 \end{proof}
 
 \begin{theorem}[Existencia y unicidad de raíces positivas]
+\label{teo:raices-positivas}
 Para cada $a>0$ y cada $n\in\mathbb{N}$ existe un único $c>0$ tal que $c^n=a$. Este número se llama \indexemph{raíz enésima positiva} de $a$ y se denota por $\sqrt[n]{a}$.
 \end{theorem}
 
@@ -1947,34 +2061,6 @@ Para $n=2$ obtenemos $\sqrt a>0$. Las soluciones reales de $x^2=a$, con $a>0$, s
 La notación $\sqrt a$ designa la raíz no negativa; en particular, $\sqrt0=0$. Así se justifica la existencia de las raíces empleadas en los apartados de números y desigualdades.
 \end{remark}
 
-\begin{example}[Conjuntos definidos por potencias]
-Consideremos
-\[
- A=\{x\in\mathbb{R}:x^3<2\},
- \qquad
- B=\{x\in\mathbb{R}:x^2<10\}.
-\]
-El conjunto $A$ es no vacío y está acotado superiormente por $2$. No está acotado inferiormente, pues contiene todos los números negativos: dado $m\in\mathbb{R}$, el número $-|m|-1$ pertenece a $A$ y es menor que $m$. Usando la raíz positiva de $2$ y el orden de las potencias no negativas,
-\[
- A=(-\infty,\sqrt[3]{2}).
-\]
-Por tanto, $\sup A=\sqrt[3]{2}$, pero no tiene máximo, mínimo ni ínfimo real.
-
-Por su parte, $B$ contiene a $0$ y está acotado, pues $x^2<10$ implica $-4<x<4$. Más precisamente,
-\[
- B=(-\sqrt{10},\sqrt{10}),
-\]
-y, por los resultados sobre intervalos,
-\[
- \inf B=-\sqrt{10},
- \qquad
- \sup B=\sqrt{10}.
-\]
-Ninguno de estos dos extremos pertenece a $B$, así que $B$ no tiene máximo ni mínimo.
-\end{example}
-
-\subsection{La propiedad arquimediana}
-
 Otra consecuencia del axioma de completitud es que los números naturales no están acotados superiormente en $\mathbb{R}$. Esta propiedad permite superar cualquier número real mediante un natural y obtener recíprocos positivos tan pequeños como se quiera.
 
 \begin{theorem}[Propiedad arquimediana]
@@ -1988,6 +2074,7 @@ Si $\mathbb{N}$ estuviera acotado superiormente, por completitud tendría un sup
 \end{proof}
 
 \begin{corollary}[Recíprocos arbitrariamente pequeños]
+\label{cor:reciprocos-pequenos}
 Para todo $\varepsilon>0$ existe $n\in\mathbb{N}$ tal que
 \[
  0<\frac1n<\varepsilon.
@@ -1999,22 +2086,140 @@ Más generalmente, dados $a,b>0$, existe $n\in\mathbb{N}$ tal que $b<na$.
 Aplicando la propiedad arquimediana a $1/\varepsilon$, obtenemos $n>1/\varepsilon>0$. Al tomar recíprocos se invierte el orden, por lo que $0<1/n<\varepsilon$. Para la segunda afirmación basta elegir $n>b/a$ y multiplicar por $a>0$.
 \end{proof}
 
-\begin{example}[Un conjunto infinito acotado]
-Sea
-\[
- E=\left\{\frac1n:n\in\mathbb{N}\right\}.
-\]
-Como $0<1/n\leq1$ y $1\in E$, se tiene $\max E=\sup E=1$. El número $0$ es cota inferior y el corolario anterior garantiza que para todo $\varepsilon>0$ hay un elemento de $E$ entre $0$ y $\varepsilon$. Por la caracterización mediante $\varepsilon$, $\inf E=0$.
+La propiedad arquimediana también permite situar cada real entre dos enteros consecutivos. Este paso será útil al buscar racionales con un denominador elegido de antemano.
 
-El conjunto no tiene mínimo, pues $0\notin E$. También puede comprobarse directamente: para cada $1/n\in E$, el elemento $1/(n+1)$ pertenece a $E$ y es menor. Este ejemplo muestra que un conjunto infinito puede estar acotado, tener supremo e ínfimo y alcanzar solamente uno de ellos.
+\begin{proposition}[Parte entera]
+\label{prop:parte-entera}
+Para todo $x\in\mathbb{R}$ existe un único $p\in\mathbb{Z}$ tal que
+\[
+ p\leq x<p+1.
+\]
+El entero $p$ se llama \indexemph{parte entera} de $x$ y se denota por $\lfloor x\rfloor$.
+\end{proposition}
+
+\begin{proof}
+Por la propiedad arquimediana, elijamos $N\in\mathbb{N}$ con $N>|x|+1$. El conjunto
+\[
+ F=\{k\in\mathbb{Z}:-N\leq k\leq N,\ k\leq x\}
+\]
+es finito y no vacío, pues contiene a $-N$. Tiene, por tanto, un máximo $p$. Su definición da $p\leq x$.
+
+Si $p+1\leq x$, entonces $-N\leq p+1\leq x<N$, así que $p+1\in F$. Esto contradice la maximalidad de $p$. Luego $x<p+1$.
+
+Para la unicidad, si dos enteros $p<q$ cumplieran la condición, tendríamos $p+1\leq q\leq x<p+1$, una contradicción.
+\end{proof}
+
+\begin{example}
+Se tiene $\lfloor 7/3\rfloor=2$, pues $2\leq7/3<3$. Para un número negativo, $\lfloor-7/3\rfloor=-3$, ya que $-3\leq-7/3<-2$. La parte entera se obtiene siempre tomando el entero que queda a la izquierda, también cuando el número es negativo.
 \end{example}
 
-La propiedad arquimediana será una herramienta para construir racionales dentro de cualquier intervalo abierto no vacío. Antes de pasar a esa cuestión, conviene recordar las dos tareas que aparecen al calcular un supremo o un ínfimo: verificar que el número propuesto es una cota y probar que ninguna cota más ajustada es posible.
-
-\section{Distribución de los números}
-
 \section{Densidad de \texorpdfstring{$\mathbb{Q}$}{Q} y de los irracionales}
-Construcción de racionales e irracionales en cualquier intervalo abierto no vacío.
+\label{sec:densidad}
+
+Entre dos números reales distintos siempre hay un racional y siempre hay un irracional. La palabra \emph{densidad} expresa esta propiedad: por pequeño que sea un intervalo abierto no vacío, contiene elementos de ambos tipos. Comenzaremos con una definición que permite formular las dos afirmaciones de la misma manera.
+
+\begin{definition}[Conjunto denso en $\mathbb{R}$]
+Un conjunto $D\subseteq\mathbb{R}$ se llama \indexemph{denso} en $\mathbb{R}$ si para cualesquiera $a,b\in\mathbb{R}$ con $a<b$ existe $d\in D$ tal que
+\[
+ a<d<b.
+\]
+Equivalentemente, $D\cap(a,b)\neq\varnothing$ para todo intervalo abierto no vacío $(a,b)$.
+\end{definition}
+
+\begin{theorem}[Densidad de los racionales]
+\label{teo:densidad-racionales}
+El conjunto $\mathbb{Q}$ es denso en $\mathbb{R}$.
+\end{theorem}
+
+\begin{proof}
+Sean $a<b$. Por \cref{cor:reciprocos-pequenos}, podemos elegir $n\in\mathbb{N}$ tal que $1/n<b-a$. Tomemos
+\[
+ m=\lfloor na\rfloor+1\in\mathbb{Z}.
+\]
+La definición de parte entera da
+\[
+ m-1\leq na<m.
+\]
+Dividiendo entre $n>0$ y reordenando, obtenemos
+\[
+ a<\frac mn\leq a+\frac1n<b.
+\]
+Por tanto, el racional $m/n$ pertenece a $(a,b)$. El argumento funciona también cuando $a$ es negativo.
+\end{proof}
+
+La elección del denominador divide la recta en pasos de longitud $1/n$. Como ese paso es menor que la longitud $b-a$, el primer punto de la forma $m/n$ que queda a la derecha de $a$ todavía queda a la izquierda de $b$.
+
+\begin{figuranotas}{Construcción de un racional entre $a$ y $b$. El paso $1/n$ es menor que $b-a$, y la elección de $m$ garantiza $(m-1)/n\leq a<m/n<b$.}{fig:densidad-racionales}
+\input{assets/densidad-racionales.tikz.tex}
+\end{figuranotas}
+
+\begin{example}
+Para $a=-2/5$ y $b=-1/3$ se tiene $b-a=1/15$. Podemos tomar $n=30$, pues $1/30<1/15$. Entonces $m=\lfloor30a\rfloor+1=-11$, y
+\[
+ -\frac25=-\frac{12}{30}
+ <-\frac{11}{30}
+ <-\frac{10}{30}=-\frac13.
+\]
+Así obtenemos un racional dentro del intervalo mediante la construcción de la demostración.
+\end{example}
+
+\begin{theorem}[Densidad de los irracionales]
+\label{teo:densidad-irracionales}
+El conjunto $\mathbb{R}\setminus\mathbb{Q}$ es denso en $\mathbb{R}$.
+\end{theorem}
+
+\begin{proof}
+Sean $a<b$. Por la densidad de los racionales, existe $q\in\mathbb{Q}$ tal que
+\[
+ a-\sqrt2<q<b-\sqrt2.
+\]
+Al sumar $\sqrt2$, el número $t=q+\sqrt2$ satisface $a<t<b$. Además, $t$ es irracional: si fuera racional, también lo sería $\sqrt2=t-q$, contradiciendo la irracionalidad demostrada en la sección anterior.
+\end{proof}
+
+\begin{example}
+En el intervalo $(13/10,8/5)$ están el racional $3/2$ y el irracional $\sqrt2$. En efecto, $13/10<3/2<8/5$, y
+\[
+ \left(\frac{13}{10}\right)^2<2<
+ \left(\frac85\right)^2
+\]
+permite comparar los extremos positivos con $\sqrt2$. Los dos teoremas aseguran que esta coexistencia ocurre en cualquier intervalo abierto no vacío.
+\end{example}
+
+\begin{corollary}[Infinitos números de ambos tipos]
+Todo intervalo abierto no vacío contiene infinitos racionales e infinitos irracionales.
+\end{corollary}
+
+\begin{proof}
+Si los racionales de $(a,b)$ formaran un conjunto finito, ese conjunto sería no vacío por la densidad y tendría un máximo $r$. Pero el intervalo $(r,b)$ contendría otro racional, mayor que $r$, una contradicción. El mismo argumento, aplicado a los irracionales de $(a,b)$, prueba la segunda afirmación.
+\end{proof}
+
+La densidad también permite calcular extremos de conjuntos que contienen únicamente racionales o únicamente irracionales, aunque sus extremos puedan ser de cualquier tipo.
+
+\begin{corollary}[Extremos en un intervalo]
+Sean $a<b$ y
+\[
+ A=\mathbb{Q}\cap(a,b),
+ \qquad
+ B=(\mathbb{R}\setminus\mathbb{Q})\cap(a,b).
+\]
+Entonces
+\[
+ \inf A=\inf B=a,
+ \qquad
+ \sup A=\sup B=b.
+\]
+Ninguno de los dos conjuntos tiene máximo ni mínimo.
+\end{corollary}
+
+\begin{proof}
+Ambos conjuntos son no vacíos por densidad, y $a$ y $b$ son cotas inferior y superior de cada uno. Dado $\varepsilon>0$, pongamos $u=\max\{a,b-\varepsilon\}<b$. El intervalo $(u,b)$ contiene un racional y un irracional; cada uno pertenece al conjunto correspondiente y está entre $b-\varepsilon$ y $b$. La caracterización con $\varepsilon$ prueba que ambos supremos son $b$.
+
+Análogamente, con $v=\min\{b,a+\varepsilon\}>a$, el intervalo $(a,v)$ contiene elementos de ambos tipos entre $a$ y $a+\varepsilon$. Por tanto, ambos ínfimos son $a$. Como $a$ y $b$ no pertenecen a $A$ ni a $B$, estos conjuntos no alcanzan ninguno de sus extremos.
+\end{proof}
+
+\begin{remark}[Densidad y completitud]
+La densidad y la completitud expresan propiedades distintas. La primera asegura que encontramos elementos dentro de cualquier intervalo abierto; la segunda garantiza una mínima cota superior para cada conjunto no vacío acotado superiormente. Los racionales son densos en $\mathbb{R}$, pero el conjunto $\{q\in\mathbb{Q}:q^2<2\}$ no tiene supremo racional. Por su parte, $\mathbb{Z}$ no es denso, pues $(0,1)$ no contiene enteros.
+\end{remark}
 
 \section{Problemas}
 Los siguientes 21 problemas practican los apartados del capítulo que ya están desarrollados: conjuntos numéricos, axiomas de campo, orden, intervalos, valor absoluto, desigualdades, acotación y extremos de conjuntos.

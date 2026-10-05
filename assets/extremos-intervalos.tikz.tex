@@ -1,18 +1,33 @@
 \begin{tikzpicture}[>=Stealth,font=\small]
-  \node at (4.2,2.65) {$S=(a,b)$};
-  \draw[<->,gray] (0.6,2) -- (8,2);
-  \draw[very thick,blue!65] (2,2) -- (6.5,2);
-  \draw[draw=blue!65,fill=white,thick] (2,2) circle (2.5pt);
-  \draw[draw=blue!65,fill=white,thick] (6.5,2) circle (2.5pt);
-  \node[below=6pt] at (2,2) {$a=\inf S$};
-  \node[below=6pt] at (6.5,2) {$b=\sup S$};
-  \node at (4.2,1.1) {No hay mínimo ni máximo.};
+  \node at (5.5,6.55) {$S=(a,b)$};
+  \draw[<->,gray] (0,6) -- (11,6);
+  \draw[very thick,blue!65] (1.6,6) -- (9.4,6);
+  \draw[draw=blue!65,fill=white,thick] (1.6,6) circle (2.5pt);
+  \draw[draw=blue!65,fill=white,thick] (9.4,6) circle (2.5pt);
+  \node[below=6pt,align=center] at (1.6,6) {$\inf S=a$\\no hay mínimo};
+  \node[below=6pt,align=center] at (9.4,6) {$\sup S=b$\\no hay máximo};
 
-  \node at (4.2,0.35) {$S=[a,b]$};
-  \draw[<->,gray] (0.6,-0.3) -- (8,-0.3);
-  \draw[very thick,blue!65] (2,-0.3) -- (6.5,-0.3);
-  \fill[blue!65] (2,-0.3) circle (2.5pt);
-  \fill[blue!65] (6.5,-0.3) circle (2.5pt);
-  \node[below=6pt] at (2,-0.3) {$a=\inf S=\min S$};
-  \node[below=6pt] at (6.5,-0.3) {$b=\sup S=\max S$};
+  \node at (5.5,4.55) {$S=[a,b]$};
+  \draw[<->,gray] (0,4) -- (11,4);
+  \draw[very thick,blue!65] (1.6,4) -- (9.4,4);
+  \fill[blue!65] (1.6,4) circle (2.5pt);
+  \fill[blue!65] (9.4,4) circle (2.5pt);
+  \node[below=6pt,align=center] at (1.6,4) {$\inf S=a$\\$\min S=a$};
+  \node[below=6pt,align=center] at (9.4,4) {$\sup S=b$\\$\max S=b$};
+
+  \node at (5.5,2.55) {$S=[a,b)$};
+  \draw[<->,gray] (0,2) -- (11,2);
+  \draw[very thick,blue!65] (1.6,2) -- (9.4,2);
+  \fill[blue!65] (1.6,2) circle (2.5pt);
+  \draw[draw=blue!65,fill=white,thick] (9.4,2) circle (2.5pt);
+  \node[below=6pt,align=center] at (1.6,2) {$\inf S=a$\\$\min S=a$};
+  \node[below=6pt,align=center] at (9.4,2) {$\sup S=b$\\no hay máximo};
+
+  \node at (5.5,0.55) {$S=(a,b]$};
+  \draw[<->,gray] (0,0) -- (11,0);
+  \draw[very thick,blue!65] (1.6,0) -- (9.4,0);
+  \draw[draw=blue!65,fill=white,thick] (1.6,0) circle (2.5pt);
+  \fill[blue!65] (9.4,0) circle (2.5pt);
+  \node[below=6pt,align=center] at (1.6,0) {$\inf S=a$\\no hay mínimo};
+  \node[below=6pt,align=center] at (9.4,0) {$\sup S=b$\\$\max S=b$};
 \end{tikzpicture}
