@@ -1,5 +1,6 @@
 *.aux
 *.bcf
+*.blg
 *.fdb_latexmk
 *.fls
 *.idx
@@ -16,3 +17,4 @@
 *.toc
 *.vrb
 *.xdv
+*-SAVE-ERROR
