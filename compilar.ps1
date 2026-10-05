@@ -1,6 +1,14 @@
 $ErrorActionPreference = 'Stop'
 
 if (-not (Get-Command latexmk -ErrorAction SilentlyContinue)) {
+    $miktexBinPath = Join-Path $env:LOCALAPPDATA 'Programs\MiKTeX\miktex\bin\x64'
+    $miktexLatexmkPath = Join-Path $miktexBinPath 'latexmk.exe'
+    if (Test-Path -LiteralPath $miktexLatexmkPath -PathType Leaf) {
+        $env:PATH = "$miktexBinPath;$env:PATH"
+    }
+}
+
+if (-not (Get-Command latexmk -ErrorAction SilentlyContinue)) {
     Write-Error 'No se encontró latexmk. Instala MiKTeX o TeX Live con latexmk y comprueba que sus ejecutables estén en PATH.'
     exit 1
 }
