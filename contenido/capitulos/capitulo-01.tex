@@ -968,6 +968,72 @@ Aplicando la hipótesis de inducción,
 \]
 \end{proof}
 
+Las estimaciones con valor absoluto también permiten demostrar igualdades. Si la distancia entre dos números fijos es menor que cualquier cantidad positiva, esa distancia debe ser cero. Esta propiedad es muy útil para demostraciones futuras, especialmente para probar unicidad: bastará estimar la distancia entre dos posibles valores y hacerla arbitrariamente pequeña.
+
+\begin{proposition}[Igualdad mediante estimaciones]
+\label{prop:igualdad-epsilon}
+Sean $x,y\in\mathbb{R}$ dos números fijos. Si
+\[
+ |x-y|<\varepsilon
+ \qquad\text{para todo }\varepsilon>0,
+\]
+entonces $x=y$. La misma conclusión se obtiene con desigualdades no estrictas:
+\[
+ \boxed{\bigl(\forall\varepsilon>0,\ |x-y|\leq\varepsilon\bigr)
+ \Longrightarrow x=y.}
+\]
+Por la caracterización del valor absoluto, la hipótesis estricta también puede escribirse como
+\[
+ -\varepsilon<x-y<\varepsilon
+ \qquad\text{para todo }\varepsilon>0.
+\]
+\end{proposition}
+\index{igualdad mediante estimaciones}
+
+\begin{proof}
+Como la hipótesis estricta implica la no estricta, basta demostrar el resultado bajo esta última. Supongamos que $x\neq y$. Entonces $d=|x-y|>0$, y podemos elegir
+\[
+ \varepsilon=\frac d2>0.
+\]
+La hipótesis, aplicada a este valor de $\varepsilon$, daría
+\[
+ d\leq\frac d2<d,
+\]
+lo cual es imposible. En la versión estricta obtendríamos directamente $d<d/2$, también una contradicción. Por tanto, $|x-y|=0$ y, en consecuencia, $x=y$.
+\end{proof}
+
+El cuantificador \emph{para todo $\varepsilon>0$} es esencial: los números $x$ e $y$ deben permanecer fijos mientras variamos $\varepsilon$. Una sola estimación expresa cercanía; disponer de todas ellas permite concluir igualdad. Geométricamente, el único punto que pertenece a todos los intervalos $(y-\varepsilon,y+\varepsilon)$, con $\varepsilon>0$, es su centro $y$. Lo mismo ocurre con los intervalos cerrados $[y-\varepsilon,y+\varepsilon]$.
+
+\begin{figuranotas}{Si $x>y$ y $d=|x-y|>0$, los dos primeros radios dibujados incluyen a $x$, pero el radio $\varepsilon=d/2$ lo excluye. Por tanto, un punto distinto de $y$ no puede estar a distancia menor o igual que todos los radios positivos. El caso $x<y$ se obtiene reflejando el dibujo alrededor de $y$.}{fig:igualdad-epsilon}
+\input{assets/igualdad-epsilon.tikz.tex}
+\end{figuranotas}
+
+\begin{example}[Un número encerrado alrededor de $3$]
+Supongamos que un número fijo $u\in\mathbb{R}$ satisface
+\[
+ 3-\varepsilon\leq u\leq3+\varepsilon
+ \qquad\text{para todo }\varepsilon>0.
+\]
+Al restar $3$ y usar la caracterización del valor absoluto, obtenemos $|u-3|\leq\varepsilon$ para todo $\varepsilon>0$. Por \cref{prop:igualdad-epsilon}, necesariamente $u=3$. Así, una familia de cotas cada vez más ajustadas puede determinar un número de manera exacta.
+\end{example}
+
+\begin{example}[Dos números con una aproximación común]
+Sean $a,b\in\mathbb{R}$ dos números fijos. Supongamos que para cada $\varepsilon>0$ podemos encontrar un número $z\in\mathbb{R}$ tal que
+\[
+ |a-z|<\frac{\varepsilon}{2},
+ \qquad
+ |b-z|<\frac{\varepsilon}{2}.
+\]
+El número $z$ puede depender de $\varepsilon$, pero en cada elección es el mismo para ambas estimaciones. Por la desigualdad del triángulo,
+\[
+ |a-b|=|(a-z)+(z-b)|
+ \leq|a-z|+|z-b|
+ <\frac{\varepsilon}{2}+\frac{\varepsilon}{2}
+ =\varepsilon.
+\]
+Como esto vale para todo $\varepsilon>0$, la proposición implica $a=b$. Más adelante, esta será la idea de la demostración de unicidad del límite: si un mismo término puede estar suficientemente cerca de dos candidatos a límite, la distancia entre esos candidatos debe ser cero.
+\end{example}
+
 Además de las desigualdades asociadas al valor absoluto, existen algunas desigualdades algebraicas elementales que aparecerán continuamente en análisis. Una de las más sencillas surge directamente del hecho de que el cuadrado de todo número real es no negativo.
 
 \begin{proposition}
