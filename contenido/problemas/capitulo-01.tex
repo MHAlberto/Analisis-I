@@ -1,0 +1,647 @@
+% Diez problemas por sección; los comentarios no generan subdivisiones.
+% Conjuntos numéricos y axiomas de campo: problemas 30--39.
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-01}
+Deduce del principio de inducción que, si una afirmación $P(n)$ se sigue de que $P(k)$ sea cierta para todos los naturales $k<n$, entonces $P(n)$ es cierta para todo $n\in\mathbb N$. Usa después la inducción para demostrar que todo subconjunto no vacío de $\mathbb N$ tiene mínimo. En la primera afirmación, interpreta expresamente qué sucede cuando $n=1$.~\cite{mseInduccion}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-02}
+Sean $q\in\mathbb R\setminus\{1\}$ y $n\in\mathbb N$. Demuestra, mediante operaciones de campo e inducción, las identidades
+\[
+\sum_{k=0}^{n}q^k=\frac{1-q^{n+1}}{1-q},\qquad
+\sum_{k=1}^{n}kq^{k-1}
+=\frac{1-(n+1)q^n+nq^{n+1}}{(1-q)^2}.
+\]
+Determina por separado ambas sumas cuando $q=1$.~\cite{mseGeometrica}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-03}
+Sea $F=\{a+b\sqrt2:a,b\in\mathbb Q\}$. Demuestra que cada elemento de $F$ tiene una única representación de esa forma y que $F$, con las operaciones heredadas de $\mathbb R$, es un campo. Obtén una fórmula para el inverso de $a+b\sqrt2\ne0$ y justifica que su denominador no se anula.~\cite{mseCampoRaiz}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-04}
+En el campo del \cref{prob:reto-numeros-03}, define $\overline{a+b\sqrt2}=a-b\sqrt2$ y $N(z)=z\overline z$. Demuestra que la conjugación conserva sumas, productos e inversos, y que $N(zw)=N(z)N(w)$. Determina los elementos fijos por conjugación y demuestra que $N(z)=0$ si y solo si $z=0$. Finalmente, construye infinitos elementos distintos de $F$ con norma $1$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-05}
+Demuestra que $\sqrt2+\sqrt3$ y $\sqrt3-\sqrt2$ son irracionales, usando la irracionalidad de $\sqrt2$ y operaciones de campo. Determina su producto y explica por qué un producto racional no obliga a que sus factores sean racionales.~\cite{mseRadicales}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-06}
+Demuestra que $\sqrt2+\sqrt[3]{3}$ es irracional. La demostración debe utilizar solamente la irracionalidad de $\sqrt2$, la expansión de un cubo y operaciones de campo.~\cite{mseRaizCubica}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-07}
+Sean $a,b,c,d\in\mathbb Q$ con $ad-bc\ne0$. Demuestra que, para todo irracional $x$, se cumple $cx+d\ne0$ y el número $(ax+b)/(cx+d)$ es irracional. Describe qué ocurre si $ad-bc=0$, suponiendo $(c,d)\ne(0,0)$ y restringiendo la expresión a los puntos donde esté definida.~\cite{mseHomografia}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-08}
+Sean $m,n\in\mathbb N$, con $n\ge2$. Demuestra que, si $r\in\mathbb Q$ y $r^n=m$, entonces $r\in\mathbb Z$. Deduce que $\sqrt[n]{m}$ es racional si y solo si $m$ es la potencia $n$-ésima de un natural. Justifica el paso sobre numeradores y denominadores coprimos, sin suponer que una raíz de un entero deba ser entera.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-09}
+Construye, para cada una de las cuatro posibilidades, dos irracionales $u,v$ cuya suma y cuyo producto sean, respectivamente, racionales o irracionales. Justifica todos los ejemplos. Demuestra además que no pueden ser racionales simultáneamente $u+v$ y $u-v$ si $u$ y $v$ son irracionales.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-numeros-10}
+Para $n\ge2$, define $r_n=\sqrt n$ y, sucesivamente, $r_k=\sqrt{k r_{k+1}}$ para $k=n-1,n-2,\ldots,2$. Demuestra que $r_k<k+1$ para todo $2\le k\le n$ y, en particular,
+\[
+\sqrt{2\sqrt{3\sqrt{\cdots\sqrt n}}}<3.
+\]
+La cantidad de raíces es finita; formula con precisión la inducción que utilizas.~\cite{mseRadicalAnidado}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+% Estructura de campo ordenado: problemas 40--49.
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-01}
+Sea $K$ un campo y $P\subseteq K$ un conjunto cerrado bajo sumas y productos, tal que cada $x\in K$ satisface exactamente una de las condiciones $x=0$, $x\in P$ o $-x\in P$. Define $x\le_P y$ cuando $y-x\in P\cup\{0\}$. Demuestra que esta relación convierte a $K$ en un campo ordenado. Recíprocamente, demuestra que los elementos estrictamente positivos de cualquier campo ordenado satisfacen esas condiciones.~\cite{mseCono}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-02}
+Supón que $\preccurlyeq$ es un orden sobre $\mathbb R$ compatible con las operaciones de campo. Demuestra que $x\preccurlyeq y$ si y solo si $x\le y$ en el orden usual. Justifica por qué todo real estrictamente positivo en el orden usual es el cuadrado de un real no nulo. ¿Qué parte de este argumento no está disponible en un campo ordenado arbitrario? \cite{mseOrdenUnico}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-03}
+En un campo ordenado $K$, escribe $n\cdot1$ para la suma de $n$ copias de $1$. Demuestra que $n\cdot1>0$ para todo $n\in\mathbb N$ y que $m\cdot1\ne n\cdot1$ si $m\ne n$. Deduce que ningún campo con un número finito de elementos admite un orden compatible con sus operaciones. Interpreta los enteros negativos mediante opuestos y demuestra que la asignación $p/q\mapsto(p\cdot1)(q\cdot1)^{-1}$, con $p\in\mathbb Z$ y $q\in\mathbb N$, está bien definida, es inyectiva y conserva el orden de $\mathbb Q$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-04}
+Sean $A>0$ y $B,C\in\mathbb R$. Demuestra que
+\[
+At^2+2Bt+C\ge0\quad\text{para todo }t\in\mathbb R
+\quad\Longleftrightarrow\quad B^2\le AC.
+\]
+Determina cuándo la expresión es estrictamente positiva para todo $t$ y cuándo puede anularse. Examina por separado qué sucede si $A=0$ o $A<0$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-05}
+Sean $a,b,c,d\in\mathbb R$ y $T(x)=(ax+b)/(cx+d)$. En un intervalo $I$ donde $cx+d$ tenga signo constante y no se anule, demuestra que $T$ es estrictamente creciente, estrictamente decreciente o constante según el signo de $ad-bc$. Obtén primero una identidad para $T(y)-T(x)$. Si $c\ne0$, explica mediante un contraejemplo por qué no basta revisar ese signo al comparar puntos situados a ambos lados de $-d/c$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-06}
+Sean $b,d>0$ y $a,c\in\mathbb R$ tales que $a/b<c/d$. Demuestra que
+\[
+\frac ab<\frac{a+c}{b+d}<\frac cd.
+\]
+Para $0\le\lambda\le1$, determina entre qué valores se encuentra
+\[
+\frac{(1-\lambda)a+\lambda c}{(1-\lambda)b+\lambda d}
+\]
+y caracteriza todas las igualdades con los extremos. Justifica cada multiplicación por denominadores.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-07}
+Sean $0<a\le x\le y\le b$. Demuestra que
+\[
+\frac{y-x}{b^2}\le\frac1x-\frac1y\le\frac{y-x}{a^2}.
+\]
+Determina todos los casos de igualdad y demuestra que ninguna de las dos constantes $1/b^2$ y $1/a^2$ puede mejorarse uniformemente cuando $a<b$ y $x,y$ recorren $[a,b]$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-08}
+Sean $a_1\le\cdots\le a_n$ y $b_1\le\cdots\le b_n$ reales. Una permutación $\sigma$ es una biyección de $\{1,\ldots,n\}$ en sí mismo. Demuestra que, para cualquier permutación,
+\[
+\sum_{i=1}^n a_i b_{n+1-i}
+\le\sum_{i=1}^n a_i b_{\sigma(i)}
+\le\sum_{i=1}^n a_i b_i.
+\]
+Si ambas listas son estrictamente crecientes, determina las únicas permutaciones que dan igualdad en cada extremo.~\cite{mseReordenamiento}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-09}
+Para dos listas no decrecientes de reales $a_1,\ldots,a_n$ y $b_1,\ldots,b_n$, demuestra que
+\[
+n\sum_{i=1}^n a_i b_i
+\ge\left(\sum_{i=1}^n a_i\right)\left(\sum_{i=1}^n b_i\right).
+\]
+Demuestra que la igualdad se da si y solo si al menos una de las listas es constante. Formula y demuestra la versión con la desigualdad invertida cuando una lista es no decreciente y la otra no creciente.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-orden-10}
+Sean $a_1\le\cdots\le a_n$ y $b_1\le\cdots\le b_n$ reales. Demuestra que
+\[
+\sum_{i=1}^n|a_i-b_i|
+\le\sum_{i=1}^n|a_i-b_{\sigma(i)}|
+\]
+para toda permutación $\sigma$. Decide si el orden estricto de ambas listas garantiza que la igualdad solo ocurra para la permutación identidad; demuestra tu respuesta o da un contraejemplo.~\cite{mseDistanciasOrden}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+% Valor absoluto y desigualdades: problemas 50--59.
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-01}
+Demuestra que, para todos $x,y,z\in\mathbb R$,
+\[
+|x+y|+|y+z|+|z+x|
+\le |x|+|y|+|z|+|x+y+z|.
+\]
+Determina cuándo la desigualdad es estricta y cuándo hay igualdad, considerando los signos de los tres números.~\cite{mseHlawka}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-02}
+Demuestra que
+\[
+\frac{|x+y|}{1+|x+y|}
+\le\frac{|x|}{1+|x|}+\frac{|y|}{1+|y|}
+\qquad(x,y\in\mathbb R).
+\]
+Para $d(x,y)=|x-y|/(1+|x-y|)$, demuestra que $d(x,y)\ge0$, que $d(x,y)=0$ si y solo si $x=y$, que $d(x,y)=d(y,x)$ y que $d(x,z)\le d(x,y)+d(y,z)$. Determina en qué casos se alcanza la igualdad en esta última desigualdad.~\cite{mseOrdenIneq}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-03}
+Sean $a_1,\ldots,a_n\in\mathbb R$ y $b_1,\ldots,b_n>0$. Demuestra que
+\[
+\sum_{i=1}^n\frac{a_i^2}{b_i}
+\ge\frac{\left(\sum_{i=1}^n a_i\right)^2}{\sum_{i=1}^n b_i}
+\]
+y determina todos los casos de igualdad. Deduce que, si $x_i>0$ y $\sum_{i=1}^n x_i=1$, entonces $\sum_{i=1}^n1/x_i\ge n^2$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-04}
+Sean $n\ge2$, $a_1,\ldots,a_n>0$ y $s=\sum_{i=1}^n a_i$. Demuestra que
+\[
+\sum_{i=1}^n\frac{a_i}{s-a_i}\ge\frac{n}{n-1}.
+\]
+Determina los casos de igualdad y justifica por qué la constante del lado derecho es la mejor posible.~\cite{mseNesbitt}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-05}
+Para $a_i,b_i\in\mathbb R$, demuestra la identidad
+\[
+\left(\sum_{i=1}^n a_i^2\right)\left(\sum_{i=1}^n b_i^2\right)
+-\left(\sum_{i=1}^n a_i b_i\right)^2
+=\sum_{1\le i<j\le n}(a_i b_j-a_j b_i)^2.
+\]
+Deduce Cauchy--Schwarz y su condición de igualdad, incluyendo los casos en que una de las listas sea completamente nula.~\cite{mseLagrange}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-06}
+Sean $a_i,b_i\in\mathbb R$. Demuestra que
+\[
+\sqrt{\sum_{i=1}^n(a_i+b_i)^2}
+\le\sqrt{\sum_{i=1}^n a_i^2}+\sqrt{\sum_{i=1}^n b_i^2}.
+\]
+Caracteriza todos los casos de igualdad. Explica por qué la proporcionalidad con un factor negativo no basta para obtenerla cuando ninguna de las dos listas es nula.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-07}
+Sean $0<m<M$, $m\le x_i\le M$ y $\lambda_i\ge0$ con $\sum_{i=1}^n\lambda_i=1$. Demuestra que
+\[
+\left(\sum_{i=1}^n\lambda_i x_i\right)
+\left(\sum_{i=1}^n\frac{\lambda_i}{x_i}\right)
+\le\frac{(M+m)^2}{4Mm}.
+\]
+Determina todos los casos de igualdad, incluyendo la posibilidad de pesos nulos. ¿Puede mejorarse la constante para todos los valores permitidos de $n$, los pesos y los $x_i$? \cite{mseKantorovich}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-08}
+Demuestra que, para $a,b,c\ge0$,
+\[
+a^3+b^3+c^3+3abc
+\ge a^2b+a^2c+b^2a+b^2c+c^2a+c^2b.
+\]
+Determina todos los casos de igualdad. La demostración debe basarse en el orden de $a,b,c$ y en una factorización, sin usar desigualdades que no se hayan demostrado en el capítulo.~\cite{mseSchur}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-09}
+Sean $a_1\le\cdots\le a_n$ y $F(x)=\sum_{i=1}^n|x-a_i|$. Encuentra el mínimo de $F$ y todos los reales donde se alcanza. Trata por separado $n=2m$ y $n=2m+1$, y permite que haya valores repetidos entre los $a_i$. Justifica tu respuesta mediante desigualdades de valor absoluto, sin derivar $F$.~\cite{mseMediana}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-absoluto-10}
+Para $n\ge2$ y $a\ge0$, demuestra por inducción que
+\[
+(1+a)^n\ge1+na+\frac{n(n-1)}2a^2.
+\]
+Determina los casos de igualdad y demuestra que $n(n-1)/2$ es la mayor constante $C$ para la que $(1+a)^n\ge1+na+Ca^2$ vale para todo $a\ge0$. Decide si la misma desigualdad sigue siendo cierta para todo $-1\le a<0$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+% Conjuntos acotados: problemas 60--69.
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-01}
+Sean $A,B\subseteq\mathbb R$ no vacíos. Demuestra que $A+B$ está acotado si y solo si $A$ y $B$ están acotados. Demuestra también las equivalencias correspondientes para acotación solamente superior y solamente inferior. Explica por qué hay que exigir que ambos conjuntos sean no vacíos.~\cite{mseSumaAcotada}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-02}
+Sean $A,B\subseteq\mathbb R$ no vacíos y supón que cada uno contiene al menos un elemento no nulo. Demuestra que $AB$ está acotado si y solo si $A$ y $B$ están acotados. Describe todas las excepciones que aparecen al permitir $A=\{0\}$ o $B=\{0\}$, y da ejemplos donde uno de los conjuntos no esté acotado.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-03}
+Sea $A\subseteq\mathbb R\setminus\{0\}$ no vacío y define $A^{-1}=\{1/a:a\in A\}$. Demuestra que $A^{-1}$ está acotado si y solo si existe $\delta>0$ tal que $|a|\ge\delta$ para todo $a\in A$. Da un conjunto acotado cuyo conjunto de recíprocos no esté acotado, y otro no acotado cuyo conjunto de recíprocos sí lo esté.~\cite{mseAlejadoCero}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-04}
+Para $A\subseteq\mathbb R$ no vacío, define $A-A=\{a-b:a,b\in A\}$. Demuestra que son equivalentes: $A$ está acotado; $A-A$ está acotado; $A-A$ está acotado superiormente; $A-A$ está acotado inferiormente. Explica el papel que tiene la simetría respecto de $0$ y construye cotas explícitas de $A$ a partir de una cota de $A-A$ y de un elemento fijo de $A$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-05}
+Para una familia $A_n\subseteq\mathbb R$, demuestra que $\bigcup_{n\in\mathbb N}A_n$ está acotada si y solo si existe una constante $C\ge0$ tal que $|x|\le C$ para todos los $n$ y todos los $x\in A_n$. Construye una familia de conjuntos acotados cuya unión no lo esté, y dos conjuntos no acotados, ni superior ni inferiormente, cuya intersección sea no vacía y acotada.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-06}
+Sea $A\subseteq\mathbb R$. Demuestra que cada uno de los conjuntos
+\[
+\{a^2-a:a\in A\},\qquad \{a^3+a:a\in A\}
+\]
+está acotado si y solo si $A$ está acotado. En cada dirección obtén una cota explícita en términos de una cota del conjunto de partida. No uses propiedades generales de funciones continuas ni límites de polinomios.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-07}
+Define $\phi(x)=x/(1+|x|)$. Demuestra que $\phi(\mathbb R)=(-1,1)$ y encuentra la expresión inversa. Para $A\subseteq\mathbb R$, demuestra que $A$ está acotado si y solo si existe $0\le r<1$ tal que $|\phi(a)|\le r$ para todo $a\in A$. Explica por qué la simple acotación de $\phi(A)$ no permite concluir que $A$ esté acotado.~\cite{mseCompresion}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-08}
+Sea $A\subseteq\mathbb R$ no vacío, acotado y tal que $A+A\subseteq A$. Demuestra que $A=\{0\}$. Decide si basta suponer únicamente acotación superior o únicamente acotación inferior, y da contraejemplos para las afirmaciones que fallen.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-09}
+Sean $A,B\subseteq\mathbb R$ no vacíos y $C\ge0$. Supón que para cada $a\in A$ existe $b\in B$ con $|a-b|\le C$. Demuestra que la acotación de $B$ implica la de $A$ y transfiere por separado cotas superiores e inferiores. Da un contraejemplo al recíproco. Si también para cada $b\in B$ existe $a\in A$ con $|a-b|\le C$, demuestra que la acotación de ambos conjuntos es equivalente.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-acotacion-10}
+Sea $A\subseteq\mathbb R$ no vacío y $r\ge0$. Demuestra que
+\[
+\bigcap_{a\in A}[a-r,a+r]\ne\varnothing
+\quad\Longleftrightarrow\quad
+|a-b|\le2r\ \text{para todos }a,b\in A.
+\]
+Cuando estas condiciones se cumplan, demuestra que $A$ está acotado y determina la intersección en términos de $\inf A$ y $\sup A$. Incluye el caso $r=0$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+% Máximo, mínimo, supremo e ínfimo: problemas 70--79.
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-01}
+Sean $A,B\subseteq\mathbb R$ no vacíos, acotados superiormente y sin máximo. Demuestra que $\sup A=\sup B$ si y solo si para cada $a\in A$ existe $b\in B$ con $a<b$ y para cada $b\in B$ existe $a\in A$ con $b<a$. Examina qué falla si se permiten máximos y formula una equivalencia válida para todos los conjuntos no vacíos y acotados superiormente usando una precisión $\varepsilon>0$.~\cite{mseSupCoinciden}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-02}
+Sean $A,B\subseteq\mathbb R$ no vacíos y acotados. Escribe $\alpha=\inf A$, $\beta=\sup A$, $\gamma=\inf B$ y $\delta=\sup B$. Demuestra que
+\[
+\begin{aligned}
+\inf(AB)&=\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+\sup(AB)&=\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\}.
+\end{aligned}
+\]
+No supongas que ninguno de los extremos pertenece a su conjunto. Da un ejemplo que invalide la fórmula $\sup(AB)=(\sup A)(\sup B)$ sin hipótesis de signo.~\cite{mseProducto}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-03}
+Sea $A\subseteq(0,\infty)$ no vacío y acotado superiormente. Demuestra que $\inf A^{-1}=1/\sup A$. Si $\inf A>0$, demuestra que $\sup A^{-1}=1/\inf A$; si $\inf A=0$, demuestra que $A^{-1}$ no está acotado superiormente. Determina cuándo existen máximo y mínimo en $A^{-1}$ y relaciónalos con los extremos alcanzados de $A$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-04}
+Para $A\subseteq\mathbb R$ no vacío y acotado, define
+\[
+D(A)=\sup\{|a-b|:a,b\in A\},\qquad
+R(c)=\sup\{|a-c|:a\in A\}.
+\]
+Demuestra que $D(A)=\sup A-\inf A$ y que $R(c)$ tiene un único mínimo, alcanzado en $c=(\sup A+\inf A)/2$, con valor $D(A)/2$. Decide si $D(A)$ debe ser la distancia entre dos elementos de $A$ y caracteriza cuándo lo es.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-05}
+Sean $A,B\subseteq\mathbb R$ no vacíos y acotados. Supón que cada elemento de cualquiera de ellos dista a lo sumo $\eta\ge0$ de algún elemento del otro. Demuestra que
+\[
+|\sup A-\sup B|\le\eta,\qquad
+|\inf A-\inf B|\le\eta.
+\]
+Si esta condición se cumple para toda $\eta>0$, deduce que los supremos y los ínfimos coinciden. ¿Deben coincidir los propios conjuntos? Da un contraejemplo.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-06}
+Sean $A,B\subseteq\mathbb R$ no vacíos y acotados, y define
+\[
+C=\{\min(a,b):a\in A,\ b\in B\},\qquad
+E=\{\max(a,b):a\in A,\ b\in B\}.
+\]
+Expresa $\inf C$, $\sup C$, $\inf E$ y $\sup E$ en términos de los extremos de $A$ y $B$, y demuestra las cuatro fórmulas. Determina exactamente cuándo $C$ tiene máximo.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-07}
+Sean $A_n\subseteq\mathbb R$ no vacíos y acotados superiormente. Demuestra que $\bigcup_n A_n$ está acotada superiormente si y solo si $\{\sup A_n:n\in\mathbb N\}$ lo está, y que entonces
+\[
+\sup\left(\bigcup_n A_n\right)=\sup\{\sup A_n:n\in\mathbb N\}.
+\]
+Si $\bigcap_n A_n\ne\varnothing$, demuestra que su supremo es a lo sumo $\inf\{\sup A_n:n\in\mathbb N\}$. Construye un ejemplo donde esta última desigualdad sea estricta.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-08}
+Sea $A\subseteq\mathbb R$ no vacío y acotado, y define
+\[
+B=\left\{\frac{n}{n+1}-a:a\in A,\ n\in\mathbb N\right\}.
+\]
+Demuestra que $\inf B=1/2-\sup A$ y $\sup B=1-\inf A$. Determina cuándo $B$ tiene mínimo y demuestra que nunca tiene máximo. Recuerda que aquí $\mathbb N=\{1,2,\ldots\}$.~\cite{mseSupParam}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-09}
+Sean $A,B\subseteq(0,\infty)$ no vacíos y acotados, con $\sup A=\inf B=s$. Para $C=\{b/a:a\in A,\ b\in B\}$, demuestra que $\inf C=1$ y determina cuándo ese ínfimo es un mínimo. Da un ejemplo con $a<b$ para todo $a\in A$ y $b\in B$ en el que todavía se cumpla $\inf C=1$.~\cite{mseCocientes}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-extremos-10}
+Para
+\[
+S=\left\{2^{-n}+\frac1m:n,m\in\mathbb N,\ m\ge n\right\},
+\]
+determina el supremo, el ínfimo y cuáles se alcanzan. Justifica el ínfimo mediante la caracterización con $\varepsilon$, sin escribir un límite. Determina también $\sup S_N$ y $\inf S_N$ cuando se añade la restricción $n\ge N$, para un natural fijo $N$.~\cite{mseDobleConjunto}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+% Distribución de los números: problemas 80--89.
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-01}
+Sean $I_n=[a_n,b_n]$ intervalos no vacíos con $I_{n+1}\subseteq I_n$. Demuestra que $\bigcap_{n\in\mathbb N}I_n\ne\varnothing$. Si para toda $\varepsilon>0$ existe $n$ con $b_n-a_n<\varepsilon$, demuestra que la intersección contiene exactamente un punto. Da contraejemplos al primer resultado si se permiten intervalos abiertos acotados, o intervalos cerrados no acotados.~\cite{mseIntervalos}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-02}
+Sean $A,B\subseteq\mathbb R$ no vacíos, disjuntos, con $A\cup B=\mathbb R$, y supón que $a<b$ para todo $a\in A$ y $b\in B$. Demuestra que existe un único $c\in\mathbb R$ con $a\le c\le b$ para todos esos pares y que $c=\sup A=\inf B$. Demuestra que exactamente uno de los conjuntos tiene un extremo alcanzado: $\max A=c$ o $\min B=c$. Explica, con una partición concreta de $\mathbb Q$, por qué la misma afirmación no es válida en los racionales.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-03}
+Sea $K$ un campo ordenado arquimediano: para cada $x\in K$ existe un natural $n$ con $x<n\cdot1$. Supón que toda familia de intervalos no vacíos $[a_n,b_n]$ con $[a_{n+1},b_{n+1}]\subseteq[a_n,b_n]$ tiene intersección no vacía. Demuestra que todo subconjunto no vacío de $K$ acotado superiormente tiene supremo en $K$. Construye los intervalos por bisección y explica dónde interviene la hipótesis arquimediana.~\cite{mseIntervalosCompletitud}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-04}
+Sean $n\ge2$, $0<a\le b$, $u=\sqrt[n]{a}$ y $v=\sqrt[n]{b}$. Demuestra que
+\[
+\frac{b-a}{n v^{n-1}}\le v-u\le\frac{b-a}{n u^{n-1}}.
+\]
+Determina los casos de igualdad. Utiliza la factorización de $v^n-u^n$ y justifica todas las comparaciones de potencias y denominadores.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-05}
+Para $a>0$, $p\in\mathbb Z$ y $q\in\mathbb N$, define $a^{p/q}=(\sqrt[q]{a})^p$, usando inversos si $p<0$ y el valor $1$ si $p=0$. Demuestra que la definición no depende de la representación de la fracción $p/q$. Para $r,s\in\mathbb Q$ y $a,b>0$, demuestra que
+\[
+a^{r+s}=a^r a^s,\qquad (a^r)^s=a^{rs},\qquad (ab)^r=a^r b^r.
+\]
+No supongas previamente las leyes de exponentes para exponentes racionales.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-06}
+Demuestra que, para todo $x\in\mathbb R$ y $n\in\mathbb N$,
+\[
+\sum_{k=0}^{n-1}\left\lfloor x+\frac{k}{n}\right\rfloor=\lfloor nx\rfloor.
+\]
+La demostración debe incluir valores negativos de $x$ y los casos en que $nx$ sea entero.~\cite{mseHermite}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-07}
+Sean $b\ge2$ un entero y $x\in\mathbb R$. Para $n\in\mathbb N$, define
+\[
+\ell_n=\frac{\lfloor b^n x\rfloor}{b^n},\qquad
+u_n=\frac{\lfloor b^n x\rfloor+1}{b^n}.
+\]
+Demuestra que $\ell_n\le x<u_n$, que los intervalos $[\ell_n,u_n]$ están encajados y que su intersección es $\{x\}$. Deduce que $\sup\{\ell_n:n\in\mathbb N\}=\inf\{u_n:n\in\mathbb N\}=x$, sin usar desarrollos decimales infinitos.~\cite{mseDecimal}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-08}
+Sean $a>0$ y $0<c<1$. Demuestra que para todo $M>0$ existe $N\in\mathbb N$ tal que $(1+a)^n>M$ para todos los $n\ge N$. Demuestra también que para toda $\varepsilon>0$ existe $N\in\mathbb N$ tal que $0<c^n<\varepsilon$ para todos los $n\ge N$. Obtén elecciones explícitas de $N$ mediante Bernoulli y la propiedad arquimediana.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-09}
+Sea $A=\{q\in\mathbb Q:q\ge0,\ q^3<2\}$. Demuestra que $A$ es no vacío y acotado, pero que no tiene supremo en $\mathbb Q$. Debes justificar mediante estimaciones algebraicas que una supuesta cota mínima racional puede mejorarse o deja de ser cota. Determina su supremo en $\mathbb R$ y relaciónalo con el \cref{prob:reto-numeros-08}.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-distribucion-10}
+Para $x\in\mathbb R$ y $h>0$, determina todos los enteros $k$ que minimizan $|x-kh|$. Demuestra que el mínimo es a lo sumo $h/2$ y caracteriza cuándo hay dos minimizadores. Deduce que, si para toda $\varepsilon>0$ existe $k\in\mathbb Z$ con $|x-k|<\varepsilon$, entonces $x\in\mathbb Z$. Explica por qué aquí el entero elegido puede depender de $\varepsilon$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+% Densidad: problemas 90--99.
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-01}
+Sean $a<b$ y $N\in\mathbb N$. Demuestra que hay infinitos racionales $p/q\in(a,b)$ escritos con $p\in\mathbb Z$, $q\in\mathbb N$ y $p,q$ coprimos, cuyo denominador cumple $q>N$. Justifica por qué solo hay un número finito de racionales del intervalo con denominador reducido a lo sumo $N$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-02}
+Demuestra que entre dos reales positivos distintos hay un cuadrado de un racional positivo. Demuestra después que todo intervalo abierto no vacío contiene un irracional $x$ tal que $x^2\in\mathbb Q$. ¿Puede exigirse además $x>0$ en cualquier intervalo? Precisa la restricción necesaria.~\cite{mseDensidadCuadrados}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-03}
+Demuestra que todo intervalo abierto no vacío contiene un número $x$ tal que $x$, $x^2$ y $1/x$ son irracionales. La construcción debe ser explícita a partir de un racional elegido en un intervalo adecuado. Comprueba en particular que $x\ne0$ y que el argumento para $x^2$ no se reduce a afirmar que el cuadrado de un irracional es irracional.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-04}
+Para $k\in\mathbb Z$, define $D_k=k\sqrt2+\mathbb Q$. Demuestra que cada $D_k$ contiene un elemento de todo intervalo abierto no vacío y que los conjuntos $D_k$ son disjuntos dos a dos. Demuestra que todos los elementos de $D_k$ son irracionales si $k\ne0$. Decide si $\bigcup_{k\in\mathbb Z}D_k=\mathbb R$; examina si $\sqrt3$ pertenece a esa unión.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-05}
+Diremos que $D\subseteq\mathbb R$ es denso si todo intervalo $(a,b)$ con $a<b$ contiene un elemento de $D$. Demuestra que, si $D$ es denso y $B\ne\varnothing$, entonces $D+B$ es denso. Da ejemplos de dos conjuntos densos cuya suma no sea todo $\mathbb R$, y de dos conjuntos densos cuya intersección sea vacía. Determina para qué escalares $\lambda$ se conserva la densidad de $\lambda D$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-06}
+Si $D\subseteq\mathbb R$ es denso y $F\subseteq\mathbb R$ es finito, demuestra que $D\setminus F$ sigue siendo denso. Deduce que cada intervalo abierto contiene infinitos elementos de $D$. Da un ejemplo que muestre que el resultado puede fallar al quitar un conjunto infinito cuyos elementos se puedan enumerar como $f_1,f_2,\ldots$.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-07}
+Sean $a<b$ y una lista cualquiera de reales $d_1,d_2,\ldots$. Construye intervalos cerrados $I_n\subseteq(a,b)$, encajados, con extremos racionales, longitud positiva y a lo sumo $3^{-n}$, y tales que $d_n\notin I_n$. Utiliza el \cref{prob:reto-distribucion-01} para demostrar que su intersección contiene un punto distinto de todos los $d_n$. Concluye que los elementos de un intervalo abierto no vacío no pueden enumerarse en una lista de ese tipo.
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-08}
+Sea $G\subseteq\mathbb R$, con $G\ne\{0\}$, no vacío y cerrado bajo diferencias: $x-y\in G$ para todos $x,y\in G$. Demuestra que ocurre exactamente una de estas posibilidades: $G=h\mathbb Z$ para algún $h>0$, o $G$ es denso en $\mathbb R$. Considera el ínfimo de los elementos positivos de $G$ y justifica por qué, si es positivo, pertenece a $G$.~\cite{mseSubgrupos}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-09}
+Para $\alpha\in\mathbb R$, define $G_\alpha=\{m+n\alpha:m,n\in\mathbb Z\}$. Demuestra que $G_\alpha$ es denso en $\mathbb R$ si y solo si $\alpha$ es irracional. En particular, demuestra la densidad de $\{m+n\sqrt2:m,n\in\mathbb Z\}$, aunque aquí los coeficientes deben ser enteros. Puedes utilizar el \cref{prob:reto-densidad-08}.~\cite{mseGrupoRaiz}
+\end{problem}
+\end{samepage}
+\par\penalty0
+
+\begin{samepage}
+\begin{problem}\label{prob:reto-densidad-10}
+Sea $f:\mathbb R\to\mathbb R$ tal que $f(x+y)=f(x)+f(y)$ para todos $x,y$. Demuestra que $f(q)=qf(1)$ para todo $q\in\mathbb Q$. Demuestra después que $f(x)=xf(1)$ para todo real $x$ bajo cualquiera de las siguientes hipótesis, tratadas por separado: $f$ es no decreciente; o existe $C\ge0$ con $|f(x)|\le C$ para $|x|<1$. Utiliza aproximaciones racionales y estimaciones válidas para toda precisión positiva, sin invocar continuidad.~\cite{mseAditiva}
+\end{problem}
+\end{samepage}
+\par\penalty0

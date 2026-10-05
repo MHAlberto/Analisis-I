@@ -110,6 +110,380 @@
       \field{title}{Calculus}
       \field{year}{2008}
     \endentry
+    \entry{mseIntervalosCompletitud}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=48d6215903dff56238e52e8891380c8f}{%
+           family={{blue}},
+           familyi={b\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{48d6215903dff56238e52e8891380c8f}
+      \strng{fullhash}{48d6215903dff56238e52e8891380c8f}
+      \strng{fullhashraw}{48d6215903dff56238e52e8891380c8f}
+      \strng{bibnamehash}{48d6215903dff56238e52e8891380c8f}
+      \strng{authorbibnamehash}{48d6215903dff56238e52e8891380c8f}
+      \strng{authornamehash}{48d6215903dff56238e52e8891380c8f}
+      \strng{authorfullhash}{48d6215903dff56238e52e8891380c8f}
+      \strng{authorfullhashraw}{48d6215903dff56238e52e8891380c8f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Proof that the nested interval property implies the axiom of completeness}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/611621
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/611621
+      \endverb
+    \endentry
+    \entry{mseCampoRaiz}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=200f11c2a54c82d6e413c297d685a0f2}{%
+           family={{Fra H}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{fullhash}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{fullhashraw}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{bibnamehash}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{authorbibnamehash}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{authornamehash}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{authorfullhash}{200f11c2a54c82d6e413c297d685a0f2}
+      \strng{authorfullhashraw}{200f11c2a54c82d6e413c297d685a0f2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Is this an ordered field?}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/495595
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/495595
+      \endverb
+    \endentry
+    \entry{mseRadicales}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1e3332b2cd20d2d3db407a20f6913d0d}{%
+           family={{Silent}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{fullhash}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{fullhashraw}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{bibnamehash}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{authorbibnamehash}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{authornamehash}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{authorfullhash}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \strng{authorfullhashraw}{1e3332b2cd20d2d3db407a20f6913d0d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Prove that the sum of the square roots of 2 and 3 is irrational}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/496037
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/496037
+      \endverb
+    \endentry
+    \entry{mseIntervalos}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7255c33c909904c10244a794640da2b9}{%
+           family={{dustOfRumors}},
+           familyi={d\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{7255c33c909904c10244a794640da2b9}
+      \strng{fullhash}{7255c33c909904c10244a794640da2b9}
+      \strng{fullhashraw}{7255c33c909904c10244a794640da2b9}
+      \strng{bibnamehash}{7255c33c909904c10244a794640da2b9}
+      \strng{authorbibnamehash}{7255c33c909904c10244a794640da2b9}
+      \strng{authornamehash}{7255c33c909904c10244a794640da2b9}
+      \strng{authorfullhash}{7255c33c909904c10244a794640da2b9}
+      \strng{authorfullhashraw}{7255c33c909904c10244a794640da2b9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Proving the nested interval property using the axiom of completeness}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/858716
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/858716
+      \endverb
+    \endentry
+    \entry{mseSumaAcotada}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=62ae150cb05bf9d5f79dc41a04a369ca}{%
+           family={{Gregory Maruss}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{fullhash}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{fullhashraw}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{bibnamehash}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{authorbibnamehash}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{authornamehash}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{authorfullhash}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \strng{authorfullhashraw}{62ae150cb05bf9d5f79dc41a04a369ca}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A bounded sum of two sets}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/925384
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/925384
+      \endverb
+    \endentry
+    \entry{mseCompresion}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=5844a15e76563fedd11840fd6f40ea7b}{%
+           family={{jane}},
+           familyi={j\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{fullhash}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{fullhashraw}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{bibnamehash}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{authorbibnamehash}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{authornamehash}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{authorfullhash}{5844a15e76563fedd11840fd6f40ea7b}
+      \strng{authorfullhashraw}{5844a15e76563fedd11840fd6f40ea7b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Supremum and infimum of a set}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/976617
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/976617
+      \endverb
+    \endentry
+    \entry{mseGeometrica}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=2b57737bf2de1970d32e2a2ef73af4f1}{%
+           family={{LifeFlow}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{fullhash}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{fullhashraw}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{bibnamehash}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{authorbibnamehash}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{authornamehash}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{authorfullhash}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \strng{authorfullhashraw}{2b57737bf2de1970d32e2a2ef73af4f1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Prove by induction the geometric progression formula}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/701405
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/701405
+      \endverb
+    \endentry
+    \entry{mseRaizCubica}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=6b644c5916a6983581db56f2967600c0}{%
+           family={{Marianna Pap}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{6b644c5916a6983581db56f2967600c0}
+      \strng{fullhash}{6b644c5916a6983581db56f2967600c0}
+      \strng{fullhashraw}{6b644c5916a6983581db56f2967600c0}
+      \strng{bibnamehash}{6b644c5916a6983581db56f2967600c0}
+      \strng{authorbibnamehash}{6b644c5916a6983581db56f2967600c0}
+      \strng{authornamehash}{6b644c5916a6983581db56f2967600c0}
+      \strng{authorfullhash}{6b644c5916a6983581db56f2967600c0}
+      \strng{authorfullhashraw}{6b644c5916a6983581db56f2967600c0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Process to show that the square root of 2 plus the cube root of 3 is irrational}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/913934
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/913934
+      \endverb
+    \endentry
+    \entry{mseMediana}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9b6688de790cd934f03e68bc5c3627b2}{%
+           family={{Public Display Name}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{fullhash}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{fullhashraw}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{bibnamehash}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{authorbibnamehash}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{authornamehash}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{authorfullhash}{9b6688de790cd934f03e68bc5c3627b2}
+      \strng{authorfullhashraw}{9b6688de790cd934f03e68bc5c3627b2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Why does the median minimize the sum of absolute deviations?}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/725730
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/725730
+      \endverb
+    \endentry
+    \entry{mseGrupoRaiz}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c578953084ac4c1a905191cca681e378}{%
+           family={{Simon S}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{c578953084ac4c1a905191cca681e378}
+      \strng{fullhash}{c578953084ac4c1a905191cca681e378}
+      \strng{fullhashraw}{c578953084ac4c1a905191cca681e378}
+      \strng{bibnamehash}{c578953084ac4c1a905191cca681e378}
+      \strng{authorbibnamehash}{c578953084ac4c1a905191cca681e378}
+      \strng{authornamehash}{c578953084ac4c1a905191cca681e378}
+      \strng{authorfullhash}{c578953084ac4c1a905191cca681e378}
+      \strng{authorfullhashraw}{c578953084ac4c1a905191cca681e378}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Density of integer combinations of 1 and the square root of 2}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1074752
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1074752
+      \endverb
+    \endentry
+    \entry{mseSupParam}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=6ab9a295c00f945cf4881fd7667a0334}{%
+           family={{Spacer}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{fullhash}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{fullhashraw}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{bibnamehash}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{authorbibnamehash}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{authornamehash}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{authorfullhash}{6ab9a295c00f945cf4881fd7667a0334}
+      \strng{authorfullhashraw}{6ab9a295c00f945cf4881fd7667a0334}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Determining and proving supremum and infimum of a given set}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/657313
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/657313
+      \endverb
+    \endentry
     \entry{abbott2015}{book}{}{}
       \name{author}{1}{}{%
         {{hash=b8c23829054861a238e88f310c7efba3}{%
@@ -142,6 +516,788 @@
       \field{year}{2015}
       \verb{doi}
       \verb 10.1007/978-1-4939-2712-8
+      \endverb
+    \endentry
+    \entry{mseAlejadoCero}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b7a48484b68b527a7b228d6d577ab93}{%
+           family={{User001}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{fullhash}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{fullhashraw}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{bibnamehash}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{authorbibnamehash}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{authornamehash}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{authorfullhash}{4b7a48484b68b527a7b228d6d577ab93}
+      \strng{authorfullhashraw}{4b7a48484b68b527a7b228d6d577ab93}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What does bounded away from zero actually mean?}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1340637
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1340637
+      \endverb
+    \endentry
+    \entry{mseLagrange}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1eeaea0053f50848bf7a36aa4e8f7511}{%
+           family={{user239780}},
+           familyi={u\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{fullhash}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{fullhashraw}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{bibnamehash}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{authorbibnamehash}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{authornamehash}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{authorfullhash}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \strng{authorfullhashraw}{1eeaea0053f50848bf7a36aa4e8f7511}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Proof of Lagrange identity}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1292290
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1292290
+      \endverb
+    \endentry
+    \entry{mseNesbitt}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ebc806bb3b05130307ef20108d916627}{%
+           family={{Basem Fouda}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{ebc806bb3b05130307ef20108d916627}
+      \strng{fullhash}{ebc806bb3b05130307ef20108d916627}
+      \strng{fullhashraw}{ebc806bb3b05130307ef20108d916627}
+      \strng{bibnamehash}{ebc806bb3b05130307ef20108d916627}
+      \strng{authorbibnamehash}{ebc806bb3b05130307ef20108d916627}
+      \strng{authornamehash}{ebc806bb3b05130307ef20108d916627}
+      \strng{authorfullhash}{ebc806bb3b05130307ef20108d916627}
+      \strng{authorfullhashraw}{ebc806bb3b05130307ef20108d916627}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Proof for an inequality problem using the rearrangement inequality}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1910308
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1910308
+      \endverb
+    \endentry
+    \entry{mseDistanciasOrden}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=dee765fdc2a2aa3f249740b47de58c5b}{%
+           family={{Caleb Stanford}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{fullhash}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{fullhashraw}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{bibnamehash}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{authorbibnamehash}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{authornamehash}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{authorfullhash}{dee765fdc2a2aa3f249740b47de58c5b}
+      \strng{authorfullhashraw}{dee765fdc2a2aa3f249740b47de58c5b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Inequality involving rearrangement of absolute differences}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1888769
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1888769
+      \endverb
+    \endentry
+    \entry{mseSupCoinciden}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=f178761104e933f9341f13f64b38538a}{%
+           family={{DeLorean}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{f178761104e933f9341f13f64b38538a}
+      \strng{fullhash}{f178761104e933f9341f13f64b38538a}
+      \strng{fullhashraw}{f178761104e933f9341f13f64b38538a}
+      \strng{bibnamehash}{f178761104e933f9341f13f64b38538a}
+      \strng{authorbibnamehash}{f178761104e933f9341f13f64b38538a}
+      \strng{authornamehash}{f178761104e933f9341f13f64b38538a}
+      \strng{authorfullhash}{f178761104e933f9341f13f64b38538a}
+      \strng{authorfullhashraw}{f178761104e933f9341f13f64b38538a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Supremum proof: Real analysis}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1619852
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1619852
+      \endverb
+    \endentry
+    \entry{mseHermite}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=b876376d3aad627f5188c7311783b018}{%
+           family={{jordanbell2357}},
+           familyi={j\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{b876376d3aad627f5188c7311783b018}
+      \strng{fullhash}{b876376d3aad627f5188c7311783b018}
+      \strng{fullhashraw}{b876376d3aad627f5188c7311783b018}
+      \strng{bibnamehash}{b876376d3aad627f5188c7311783b018}
+      \strng{authorbibnamehash}{b876376d3aad627f5188c7311783b018}
+      \strng{authornamehash}{b876376d3aad627f5188c7311783b018}
+      \strng{authorfullhash}{b876376d3aad627f5188c7311783b018}
+      \strng{authorfullhashraw}{b876376d3aad627f5188c7311783b018}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hermite's identity for the sum of the floor function}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1672197
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1672197
+      \endverb
+    \endentry
+    \entry{mseProducto}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c9c415e1a14b604d4e0cb00a66e6df0a}{%
+           family={{No One}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{fullhash}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{fullhashraw}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{bibnamehash}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{authorbibnamehash}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{authornamehash}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{authorfullhash}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \strng{authorfullhashraw}{c9c415e1a14b604d4e0cb00a66e6df0a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Supremum of the product of two sets}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1918395
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1918395
+      \endverb
+    \endentry
+    \entry{mseReordenamiento}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=f5c0a1c9384c2e25e79ba1abf5d9a037}{%
+           family={{Student}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{fullhash}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{fullhashraw}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{bibnamehash}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{authorbibnamehash}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{authornamehash}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{authorfullhash}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \strng{authorfullhashraw}{f5c0a1c9384c2e25e79ba1abf5d9a037}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Help me complete the proof of the rearrangement inequality}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/1964245
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/1964245
+      \endverb
+    \endentry
+    \entry{mseDensidadCuadrados}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=51b450a4da139e4e6dc7b2f865ea35d1}{%
+           family={{BOA2018}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{fullhash}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{fullhashraw}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{bibnamehash}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{authorbibnamehash}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{authornamehash}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{authorfullhash}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \strng{authorfullhashraw}{51b450a4da139e4e6dc7b2f865ea35d1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Density of square rationals}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/2546557
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/2546557
+      \endverb
+    \endentry
+    \entry{mseDecimal}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=3e542a23c4c7b72d4bf20290b9d9f112}{%
+           family={{Suman Kundu}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{fullhash}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{fullhashraw}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{bibnamehash}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{authorbibnamehash}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{authornamehash}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{authorfullhash}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \strng{authorfullhashraw}{3e542a23c4c7b72d4bf20290b9d9f112}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Density of real numbers with finite decimal representations}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/2247683
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/2247683
+      \endverb
+    \endentry
+    \entry{mseSubgrupos}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0bf5f65fe890c9f8c9ff126b834cbdcd}{%
+           family={{user422112}},
+           familyi={u\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{fullhash}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{fullhashraw}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{bibnamehash}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{authorbibnamehash}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{authornamehash}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{authorfullhash}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \strng{authorfullhashraw}{0bf5f65fe890c9f8c9ff126b834cbdcd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Subgroups of the real numbers are either dense or cyclic}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/2325904
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/2325904
+      \endverb
+    \endentry
+    \entry{mseHomografia}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ca13ab906635d7edbc8ef5fd04253a13}{%
+           family={{RM777}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{fullhash}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{fullhashraw}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{bibnamehash}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{authorbibnamehash}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{authornamehash}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{authorfullhash}{ca13ab906635d7edbc8ef5fd04253a13}
+      \strng{authorfullhashraw}{ca13ab906635d7edbc8ef5fd04253a13}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Irrationality of a linear fractional expression with rational coefficients}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/2992127
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/2992127
+      \endverb
+    \endentry
+    \entry{mseDobleConjunto}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=739e6d2a73723ec7b1919fa5a51f9b07}{%
+           family={{Analysis}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{fullhash}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{fullhashraw}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{bibnamehash}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{authorbibnamehash}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{authornamehash}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{authorfullhash}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \strng{authorfullhashraw}{739e6d2a73723ec7b1919fa5a51f9b07}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Boundedness, supremum and infimum of a set with two natural indices}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/3263170
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/3263170
+      \endverb
+    \endentry
+    \entry{mseCocientes}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0e7a21c3521cf2782198d0e1dd06f281}{%
+           family={{user459879}},
+           familyi={u\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{fullhash}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{fullhashraw}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{bibnamehash}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{authorbibnamehash}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{authornamehash}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{authorfullhash}{0e7a21c3521cf2782198d0e1dd06f281}
+      \strng{authorfullhashraw}{0e7a21c3521cf2782198d0e1dd06f281}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Infimum of quotients of two positive bounded sets}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/3088939
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/3088939
+      \endverb
+    \endentry
+    \entry{mseRadicalAnidado}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8d7b64df78280a85a675eefd6f1b3a6e}{%
+           family={{Dhrubajyoti Bhattacharjee}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{fullhash}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{fullhashraw}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{bibnamehash}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{authorbibnamehash}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{authornamehash}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{authorfullhash}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \strng{authorfullhashraw}{8d7b64df78280a85a675eefd6f1b3a6e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Prove that a finite nested radical is less than 3}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/472945
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/472945
+      \endverb
+    \endentry
+    \entry{mseSchur}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9fd74fa60b3654f4d64a9f1c73dcedc1}{%
+           family={{Lev Landau}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{fullhash}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{fullhashraw}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{bibnamehash}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{authorbibnamehash}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{authornamehash}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{authorfullhash}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \strng{authorfullhashraw}{9fd74fa60b3654f4d64a9f1c73dcedc1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Prove Schur's inequality in three variables}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/3815419
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/3815419
+      \endverb
+    \endentry
+    \entry{mseOrdenUnico}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=73a14bb4c7788881455161fe6ac1f6d6}{%
+           family={{Minh}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{fullhash}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{fullhashraw}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{bibnamehash}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{authorbibnamehash}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{authornamehash}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{authorfullhash}{73a14bb4c7788881455161fe6ac1f6d6}
+      \strng{authorfullhashraw}{73a14bb4c7788881455161fe6ac1f6d6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Show that the real field has a unique ordering}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/3505113
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/3505113
+      \endverb
+    \endentry
+    \entry{mseOrdenIneq}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=85b285d50f417b7fb9650a107c49cdc4}{%
+           family={{Novice}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{fullhash}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{fullhashraw}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{bibnamehash}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{authorbibnamehash}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{authornamehash}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{authorfullhash}{85b285d50f417b7fb9650a107c49cdc4}
+      \strng{authorfullhashraw}{85b285d50f417b7fb9650a107c49cdc4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ordered field inequalities}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/3805615
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/3805615
+      \endverb
+    \endentry
+    \entry{mseHlawka}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9bd5d0457b3c59e3ea441c91ecfa863f}{%
+           family={{user623949}},
+           familyi={u\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{fullhash}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{fullhashraw}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{bibnamehash}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{authorbibnamehash}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{authornamehash}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{authorfullhash}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \strng{authorfullhashraw}{9bd5d0457b3c59e3ea441c91ecfa863f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hlawka's inequality proof in the complex numbers with integrals}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/3566131
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/3566131
+      \endverb
+    \endentry
+    \entry{mseKantorovich}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=e7c472020d559983591e3706b208e7e6}{%
+           family={{pmun}},
+           familyi={p\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{e7c472020d559983591e3706b208e7e6}
+      \strng{fullhash}{e7c472020d559983591e3706b208e7e6}
+      \strng{fullhashraw}{e7c472020d559983591e3706b208e7e6}
+      \strng{bibnamehash}{e7c472020d559983591e3706b208e7e6}
+      \strng{authorbibnamehash}{e7c472020d559983591e3706b208e7e6}
+      \strng{authornamehash}{e7c472020d559983591e3706b208e7e6}
+      \strng{authorfullhash}{e7c472020d559983591e3706b208e7e6}
+      \strng{authorfullhashraw}{e7c472020d559983591e3706b208e7e6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Kantorovich inequality: An inequality for real numbers}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/4189320
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/4189320
+      \endverb
+    \endentry
+    \entry{mseCono}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=f6cc8f1638c8db215395bca73d1ad9d3}{%
+           family={{Analysis\_Mark}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{fullhash}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{fullhashraw}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{bibnamehash}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{authorbibnamehash}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{authornamehash}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{authorfullhash}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \strng{authorfullhashraw}{f6cc8f1638c8db215395bca73d1ad9d3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An ordered field and its positive cone}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/4379189
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/4379189
+      \endverb
+    \endentry
+    \entry{mseInduccion}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1dfb290612817f8fd7e3913c1cc641d1}{%
+           family={{Ruperrrt}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{fullhash}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{fullhashraw}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{bibnamehash}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{authorbibnamehash}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{authornamehash}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{authorfullhash}{1dfb290612817f8fd7e3913c1cc641d1}
+      \strng{authorfullhashraw}{1dfb290612817f8fd7e3913c1cc641d1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Induction and well-ordering imply strong induction}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/4690821
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/4690821
+      \endverb
+    \endentry
+    \entry{mseAditiva}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ce61ef162de673a1f299844c2be1f564}{%
+           family={{Mxyz}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Mathematics Stack Exchange}%
+      }
+      \strng{namehash}{ce61ef162de673a1f299844c2be1f564}
+      \strng{fullhash}{ce61ef162de673a1f299844c2be1f564}
+      \strng{fullhashraw}{ce61ef162de673a1f299844c2be1f564}
+      \strng{bibnamehash}{ce61ef162de673a1f299844c2be1f564}
+      \strng{authorbibnamehash}{ce61ef162de673a1f299844c2be1f564}
+      \strng{authornamehash}{ce61ef162de673a1f299844c2be1f564}
+      \strng{authorfullhash}{ce61ef162de673a1f299844c2be1f564}
+      \strng{authorfullhashraw}{ce61ef162de673a1f299844c2be1f564}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The additive function bounded from below is linear}
+      \field{urlday}{5}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://math.stackexchange.com/q/5013504
+      \endverb
+      \verb{url}
+      \verb https://math.stackexchange.com/q/5013504
       \endverb
     \endentry
     \entry{mactutorHeine}{online}{}{}
