@@ -1,13 +1,20 @@
 \chapter{Los números reales y la completitud}
 \label{cap:reales-completitud}
-Los números reales que estudiaremos en este capítulo contienen distintos subconjuntos que permiten comprender mejor su estructura. Comenzaremos con los números naturales, los cuales utilizamos para contar, y posteriormente construiremos los enteros, racionales y reales.
+Presentaremos los conjuntos numéricos y estudiaremos la estructura de los reales mediante sus propiedades, sin desarrollar una construcción completa.
+
+Los axiomas de campo y el orden permiten operar y comparar (\cref{sec:conjuntos-numericos,sec:campo-ordenado}). El valor absoluto y la acotación preparan el estudio de los extremos (\cref{sec:extremos-supremo-infimo}). Finalmente, la completitud dará raíces y herramientas para la densidad (\cref{sec:distribucion-numeros,sec:densidad}).
+
+\section{Conjuntos numéricos y axiomas de campo}
+\label{sec:conjuntos-numericos}
 
 Los números naturales pueden describirse informalmente como los números usados para contar. Sin embargo, existe una caracterización formal atribuida a Giuseppe Peano, conocida mediante los \indexemph{axiomas de Peano}. En estas notas adoptaremos la convención
 \[
 \mathbb{N}=\{1,2,3,\ldots\}.
 \]
 
+\begin{samepage}
 \begin{definition}
+\label{def:naturales}
 Sea $\mathbb{N}$ un conjunto con un elemento distinguido $1$ y una aplicación sucesor
 $S:\mathbb{N}\to\mathbb{N}.$ Diremos que $\mathbb{N}$ es el conjunto de los \indexemph{números naturales} si:
 \begin{enumerate}
@@ -19,6 +26,7 @@ $S:\mathbb{N}\to\mathbb{N}.$ Diremos que $\mathbb{N}$ es el conjunto de los \ind
 \end{enumerate}
 Usualmente escribimos $S(n)=n+1$.
 \end{definition}
+\end{samepage}
 
 Estos números tienen una importancia fundamental, pues su estructura conduce al principio de inducción matemática, una herramienta que permite demostrar proposiciones para todos los números naturales.
 
@@ -37,11 +45,20 @@ mientras que
 \]
 \end{example}
 
+\begin{samepage}
 \begin{theorem}[Principio de inducción matemática]
+\label{teo:induccion}
 Sea $P(n)$ una proposición definida para todo $n\in\mathbb{N}$. Si $P(1)$
 es verdadera y, para todo $n\in\mathbb{N}$, si $P(n)$ implica $P(n+1),$
 entonces $P(n)$ es verdadera para todo $n\in\mathbb{N}$.
 \end{theorem}
+\end{samepage}
+
+\begin{proof}
+Sea $A=\{n\in\mathbb{N}:P(n)\text{ es verdadera}\}$. La hipótesis $P(1)$ da $1\in A$, y la implicación $P(n)\Rightarrow P(n+1)$ asegura que $A$ contiene al sucesor de cada uno de sus elementos. Por el quinto axioma de la \cref{def:naturales}, $A=\mathbb{N}$. Así, $P(n)$ es verdadera para todo natural.
+\end{proof}
+
+Al aplicar este principio conviene distinguir el \emph{caso inicial} y el \emph{paso inductivo}. En el segundo suponemos $P(n)$ para un natural arbitrario y, a partir de esa hipótesis, demostramos $P(n+1)$; no suponemos de antemano la conclusión para todos los naturales.
 
 \begin{example}
 Demostremos que
@@ -87,7 +104,9 @@ para todo $n\in\mathbb{N}$.
 
 Después de los números naturales nos interesa incorporar el cero y los números negativos. Existe una diferencia de convenciones respecto a si $0$ pertenece o no a $\mathbb{N}$. Algunos autores utilizan $\mathbb{N}=\{0,1,2,\ldots\}$ y otros $\mathbb{N}=\{1,2,3,\ldots\}$. En estas notas utilizaremos esta última convención.
 
+\begin{samepage}
 \begin{definition}
+\label{def:enteros}
 El conjunto de los \indexemph{números enteros} se define por
 \[
 \mathbb{Z}
@@ -99,6 +118,7 @@ Por tanto,
 \mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}.
 \]
 \end{definition}
+\end{samepage}
 
 \begin{example}
 Tenemos, por ejemplo,
@@ -128,9 +148,11 @@ pero
 \]
 \end{example}
 
-Los números racionales representan una extensión importante, pues constituyen un campo: todo elemento distinto de cero posee inverso multiplicativo.
+Los números racionales representan una extensión importante: cada elemento distinto de cero posee inverso multiplicativo. Además, sus operaciones satisfacen los axiomas de campo que formalizaremos en la \cref{def:campo}.
 
+\begin{samepage}
 \begin{definition}
+\label{def:racionales}
 El conjunto de los \indexemph{números racionales} se define como
 \[
 \mathbb{Q}
@@ -144,6 +166,7 @@ Dos fracciones $\frac pq$ y $\frac rs$ representan el mismo racional si
 ps=rq.
 \]
 \end{definition}
+\end{samepage}
 
 Todo entero es racional, pues
 \[
@@ -160,23 +183,23 @@ Además, si $\frac pq\neq0$, entonces
 
 Aun así, los racionales presentan una limitación: existen números que surgen naturalmente mediante operaciones elementales y que no pertenecen a $\mathbb{Q}$. Estos números serán llamados irracionales.
 
+\begin{samepage}
 \begin{proposition}
-Se cumple
-\[
-\sqrt2\notin\mathbb{Q}.
-\]
+\label{prop:irracionalidad-raiz-dos}
+No existe un número racional cuyo cuadrado sea $2$. En consecuencia, la raíz real positiva $\sqrt2$, cuya existencia justificaremos en el \cref{ej:raiz-dos-completitud}, es irracional.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Supongamos que $\sqrt2\in\mathbb{Q}$. Entonces existen $p,q\in\mathbb{Z}$, con $q\neq0$ y $\gcd(p,q)=1$, tales que
+Supongamos que existe un racional $r$ con $r^2=2$. Podemos escribirlo como $r=p/q$, con $p,q\in\mathbb{Z}$, $q\neq0$ y $\gcd(p,q)=1$. Entonces
 \[
-\sqrt2=\frac pq.
+r=\frac pq.
 \]
 Elevando al cuadrado,
 \[
 p^2=2q^2.
 \]
-Por tanto, $p^2$ es par y entonces $p$ es par. Escribimos $p=2k$. Sustituyendo,
+Por tanto, $p^2$ es par y entonces $p$ es par: si $p=2k+1$ fuera impar, su cuadrado sería $4k^2+4k+1$, también impar. Escribimos $p=2k$. Sustituyendo,
 \[
 4k^2=2q^2,
 \]
@@ -203,10 +226,12 @@ Además,
 \]
 \end{example}
 
-Para incorporar tanto racionales como irracionales introducimos los números reales. Formalmente, no los definiremos simplemente como la unión de racionales e irracionales, sino mediante la estructura que los caracteriza.
+Para incorporar tanto racionales como irracionales introducimos los números reales. La estructura que estudiaremos es la de un \emph{campo ordenado completo}. Comencemos por la parte algebraica, común a los racionales y a los reales.
 
+\begin{samepage}
 \begin{definition}
-El conjunto de los \indexemph{números reales}, denotado por $\mathbb{R}$, es un campo. Para cualesquiera $a,b,c\in\mathbb{R}$ se cumplen las siguientes propiedades:
+\label{def:campo}
+Un conjunto $K$ provisto de operaciones de suma y producto, que asignan a cada par de elementos de $K$ otro elemento de $K$, se llama \indexemph{campo} si para cualesquiera $a,b,c\in K$ se cumplen las siguientes propiedades:
 
 \begin{enumerate}
     \renewcommand{\labelenumi}{\Roman{enumi}.}
@@ -236,30 +261,31 @@ El conjunto de los \indexemph{números reales}, denotado por $\mathbb{R}$, es un
     a(b+c)=ab+ac.
     \]
 
-    \item \textbf{Existencia del neutro aditivo:} existe $0\in\mathbb{R}$ tal que
+    \item \textbf{Existencia del neutro aditivo:} existe $0\in K$ tal que
     \[
     a+0=a.
     \]
 
-    \item \textbf{Existencia del neutro multiplicativo:} existe $1\in\mathbb{R}$, con $1\neq0$, tal que
+    \item \textbf{Existencia del neutro multiplicativo:} existe $1\in K$, con $1\neq0$, tal que
     \[
     a\cdot1=a.
     \]
 
-    \item \textbf{Existencia del inverso aditivo:} para todo $a\in\mathbb{R}$ existe $-a\in\mathbb{R}$ tal que
+    \item \textbf{Existencia del inverso aditivo:} para todo $a\in K$ existe $-a\in K$ tal que
     \[
     a+(-a)=0.
     \]
 
-    \item \textbf{Existencia del inverso multiplicativo:} para todo $a\in\mathbb{R}\setminus\{0\}$ existe $a^{-1}\in\mathbb{R}$ tal que
+    \item \textbf{Existencia del inverso multiplicativo:} para todo $a\in K\setminus\{0\}$ existe $a^{-1}\in K$ tal que
     \[
     aa^{-1}=1.
     \]
 \end{enumerate}
 
 \end{definition}
+\end{samepage}
 
-Las nueve reglas anteriores se llaman \indexemph{axiomas de campo}. Se aplican a todos los números reales y permiten calcular sin depender de ejemplos particulares. Por ejemplo, al elegir $a=2$, $b=3$ y $c=4$ en la asociatividad y la distributividad obtenemos
+Las nueve reglas anteriores se llaman \indexemph{axiomas de campo}. Los números reales las satisfacen, pero estas reglas por sí solas no los caracterizan: $\mathbb{Q}$ también es un campo. En la \cref{def:campo-ordenado} y el \cref{ax:completitud} añadiremos el orden compatible y la completitud, respectivamente. Los axiomas permiten calcular sin depender de ejemplos particulares. Por ejemplo, al elegir $a=2$, $b=3$ y $c=4$ en la asociatividad y la distributividad obtenemos
 \[
 (2+3)+4=2+(3+4)=9,
 \qquad
@@ -274,12 +300,19 @@ Los elementos $0$ y $1$ actúan como neutros, mientras que $-2$ y $1/2$ son, res
 
 Las propiedades de campo también implican reglas que usaremos sin tener que suponerlas por separado.
 
+\begin{samepage}
 \begin{proposition}[Unicidad y cancelación en un campo]
+\label{prop:cancelacion-campo}
 En un campo el neutro aditivo y el neutro multiplicativo son únicos; cada elemento tiene un único inverso aditivo y, si es distinto de cero, un único inverso multiplicativo. Además,
 \[
 a+c=b+c\quad\Longrightarrow\quad a=b.
 \]
+También se puede cancelar un factor distinto de cero:
+\[
+ac=bc,\quad c\neq0\quad\Longrightarrow\quad a=b.
+\]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Si $0$ y $0'$ fueran neutros aditivos, entonces $0=0+0'=0'$. Análogamente, si $1$ y $1'$ fueran neutros multiplicativos, entonces $1=1\cdot1'=1'$. Si $u$ y $v$ fueran inversos aditivos de $a$, entonces
@@ -291,15 +324,19 @@ La unicidad del inverso multiplicativo se obtiene de la misma manera: si $u a=v 
 u=u\cdot1=u(av)=(ua)v=1\cdot v=v.
 \]
 Finalmente, sumando $-c$ a ambos lados de $a+c=b+c$ y usando asociatividad se obtiene $a=b$.
+Para cancelar un factor $c\neq0$, multiplicamos $ac=bc$ por $c^{-1}$. La condición $c\neq0$ es necesaria: $a\cdot0=b\cdot0$ se cumple aunque $a\neq b$.
 \end{proof}
 
+\begin{samepage}
 \begin{proposition}[Cálculos con cero y signos]
-Para cualesquiera $a,b\in\mathbb{R}$,
+\label{prop:cero-signos}
+En cualquier campo $K$, para cualesquiera $a,b\in K$,
 \[
 a\cdot0=0,\qquad a(-b)=-(ab),\qquad (-a)(-b)=ab.
 \]
 Además, $ab=0$ si y sólo si $a=0$ o $b=0$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Por distributividad,
@@ -347,20 +384,89 @@ Los tres primeros son racionales, mientras que
 \[
 \sqrt2,\pi,e
 \]
-son irracionales. En consecuencia,
+son irracionales. La irracionalidad de $\sqrt2$ se probó en la \cref{prop:irracionalidad-raiz-dos}; anunciamos aquí la de $\pi$ y $e$, cuyo estudio se retomará en el \cref{cap:series-funciones}. En consecuencia,
 \[
 \mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}.
 \]
 \end{example}
+
+La \cref{fig:inclusion-conjuntos-numericos} resume estas inclusiones: pertenecer a un conjunto de la cadena implica pertenecer a todos los que lo contienen.
 
 \begin{figuranotas}{Inclusión de los conjuntos numéricos estudiados.}{fig:inclusion-conjuntos-numericos}
 \input{assets/inclusion-conjuntos-numericos.tikz.tex}
 \end{figuranotas}
 
 \section{Estructura de campo ordenado de \texorpdfstring{$\mathbb{R}$}{R}}
+\label{sec:campo-ordenado}
 
-Los números reales poseen estructuras matemáticas importantes. La primera que estudiaremos es que $\mathbb{R}$ es un \indexemph{campo ordenado}. Esto significa que, además de satisfacer las propiedades algebraicas de un campo, sus elementos pueden compararse mediante una relación de orden compatible con la suma y el producto. Aunque esta propiedad puede parecer natural, no todos los campos pueden dotarse de un orden de este tipo. El ejemplo fundamental es el campo de los números complejos.
+Los números reales poseen estructuras matemáticas importantes. La primera que estudiaremos es que $\mathbb{R}$ es un \indexemph{campo ordenado}. Esto significa que, además de satisfacer las propiedades algebraicas de un campo, sus elementos pueden compararse mediante una relación de orden compatible con la suma y el producto. Para trabajar con desigualdades necesitamos indicar primero qué propiedades exigimos al orden. Después veremos un campo que no admite un orden compatible con sus operaciones.
 
+\begin{samepage}
+\begin{definition}
+\label{def:campo-ordenado}
+Un campo $K$ se denomina \indexemph{campo ordenado} si está provisto de una relación $\leq$ que es un orden total y es compatible con las operaciones del campo. Esto significa que para cualesquiera $a,b,c\in K$ se cumplen:
+\begin{enumerate}
+    \item \textbf{Reflexividad:} $a\leq a$;
+    \item \textbf{Antisimetría:} si $a\leq b$ y $b\leq a$, entonces $a=b$;
+    \item \textbf{Transitividad:} si $a\leq b$ y $b\leq c$, entonces $a\leq c$;
+    \item \textbf{Totalidad o comparabilidad:} $a\leq b$ o $b\leq a$;
+    \item \textbf{Compatibilidad con la suma (invariancia por traslación):} si $a\leq b$, entonces $a+c\leq b+c$;
+    \item \textbf{Compatibilidad multiplicativa (producto de no negativos):} si $0\leq a$ y $0\leq b$, entonces $0\leq ab$.
+\end{enumerate}
+\end{definition}
+\end{samepage}
+
+En los resultados siguientes, $K$ denota un campo ordenado fijo; en particular, pueden aplicarse a $\mathbb{R}$. Las primeras cuatro condiciones dicen que cualquier par de elementos puede compararse en un orden coherente. Las dos últimas exigen que la comparación sea compatible con la suma y que el producto de elementos no negativos siga siendo no negativo. La notación $a<b$ significa que $a\leq b$ y $a\ne b$; equivalentemente, $a>b$ significa $b<a$.
+
+\begin{samepage}
+\begin{proposition}[Comparación mediante la diferencia]
+\label{prop:orden-diferencia}
+Para cualesquiera $a,b\in K$,
+\[
+a\leq b\quad\Longleftrightarrow\quad 0\leq b-a.
+\]
+En particular, $a<b$ si y sólo si $0<b-a$.
+\end{proposition}
+\end{samepage}
+
+\begin{proof}
+Sumar el mismo elemento preserva el orden. Por tanto, al sumar $-a$ a $a\leq b$ obtenemos $0\leq b-a$. Recíprocamente, al sumar $a$ a $0\leq b-a$ se obtiene $a\leq b$. Si alguna de las desigualdades es estricta, la otra también lo es: sumar o restar el mismo elemento no convierte dos elementos distintos en iguales.
+\end{proof}
+
+\begin{samepage}
+\begin{proposition}[Tricotomía]
+\label{prop:tricotomia}
+Para cualesquiera $a,b\in K$ se cumple exactamente una de las siguientes posibilidades:
+\[
+a<b,\qquad a=b,\qquad b<a.
+\]
+\end{proposition}
+\end{samepage}
+
+\begin{proof}
+Por totalidad, $a\leq b$ o $b\leq a$. Si ambas relaciones se cumplen, la antisimetría implica $a=b$. Si $a\ne b$, por tanto, sólo una de las dos comparaciones puede cumplirse y es estricta.
+\end{proof}
+
+\begin{samepage}
+\begin{proposition}[Positividad de $1$ y de los cuadrados]
+\label{prop:cuadrados-no-negativos}
+En todo campo ordenado, $0<1$. Además, para cada $x\in K$,
+\[
+x^2\geq0,
+\]
+y si $x\ne0$, entonces $x^2>0$.
+\end{proposition}
+\end{samepage}
+
+\begin{proof}
+Por totalidad, $0\leq1$ o $1\leq0$. Si $1\leq0$, como $1\ne0$ tendríamos $1<0$, y al sumar $-1$ se obtendría $0<-1$. La compatibilidad del orden con el producto daría $0\leq(-1)(-1)=1$. Junto con $1\leq0$, esto implicaría $1=0$ por antisimetría, una contradicción. Así, $0\leq1$; como $1\ne0$, en realidad $0<1$.
+
+Por tricotomía, $0\leq x$ o $x<0$. En el primer caso el axioma del producto da $x^2\geq0$. En el segundo, al sumar $-x$ a $x<0$ vemos que $0<-x$, y de nuevo el axioma del producto da $(-x)^2=x^2\geq0$. Si $x\ne0$, el producto $x^2$ no es cero por la propiedad de producto nulo de la \cref{prop:cero-signos}; por ello $x^2>0$.
+\end{proof}
+
+El signo de los cuadrados, demostrado en la \cref{prop:cuadrados-no-negativos}, permite entender por qué la compatibilidad del orden es una exigencia adicional.
+
+\begin{samepage}
 \begin{definition}
 El conjunto de los \indexemph{números complejos} se define por
 \[
@@ -371,6 +477,7 @@ donde $i$ es un elemento que satisface $i^2=-1$. Si $z=a+bi\in\mathbb{C}$, llama
 \operatorname{Re}(z)=a,\qquad \operatorname{Im}(z)=b.
 \]
 \end{definition}
+\end{samepage}
 
 \begin{example}
 Son números complejos
@@ -384,65 +491,12 @@ Todo número real es también complejo, pues $a=a+0i$ para todo $a\in\mathbb{R}$
 \end{example}
 
 \begin{example}
-El campo $\mathbb{C}$ no puede dotarse de un orden que sea compatible con sus operaciones. En efecto, en cualquier campo ordenado se cumple $x^2\geq0$ para todo $x$. Si $\mathbb{C}$ fuera un campo ordenado, entonces $i^2\geq0$; pero $i^2=-1$, por lo que tendríamos $-1\geq0$, contradiciendo que $1>0$. Por tanto, $\mathbb{C}$ no es un campo ordenado.
+El campo $\mathbb{C}$ no puede dotarse de un orden que sea compatible con sus operaciones. En efecto, por la \cref{prop:cuadrados-no-negativos}, en cualquier campo ordenado se cumple $x^2\geq0$ para todo $x$. Si $\mathbb{C}$ fuera un campo ordenado, entonces $i^2\geq0$; pero $i^2=-1$, por lo que tendríamos $-1\geq0$, contradiciendo que $1>0$. Por tanto, $\mathbb{C}$ no es un campo ordenado.
 \end{example}
-
-En el ejemplo anterior se anticipó una consecuencia de los axiomas de campo ordenado: el cuadrado de cualquier elemento es no negativo. Después de formalizar el orden, demostraremos esta y otras reglas que explican cómo operar con desigualdades.
-
-\begin{definition}
-Un campo $K$ se denomina \indexemph{campo ordenado} si está provisto de una relación $\leq$ que es un orden total y es compatible con las operaciones del campo. Esto significa que para cualesquiera $a,b,c\in K$ se cumplen:
-\begin{enumerate}
-    \item \textbf{Reflexividad:} $a\leq a$;
-    \item \textbf{Antisimetría:} si $a\leq b$ y $b\leq a$, entonces $a=b$;
-    \item \textbf{Transitividad:} si $a\leq b$ y $b\leq c$, entonces $a\leq c$;
-    \item \textbf{Totalidad o comparabilidad:} $a\leq b$ o $b\leq a$;
-    \item \textbf{Compatibilidad con la suma (invariancia por traslación):} si $a\leq b$, entonces $a+c\leq b+c$;
-    \item \textbf{Compatibilidad multiplicativa (producto de no negativos):} si $0\leq a$ y $0\leq b$, entonces $0\leq ab$.
-\end{enumerate}
-\end{definition}
-
-Las primeras cuatro condiciones dicen que cualquier par de elementos puede compararse en un orden coherente. Las dos últimas exigen que la comparación sea compatible con la suma y que el producto de elementos no negativos siga siendo no negativo. La notación $a<b$ significa que $a\leq b$ y $a\ne b$; equivalentemente, $a>b$ significa $b<a$.
-
-\begin{proposition}[Comparación mediante la diferencia]
-Para cualesquiera $a,b\in K$,
-\[
-a\leq b\quad\Longleftrightarrow\quad 0\leq b-a.
-\]
-En particular, $a<b$ si y sólo si $0<b-a$.
-\end{proposition}
-
-\begin{proof}
-Sumar el mismo elemento preserva el orden. Por tanto, al sumar $-a$ a $a\leq b$ obtenemos $0\leq b-a$. Recíprocamente, al sumar $a$ a $0\leq b-a$ se obtiene $a\leq b$. Si alguna de las desigualdades es estricta, la otra también lo es: sumar o restar el mismo elemento no convierte dos elementos distintos en iguales.
-\end{proof}
-
-\begin{proposition}[Tricotomía]
-Para cualesquiera $a,b\in K$ se cumple exactamente una de las siguientes posibilidades:
-\[
-a<b,\qquad a=b,\qquad b<a.
-\]
-\end{proposition}
-
-\begin{proof}
-Por totalidad, $a\leq b$ o $b\leq a$. Si ambas relaciones se cumplen, la antisimetría implica $a=b$. Si $a\ne b$, por tanto, sólo una de las dos comparaciones puede cumplirse y es estricta.
-\end{proof}
-
-\begin{proposition}[Positividad de $1$ y de los cuadrados]
-En todo campo ordenado, $0<1$. Además, para cada $x\in K$,
-\[
-x^2\geq0,
-\]
-y si $x\ne0$, entonces $x^2>0$.
-\end{proposition}
-
-\begin{proof}
-Por totalidad, $0\leq1$ o $1\leq0$. Si $1\leq0$, como $1\ne0$ tendríamos $1<0$, y al sumar $-1$ se obtendría $0<-1$. La compatibilidad del orden con el producto daría $0\leq(-1)(-1)=1$. Junto con $1\leq0$, esto implicaría $1=0$ por antisimetría, una contradicción. Así, $0\leq1$; como $1\ne0$, en realidad $0<1$.
-
-Por tricotomía, $0\leq x$ o $x<0$. En el primer caso el axioma del producto da $x^2\geq0$. En el segundo, al sumar $-x$ a $x<0$ vemos que $0<-x$, y de nuevo el axioma del producto da $(-x)^2=x^2\geq0$. Si $x\ne0$, el producto $x^2$ no es cero por la propiedad de producto nulo; por ello $x^2>0$.
-\end{proof}
 
 Estas consecuencias justifican varias reglas prácticas: se puede sumar o restar el mismo número a ambos lados sin cambiar el sentido; multiplicar por un número positivo conserva el sentido; y multiplicar por uno negativo lo invierte. Para esta última regla es esencial conocer el signo del factor.
 
-La relación de orden nos permite expresar comparaciones mediante desigualdades. Escribimos $a<b$ cuando $a\leq b$ y $a\neq b$; de manera análoga, $a>b$ significa $b<a$ y $a\geq b$ significa $b\leq a$. Así, por ejemplo,
+La relación de orden nos permite expresar comparaciones mediante desigualdades. Además de la notación estricta ya definida, $a\geq b$ significa $b\leq a$. Así, por ejemplo,
 \[
 2<5,\qquad -3<0,\qquad 4\leq4,\qquad 7>2.
 \]
@@ -469,7 +523,9 @@ Por ejemplo, de $2<5$ y $-3<0$ obtenemos
 -6>-15.
 \]
 
+\begin{samepage}
 \begin{proposition}[Multiplicación de desigualdades]
+\label{prop:multiplicacion-orden}
 Sean $a,b,c\in K$ y supongamos que $a<b$. Entonces:
 \begin{enumerate}
     \item si $c>0$, entonces $ac<bc$;
@@ -479,12 +535,15 @@ En particular, multiplicar por $-1$ invierte la desigualdad:
 \[
 a<b\quad\Longrightarrow\quad -b<-a.
 \]
+Las versiones no estrictas también son válidas: si $a\leq b$ y $c\geq0$, entonces $ac\leq bc$; si $c\leq0$, entonces $ac\geq bc$. Cuando $c=0$, ambos productos son iguales a cero.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Por la caracterización mediante la diferencia, $0<b-a$. Si $c>0$, el producto $c(b-a)$ es no negativo por el axioma del orden y no es cero por la propiedad de producto nulo. Por tanto, $0<c(b-a)=bc-ac$, de donde $ac<bc$.
+Por la \cref{prop:orden-diferencia}, $0<b-a$. Si $c>0$, el producto $c(b-a)$ es no negativo por el axioma del orden y no es cero por la propiedad de producto nulo. Por tanto, $0<c(b-a)=bc-ac$, de donde $ac<bc$.
 
 Si $c<0$, al sumar $-c$ a ambos lados se obtiene $0<-c$. El mismo argumento da $0<(-c)(b-a)$. Sumando $-(-c)(b-a)$ a ambos lados de esta última desigualdad se obtiene $c(b-a)<0$. Por consiguiente, $bc-ac<0$, es decir, $bc<ac$. Para la última afirmación tomamos $c=-1$; al sumar $-1$ a $0<1$ se obtiene $-1<0$.
+Si $a=b$ o $c=0$, las comparaciones no estrictas son igualdades; en los demás casos se siguen de lo que acabamos de demostrar.
 \end{proof}
 
 \begin{example}
@@ -495,20 +554,44 @@ De $2<5$, al multiplicar por $-3<0$ se obtiene $-6>-15$. En cambio, al multiplic
 \input{assets/inversion-desigualdad.tikz.tex}
 \end{figuranotas}
 
+\begin{samepage}
+\begin{proposition}[Comparación de cuadrados no negativos]
+\label{prop:comparacion-cuadrados}
+Si $u,v\geq0$, entonces
+\[
+u\leq v\quad\Longleftrightarrow\quad u^2\leq v^2.
+\]
+También $u<v$ si y solo si $u^2<v^2$. En particular, dos números no negativos con el mismo cuadrado son iguales.
+\end{proposition}
+\end{samepage}
+
+\begin{proof}
+Si $u<v$, los factores $v-u$ y $v+u$ son positivos. Por la \cref{prop:multiplicacion-orden},
+\[
+v^2-u^2=(v-u)(v+u)>0.
+\]
+Si $u=v$, sus cuadrados son iguales. Recíprocamente, si $u^2\leq v^2$ pero $u>v$, el argumento anterior daría $u^2>v^2$, una contradicción. La equivalencia estricta se obtiene excluyendo la igualdad.
+\end{proof}
+
+La hipótesis de no negatividad importa: $-3<-2$, pero $9>4$. Esta proposición permitirá comparar valores absolutos y raíces sin alterar indebidamente una desigualdad.
+
+\begin{samepage}
 \begin{proposition}[Orden de los recíprocos positivos]
+\label{prop:reciprocos-positivos}
 Si $0<y<x$, entonces
 \[
 0<\frac1x<\frac1y.
 \]
 Así, al tomar recíprocos de dos números positivos, el orden se invierte.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Para $v\ne0$ usamos la notación $u/v:=uv^{-1}$. Primero observamos que si $t>0$, entonces $t^{-1}>0$. En efecto, $t^{-1}\ne0$. Si fuera negativo, al multiplicar $0<t$ por $t^{-1}<0$ resultaría $1=tt^{-1}<0$, en contradicción con $0<1$.
 
 Como $x,y>0$, también $xy>0$ y, por lo anterior, $(xy)^{-1}>0$. Además, $x-y>0$. Por tanto,
 \[
-=\frac1y-\frac1x
+\frac1y-\frac1x
 =\frac{x}{xy}-\frac{y}{xy}
 =\frac{x-y}{xy}
 =(x-y)(xy)^{-1}>0,
@@ -521,12 +604,32 @@ Como $0<2<5$, sus recíprocos satisfacen
 \[
 0<\frac15<\frac12.
 \]
-La hipótesis de positividad importa: no se puede tomar recíprocos de una desigualdad que atraviesa el cero, y el orden debe analizarse por separado cuando los números son negativos.
+La regla anterior requiere números positivos. Si dos números no nulos tienen signos opuestos, sus recíprocos conservan esos signos: de $-1<1$ obtenemos $1/(-1)=-1<1=1/1$. Por tanto, invertir ambos números no siempre invierte una desigualdad. El caso de dos números negativos se trata a continuación.
 \end{example}
+
+\begin{samepage}
+\begin{corollary}[Orden de los recíprocos negativos]
+\label{cor:reciprocos-negativos}
+Si $a<b<0$, entonces
+\[
+\frac1b<\frac1a<0.
+\]
+Así, tomar recíprocos invierte el orden cuando los dos números tienen el mismo signo.
+\end{corollary}
+\end{samepage}
+
+\begin{proof}
+De $a<b<0$ se obtiene $0<-b<-a$. Por la \cref{prop:reciprocos-positivos},
+$0<1/(-a)<1/(-b)$. Como $1/(-t)=-1/t$ para $t\neq0$, multiplicar por $-1$ da la conclusión. Esta identidad se justifica porque $(-t)(-1/t)=1$ y el inverso multiplicativo es único, por la \cref{prop:cancelacion-campo}.
+\end{proof}
+
+Por ejemplo, $-5<-2<0$ implica $-1/2<-1/5<0$. Dividir una desigualdad por un número no nulo equivale a multiplicar por su recíproco: se conserva el sentido si el divisor es positivo y se invierte si es negativo, de acuerdo con la \cref{prop:multiplicacion-orden}.
 
 Las desigualdades permiten describir de forma natural ciertos subconjuntos fundamentales de $\mathbb{R}$ llamados intervalos.
 
+\begin{samepage}
 \begin{definition}
+\label{def:intervalos-acotados}
 Sean $a,b\in\mathbb{R}$ con $a<b$. Definimos los \indexemph{intervalos acotados} por
 \begin{enumerate}
     \item
@@ -551,6 +654,9 @@ Sean $a,b\in\mathbb{R}$ con $a<b$. Definimos los \indexemph{intervalos acotados}
 \end{enumerate}
 El intervalo $(a,b)$ se denomina \indexemph{abierto}, $[a,b]$ se denomina \indexemph{cerrado}, mientras que $[a,b)$ y $(a,b]$ se denominan \indexemph{semiabiertos} o \indexemph{semicerrados}.
 \end{definition}
+\end{samepage}
+
+Las mismas descripciones por desigualdades permiten tomar $a=b$: en ese caso $[a,a]=\{a\}$ y los otros tres intervalos son vacíos. El término \emph{acotado} se formalizará en la \cref{def:conjunto-acotado}; aquí expresa que todos los elementos quedan entre dos números reales.
 
 \begin{example}
 El intervalo
@@ -579,7 +685,7 @@ contiene ambos extremos.
 \begin{figuranotas}{Intervalos acotados y pertenencia de sus extremos.}{fig:intervalos-acotados}
 \input{assets/intervalos-acotados.tikz.tex}
 \end{figuranotas}
-En estas gráficas, el círculo vacío indica que el extremo no pertenece al intervalo y el punto lleno indica que sí pertenece.
+En la \cref{fig:intervalos-acotados}, el círculo vacío indica que el extremo no pertenece al intervalo y el punto lleno indica que sí pertenece.
 
 También necesitamos describir conjuntos que se extienden indefinidamente hacia alguno de los dos sentidos de la recta real. Para ello utilizamos los símbolos $\infty$ y $-\infty$. Estos símbolos no representan números reales y, por tanto,
 \[
@@ -587,7 +693,9 @@ También necesitamos describir conjuntos que se extienden indefinidamente hacia 
 \]
 Su función es únicamente indicar que un intervalo no posee un extremo real en cierta dirección.
 
+\begin{samepage}
 \begin{definition}
+\label{def:intervalos-no-acotados}
 Sea $a\in\mathbb{R}$. Los \indexemph{intervalos no acotados} se definen por
 \[
 (a,\infty)=\{x\in\mathbb{R}:a<x\},\qquad [a,\infty)=\{x\in\mathbb{R}:a\leq x\},
@@ -601,6 +709,7 @@ Además,
 \mathbb{R}=(-\infty,\infty).
 \]
 \end{definition}
+\end{samepage}
 
 \begin{example}
 El intervalo
@@ -637,22 +746,27 @@ contiene a todos los números reales menores o iguales que $3$, incluido el prop
 \begin{figuranotas}{Intervalos no acotados: los extremos infinitos indican una dirección, no un punto.}{fig:intervalos-no-acotados}
 \input{assets/intervalos-no-acotados.tikz.tex}
 \end{figuranotas}
-Las flechas muestran que el intervalo continúa indefinidamente en esa dirección; no señalan un extremo real llamado $\infty$ o $-\infty$.
+Las flechas de la \cref{fig:intervalos-no-acotados} muestran que el intervalo continúa indefinidamente en esa dirección; no señalan un extremo real llamado $\infty$ o $-\infty$.
 
-Enseguida verificamos que el orden usual de los números reales es compatible con su estructura algebraica.
+En estas notas asumimos que $\mathbb{R}$ tiene su orden usual compatible con las operaciones, además de los axiomas de campo. Esta compatibilidad no se deduce de los nueve axiomas algebraicos de la \cref{def:campo}. El siguiente enunciado resume la estructura que utilizaremos.
 
+\begin{samepage}
 \begin{proposition}
 El campo $\mathbb{R}$, provisto de su orden usual $\leq$, es un campo ordenado.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 La relación $\leq$ en $\mathbb{R}$ es reflexiva, antisimétrica, transitiva y total. Además, para cualesquiera $a,b,c\in\mathbb{R}$, si $a\leq b$, entonces $a+c\leq b+c$, y si $0\leq a$ y $0\leq b$, entonces $0\leq ab$. Por tanto, el orden usual de $\mathbb{R}$ es compatible con las operaciones de suma y producto, y en consecuencia $\mathbb{R}$ es un campo ordenado.
 \end{proof}
 
 \section{Valor absoluto y desigualdades}
+\label{sec:valor-absoluto}
 Una parte importante del análisis real se fundamenta en el estudio de desigualdades. Estas permiten comparar cantidades, obtener estimaciones y controlar el comportamiento de expresiones que posteriormente aparecerán en sucesiones, límites, continuidad y convergencia. Una de las herramientas más elementales y, al mismo tiempo, más utilizadas para expresar este tipo de estimaciones es el valor absoluto.
 
+\begin{samepage}
 \begin{definition}[Valor absoluto]
+\label{def:valor-absoluto}
 Sea $x\in\mathbb{R}$. El \indexemph{valor absoluto} de $x$ se define por
 \[
 |x|=
@@ -663,8 +777,11 @@ x, & x\geq0,\\
 \]
 En particular, $|x|\geq0$ para todo $x\in\mathbb{R}$ y $|x|=0$ si y sólo si $x=0$.
 \end{definition}
+\end{samepage}
 
+\begin{samepage}
 \begin{proposition}[Relación entre el valor absoluto y el cuadrado]
+\label{prop:absoluto-cuadrado}
 Para todo $x\in\mathbb{R}$,
 \[
 (|x|)^2=x^2,
@@ -674,10 +791,13 @@ Para todo $x\in\mathbb{R}$,
 |x|=\sqrt{x^2}.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Si $x\geq0$, entonces $|x|=x$, así que $(|x|)^2=x^2$. Si $x<0$, entonces $|x|=-x$ y de nuevo $(|x|)^2=(-x)^2=x^2$. En ambos casos $x^2\geq0$, por lo que $|x^2|=x^2$. Además, $|x|$ es no negativo y su cuadrado es $x^2$; por la unicidad de la raíz cuadrada no negativa, $|x|=\sqrt{x^2}$.
 \end{proof}
+
+La existencia general de las raíces se justificará en el \cref{teo:raices-positivas}. En esta identidad podemos reconocer directamente la raíz de $x^2$: es el número no negativo $|x|$, y su unicidad se sigue de la \cref{prop:comparacion-cuadrados}. Conviene distinguir $|x|=\sqrt{x^2}$ de $|x|=x^2$, que no es una identidad: para $x=2$, sus lados son $2$ y $4$.
 
 \begin{example}
 Por definición,
@@ -699,12 +819,15 @@ pues en este caso
 En general, esta desigualdad se cumple para todo $x\in\mathbb{R}$.
 \end{example}
 
+\begin{samepage}
 \begin{proposition}[Cotas inmediatas del valor absoluto]
+\label{prop:cotas-absoluto}
 Para todo $x\in\mathbb{R}$,
 \[
 -|x|\leq x\leq |x|.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Si $x\geq0$, entonces $|x|=x$ y $-|x|=-x\leq x$. Si $x<0$, entonces $|x|=-x$ y $-|x|=x\leq -x=|x|$. En ambos casos la afirmación sigue de la definición por casos del valor absoluto y del orden usual.
@@ -723,9 +846,12 @@ De manera análoga,
 |x|\leq r\quad\Longleftrightarrow\quad -r\leq x\leq r.
 \]
 Estas equivalencias se leen directamente de la definición: si $x\geq0$, entonces $|x|=x$; si $x<0$, entonces $|x|=-x$. En ambos casos, comparar $|x|$ con $r>0$ equivale a exigir que $x$ no quede ni a la izquierda de $-r$ ni a la derecha de $r$.
+La equivalencia no estricta también vale para $r=0$: ambos lados equivalen a $x=0$.
 Esta observación permite describir intervalos centrados en cualquier punto de la recta real.
 
+\begin{samepage}
 \begin{proposition}
+\label{prop:absoluto-intervalos}
 Sean $a,x\in\mathbb{R}$ y $r>0$. Entonces
 \[
 x\in(a-r,a+r)
@@ -739,6 +865,7 @@ x\in[a-r,a+r]
 |x-a|\leq r.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Por definición,
@@ -778,7 +905,7 @@ a-r\leq x\leq a+r
 \]
 \end{proof}
 
-La equivalencia de esta proposición también tiene una lectura geométrica: $|x-a|<r$ describe los puntos cuya distancia a $a$ es menor que $r$. En la recta real son exactamente los puntos del intervalo abierto con centro $a$ y radio $r$.
+La equivalencia de la \cref{prop:absoluto-intervalos} también tiene una lectura geométrica: $|x-a|<r$ describe los puntos cuya distancia a $a$ es menor que $r$. En la recta real son exactamente los puntos del intervalo abierto con centro $a$ y radio $r$.
 
 \begin{figuranotas}{El valor absoluto como distancia a un centro.}{fig:valor-absoluto-intervalo}
 \input{assets/valor-absoluto-intervalo.tikz.tex}
@@ -807,15 +934,18 @@ x\in(1,5).
 
 Otra propiedad fundamental es que el valor absoluto es compatible con el producto.
 
+\begin{samepage}
 \begin{proposition}
+\label{prop:absoluto-producto}
 Para cualesquiera $x,y\in\mathbb{R}$ se cumple
 \[
 |xy|=|x||y|.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Como $|x|^2=x^2$ y $|y|^2=y^2$, tenemos
+La \cref{prop:absoluto-cuadrado} asegura que $|x|^2=x^2$ y $|y|^2=y^2$. Por ello,
 \[
 |xy|^2=x^2y^2=|x|^2|y|^2=(|x||y|)^2.
 \]
@@ -827,15 +957,18 @@ Puesto que $|xy|\geq0$ y $|x||y|\geq0$, la igualdad de sus cuadrados implica que
 
 Una de las desigualdades fundamentales del análisis es la \indexemph{desigualdad del triángulo}. Su nombre proviene de su interpretación geométrica: la longitud de uno de los lados de un triángulo nunca puede superar la suma de las longitudes de los otros dos. En la recta real, esta propiedad se expresa mediante valores absolutos.
 
+\begin{samepage}
 \begin{proposition}[Desigualdad del triángulo]
+\label{prop:triangulo}
 Para cualesquiera $x,y\in\mathbb{R}$ se cumple
 \[
 |x+y|\leq |x|+|y|.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Como
+Por las \cref{prop:cotas-absoluto,prop:absoluto-producto},
 \[
 xy\leq |x||y|,
 \]
@@ -845,23 +978,45 @@ tenemos
 \leq x^2+2|x||y|+y^2
 =(|x|+|y|)^2.
 \]
-Además, tanto $|x+y|$ como $|x|+|y|$ son no negativos. Tomando raíces cuadradas obtenemos
+Además, por la \cref{prop:absoluto-cuadrado}, el lado izquierdo es el cuadrado de $|x+y|$. Tanto $|x+y|$ como $|x|+|y|$ son no negativos; por la \cref{prop:comparacion-cuadrados}, obtenemos
 \[
 |x+y|\leq|x|+|y|.
 \]
 \end{proof}
 
+\begin{samepage}
+\begin{proposition}[Distancia en la recta real]
+\label{prop:distancia-real}
+Para $x,y\in\mathbb{R}$, definimos $d(x,y)=|x-y|$. Entonces
+\[
+d(x,y)\geq0,\qquad d(x,y)=0\ \Longleftrightarrow\ x=y,
+\]
+\[
+d(x,y)=d(y,x),\qquad d(x,z)\leq d(x,y)+d(y,z).
+\]
+\end{proposition}
+\end{samepage}
+
+\begin{proof}
+La no negatividad y el caso de distancia cero se siguen de la \cref{def:valor-absoluto}. Como $|-t|=|t|$ por la definición por casos, $|x-y|=|y-x|$. Finalmente, escribimos $x-z=(x-y)+(y-z)$ y aplicamos la \cref{prop:triangulo}.
+\end{proof}
+
+La última desigualdad expresa que pasar por un punto intermedio no acorta la distancia. La \cref{fig:valor-absoluto-intervalo} representa esta distancia mediante intervalos centrados en un punto.
+
 La desigualdad del triángulo posee una forma inversa que será utilizada reiteradamente para comparar distancias.
 
+\begin{samepage}
 \begin{proposition}[Desigualdad triangular inversa]
+\label{prop:triangulo-inversa}
 Para cualesquiera $x,y\in\mathbb{R}$ se cumple
 \[
 |x-y|\geq \bigl||x|-|y|\bigr|.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Por la desigualdad del triángulo,
+Por la \cref{prop:triangulo},
 \[
 |x|=|(x-y)+y|\leq|x-y|+|y|,
 \]
@@ -877,7 +1032,7 @@ Por tanto,
 \[
 -\lvert x-y\rvert\leq |x|-|y|\leq|x-y|,
 \]
-y, por la caracterización del valor absoluto,
+y, por la caracterización del valor absoluto de la \cref{prop:absoluto-intervalos}, incluido el caso de radio cero,
 \[
 \bigl||x|-|y|\bigr|\leq|x-y|.
 \]
@@ -940,17 +1095,20 @@ Sean $x,y,z\in\mathbb{R}$. Aplicando dos veces la desigualdad del triángulo obt
 Esta propiedad puede extenderse inductivamente a cualquier número finito de sumandos.
 \end{example}
 
+\begin{samepage}
 \begin{proposition}[Desigualdad triangular finita]
-Para cualesquiera $x_1,\ldots,x_n\in\mathbb{R}$ se cumple
+\label{prop:triangulo-finita}
+Si $n\in\mathbb{N}$ y $x_1,\ldots,x_n\in\mathbb{R}$, se cumple
 \[
 \left|\sum_{k=1}^{n}x_k\right|
 \leq
 \sum_{k=1}^{n}|x_k|.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-La demostración se realiza por inducción sobre $n$. Para $n=1$ la igualdad es inmediata. Supongamos que el resultado es válido para $n$. Entonces, por la desigualdad del triángulo,
+Aplicamos el principio de inducción del \cref{teo:induccion}. Para $n=1$ la igualdad es inmediata. Supongamos que el resultado es válido para $n$. Entonces, por la \cref{prop:triangulo},
 \[
 \left|\sum_{k=1}^{n+1}x_k\right|
 =
@@ -970,6 +1128,7 @@ Aplicando la hipótesis de inducción,
 
 Las estimaciones con valor absoluto también permiten demostrar igualdades. Si la distancia entre dos números fijos es menor que cualquier cantidad positiva, esa distancia debe ser cero. Esta propiedad es muy útil para demostraciones futuras, especialmente para probar unicidad: bastará estimar la distancia entre dos posibles valores y hacerla arbitrariamente pequeña.
 
+\begin{samepage}
 \begin{proposition}[Igualdad mediante estimaciones]
 \label{prop:igualdad-epsilon}
 Sean $x,y\in\mathbb{R}$ dos números fijos. Si
@@ -988,6 +1147,7 @@ Por la caracterización del valor absoluto, la hipótesis estricta también pued
  \qquad\text{para todo }\varepsilon>0.
 \]
 \end{proposition}
+\end{samepage}
 \index{igualdad mediante estimaciones}
 
 \begin{proof}
@@ -1002,7 +1162,7 @@ La hipótesis, aplicada a este valor de $\varepsilon$, daría
 lo cual es imposible. En la versión estricta obtendríamos directamente $d<d/2$, también una contradicción. Por tanto, $|x-y|=0$ y, en consecuencia, $x=y$.
 \end{proof}
 
-El cuantificador \emph{para todo $\varepsilon>0$} es esencial: los números $x$ e $y$ deben permanecer fijos mientras variamos $\varepsilon$. Una sola estimación expresa cercanía; disponer de todas ellas permite concluir igualdad. Geométricamente, el único punto que pertenece a todos los intervalos $(y-\varepsilon,y+\varepsilon)$, con $\varepsilon>0$, es su centro $y$. Lo mismo ocurre con los intervalos cerrados $[y-\varepsilon,y+\varepsilon]$.
+El cuantificador \emph{para todo $\varepsilon>0$} es esencial: los números $x$ e $y$ deben permanecer fijos mientras variamos $\varepsilon$. Una sola estimación expresa cercanía; disponer de todas ellas permite concluir igualdad. La \cref{fig:igualdad-epsilon} muestra cómo una elección de radio excluye cualquier punto distinto del centro. Geométricamente, el único punto que pertenece a todos los intervalos $(y-\varepsilon,y+\varepsilon)$, con $\varepsilon>0$, es su centro $y$. Lo mismo ocurre con los intervalos cerrados $[y-\varepsilon,y+\varepsilon]$.
 
 \begin{figuranotas}{Si $x>y$ y $d=|x-y|>0$, los dos primeros radios dibujados incluyen a $x$, pero el radio $\varepsilon=d/2$ lo excluye. Por tanto, un punto distinto de $y$ no puede estar a distancia menor o igual que todos los radios positivos. El caso $x<y$ se obtiene reflejando el dibujo alrededor de $y$.}{fig:igualdad-epsilon}
 \input{assets/igualdad-epsilon.tikz.tex}
@@ -1014,7 +1174,7 @@ Supongamos que un número fijo $u\in\mathbb{R}$ satisface
  3-\varepsilon\leq u\leq3+\varepsilon
  \qquad\text{para todo }\varepsilon>0.
 \]
-Al restar $3$ y usar la caracterización del valor absoluto, obtenemos $|u-3|\leq\varepsilon$ para todo $\varepsilon>0$. Por \cref{prop:igualdad-epsilon}, necesariamente $u=3$. Así, una familia de cotas cada vez más ajustadas puede determinar un número de manera exacta.
+Al restar $3$ y usar la caracterización del valor absoluto, obtenemos $|u-3|\leq\varepsilon$ para todo $\varepsilon>0$. Por la \cref{prop:igualdad-epsilon}, necesariamente $u=3$. Así, una familia de cotas cada vez más ajustadas puede determinar un número de manera exacta.
 \end{example}
 
 \begin{example}[Dos números con una aproximación común]
@@ -1031,20 +1191,23 @@ El número $z$ puede depender de $\varepsilon$, pero en cada elección es el mis
  <\frac{\varepsilon}{2}+\frac{\varepsilon}{2}
  =\varepsilon.
 \]
-Como esto vale para todo $\varepsilon>0$, la proposición implica $a=b$. Más adelante, esta será la idea de la demostración de unicidad del límite: si un mismo término puede estar suficientemente cerca de dos candidatos a límite, la distancia entre esos candidatos debe ser cero.
+Como esto vale para todo $\varepsilon>0$, la \cref{prop:igualdad-epsilon} implica $a=b$. En el \cref{cap:sucesiones-limites}, esta será la idea de la demostración de unicidad del límite: si un mismo término puede estar suficientemente cerca de dos candidatos a límite, la distancia entre esos candidatos debe ser cero.
 \end{example}
 
 Además de las desigualdades asociadas al valor absoluto, existen algunas desigualdades algebraicas elementales que aparecerán continuamente en análisis. Una de las más sencillas surge directamente del hecho de que el cuadrado de todo número real es no negativo.
 
+\begin{samepage}
 \begin{proposition}
+\label{prop:producto-cuadrados}
 Para cualesquiera $a,b\in\mathbb{R}$ se cumple
 \[
 ab\leq\frac{a^2+b^2}{2}.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Como
+Por la \cref{prop:cuadrados-no-negativos},
 \[
 (a-b)^2\geq0,
 \]
@@ -1064,19 +1227,22 @@ ab\leq\frac{a^2+b^2}{2}.
 
 Una consecuencia inmediata es otra estimación que será útil con frecuencia.
 
+\begin{samepage}
 \begin{proposition}
+\label{prop:cuadrado-suma}
 Para cualesquiera $a,b\in\mathbb{R}$ se cumple
 \[
 (a+b)^2\leq2(a^2+b^2).
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Tenemos
 \[
 (a+b)^2=a^2+2ab+b^2.
 \]
-Como $2ab\leq a^2+b^2$, resulta
+La \cref{prop:producto-cuadrados} da $2ab\leq a^2+b^2$. Por tanto,
 \[
 (a+b)^2
 \leq
@@ -1088,42 +1254,35 @@ a^2+(a^2+b^2)+b^2
 
 Otra desigualdad fundamental compara la media geométrica con la media aritmética.
 
+\begin{samepage}
 \begin{proposition}[Desigualdad aritmético--geométrica]
+\label{prop:media-geometrica}
 Si $a,b\geq0$, entonces
 \[
 \sqrt{ab}\leq\frac{a+b}{2}.
 \]
 La igualdad ocurre si y sólo si $a=b$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Como
+Por la \cref{prop:cuadrados-no-negativos},
 \[
-(\sqrt{a}-\sqrt{b})^2\geq0,
+(a+b)^2-4ab=(a-b)^2\geq0.
 \]
-tenemos
-\[
-a-2\sqrt{ab}+b\geq0.
-\]
-Por tanto,
-\[
-2\sqrt{ab}\leq a+b,
-\]
-y dividiendo entre $2$ obtenemos
+Así, el cuadrado de $(a+b)/2$ es mayor o igual que $ab$, el cuadrado de $\sqrt{ab}$. Como ambos números son no negativos, la \cref{prop:comparacion-cuadrados} da
 \[
 \sqrt{ab}\leq\frac{a+b}{2}.
 \]
-La igualdad ocurre precisamente cuando
-\[
-(\sqrt{a}-\sqrt{b})^2=0,
-\]
-es decir, cuando $a=b$.
+Hay igualdad si y solo si los cuadrados coinciden, es decir, si $(a-b)^2=0$. Por la \cref{prop:cero-signos}, esto equivale a $a=b$.
 \end{proof}
 
 Esta desigualdad forma parte de una relación más amplia entre distintas medias.
 
+\begin{samepage}
 \begin{proposition}[Desigualdad de las medias]
-Si $a,b>0$, entonces
+\label{prop:medias}
+Si $a,b>0$, sus medias armónica, geométrica, aritmética y cuadrática, respectivamente, satisfacen
 \[
 \frac{2ab}{a+b}
 \leq
@@ -1133,10 +1292,12 @@ Si $a,b>0$, entonces
 \leq
 \sqrt{\frac{a^2+b^2}{2}}.
 \]
+Cada una de las tres comparaciones es una igualdad si y solo si $a=b$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-La desigualdad central ya fue demostrada. Probemos con detalle la primera comparación. Como $a,b>0$, también $a+b>0$ y $\sqrt{ab}>0$. Partimos de
+La desigualdad central se demostró en la \cref{prop:media-geometrica}. Probemos con detalle la primera comparación. Como $a,b>0$, también $a+b>0$ y $\sqrt{ab}>0$. Partimos de
 \[
 2\sqrt{ab}\leq a+b
 \]
@@ -1154,11 +1315,11 @@ por lo que
 \[
 \frac{(a+b)^2}{4}\leq\frac{a^2+b^2}{2}.
 \]
-Tomando raíces cuadradas,
+Por la \cref{prop:comparacion-cuadrados}, al comparar los dos números no negativos cuyos cuadrados aparecen en esta desigualdad,
 \[
 \frac{a+b}{2}\leq\sqrt{\frac{a^2+b^2}{2}}.
 \]
-En la comparación armónica--geométrica, la transformación anterior sólo multiplica por un factor positivo, así que la igualdad equivale a $2\sqrt{ab}=a+b$. En la comparación geométrica--aritmética, la igualdad ocurre cuando $(\sqrt a-\sqrt b)^2=0$. Ambas condiciones equivalen a $a=b$. En la comparación aritmética--cuadrática, la igualdad equivale a $(a-b)^2=0$, por lo que también requiere $a=b$. Por tanto, las cuatro medias coinciden exactamente cuando $a=b$.
+En la comparación armónica--geométrica, la transformación anterior sólo multiplica por un factor positivo, así que la igualdad equivale a $2\sqrt{ab}=a+b$. Por la \cref{prop:media-geometrica}, esta condición, al igual que la igualdad geométrica--aritmética, equivale a $a=b$. En la comparación aritmética--cuadrática, la diferencia entre los cuadrados es $(a-b)^2/4$, por lo que la igualdad también requiere $a=b$. Por tanto, las cuatro medias coinciden exactamente cuando $a=b$.
 \end{proof}
 
 \begin{example}
@@ -1176,6 +1337,7 @@ En efecto,
 \[
 1.6\leq2\leq2.5\leq\sqrt{8.5}.
 \]
+La \cref{fig:orden-medias} sitúa estas cuatro cantidades en el orden demostrado en la \cref{prop:medias}.
 \end{example}
 
 \begin{figuranotas}{Las cuatro medias del ejemplo ordenadas sobre la recta real: $H$ es la armónica, $G$ la geométrica, $A$ la aritmética y $Q$ la cuadrática.}{fig:orden-medias}
@@ -1184,15 +1346,18 @@ En efecto,
 
 Otra desigualdad elemental de gran utilidad es la \indexemph{desigualdad de Bernoulli}, que permite estimar potencias sin necesidad de desarrollarlas completamente.
 
+\begin{samepage}
 \begin{proposition}[Desigualdad de Bernoulli]
+\label{prop:bernoulli}
 Sea $a\geq-1$ y $n\in\mathbb{N}$. Entonces
 \[
 (1+a)^n\geq1+na.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Procedemos por inducción sobre $n$. Para $n=1$,
+Procedemos por inducción sobre $n$, utilizando el \cref{teo:induccion}. Para $n=1$,
 \[
 (1+a)^1=1+a,
 \]
@@ -1200,7 +1365,7 @@ por lo que el resultado es cierto. Supongamos ahora que
 \[
 (1+a)^n\geq1+na.
 \]
-Como $a\geq-1$, tenemos $1+a\geq0$ y podemos multiplicar la desigualdad por $1+a$:
+Como $a\geq-1$, tenemos $1+a\geq0$. La versión no estricta de la \cref{prop:multiplicacion-orden} permite multiplicar la desigualdad por $1+a$, incluso cuando este factor es cero:
 \[
 (1+a)^{n+1}\geq(1+na)(1+a).
 \]
@@ -1230,15 +1395,19 @@ En efecto,
 
 Una de las desigualdades más importantes de las matemáticas es la \indexemph{desigualdad de Cauchy--Schwarz}. En el caso finito puede formularse exclusivamente en términos de números reales.
 
+\begin{samepage}
 \begin{proposition}[Desigualdad de Cauchy--Schwarz]
-Sean $a_1,\ldots,a_n,b_1,\ldots,b_n\in\mathbb{R}$. Entonces
+\label{prop:cauchy-schwarz}
+Sean $n\in\mathbb{N}$ y dos familias de números reales $a_1,\ldots,a_n$ y $b_1,\ldots,b_n$. Entonces
 \[
 \left(\sum_{k=1}^{n}a_kb_k\right)^2
 \leq
 \left(\sum_{k=1}^{n}a_k^2\right)
 \left(\sum_{k=1}^{n}b_k^2\right).
 \]
+Hay igualdad si y solo si todos los $b_k$ son cero, o existe $\lambda\in\mathbb{R}$ tal que $a_k=\lambda b_k$ para todo $k$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Si
@@ -1259,7 +1428,18 @@ Como todo cuadrado es no negativo,
 \[
 0\leq\sum_{k=1}^{n}(a_k-\lambda b_k)^2.
 \]
-Desarrollando y sustituyendo el valor de $\lambda$ obtenemos
+Para ver por qué esta elección de $\lambda$ es útil, escribamos
+\[
+A=\sum_{k=1}^n a_k^2,\qquad B=\sum_{k=1}^n b_k^2>0,
+\qquad C=\sum_{k=1}^n a_kb_k.
+\]
+Entonces $\lambda=C/B$ y el desarrollo de la suma de cuadrados es
+\[
+\sum_{k=1}^n(a_k-\lambda b_k)^2
+=A-2\lambda C+\lambda^2B
+=A-\frac{C^2}{B}.
+\]
+En consecuencia,
 \[
 0\leq
 \sum_{k=1}^{n}a_k^2
@@ -1274,6 +1454,7 @@ Multiplicando por $\sum_{k=1}^{n}b_k^2>0$ resulta
 \left(\sum_{k=1}^{n}a_k^2\right)
 \left(\sum_{k=1}^{n}b_k^2\right).
 \]
+Cuando $B>0$, hay igualdad exactamente cuando $\sum_{k=1}^n(a_k-\lambda b_k)^2=0$. Una suma de cuadrados no negativos sólo es cero si cada sumando es cero: si alguno fuera positivo, la suma también lo sería. Por ello, la igualdad equivale a $a_k=\lambda b_k$ para todo $k$. El caso $B=0$ ya se comprobó al comienzo.
 \end{proof}
 
 \begin{example}
@@ -1291,17 +1472,21 @@ En efecto,
 
 Como consecuencia de Cauchy--Schwarz obtenemos una desigualdad útil para sumas.
 
+\begin{samepage}
 \begin{proposition}
-Para cualesquiera $x_1,\ldots,x_n\in\mathbb{R}$ se cumple
+\label{prop:suma-cuadrados}
+Si $n\in\mathbb{N}$ y $x_1,\ldots,x_n\in\mathbb{R}$, se cumple
 \[
 \left(\sum_{k=1}^{n}x_k\right)^2
 \leq
 n\sum_{k=1}^{n}x_k^2.
 \]
+Hay igualdad si y solo si $x_1=\cdots=x_n$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Aplicando Cauchy--Schwarz a los números
+Aplicando la \cref{prop:cauchy-schwarz} a los números
 \[
 a_k=x_k,
 \qquad
@@ -1324,14 +1509,18 @@ se concluye que
 \leq
 n\sum_{k=1}^{n}x_k^2.
 \]
+La condición de igualdad de esa proposición, con $b_k=1$, exige que todos los $x_k$ sean el mismo número $\lambda$.
 \end{proof}
 
-Estas desigualdades constituyen herramientas elementales que aparecerán reiteradamente a lo largo del análisis. En particular, el valor absoluto y la desigualdad del triángulo permitirán formalizar la noción de distancia, mientras que Bernoulli, las desigualdades entre medias y Cauchy--Schwarz proporcionarán estimaciones fundamentales para el estudio posterior de sucesiones, límites y convergencia.
+Estas desigualdades constituyen herramientas que aparecerán reiteradamente en análisis. La distancia de la \cref{prop:distancia-real} permitirá expresar cercanía, y la \cref{prop:igualdad-epsilon} convertirá estimaciones arbitrariamente pequeñas en igualdades. Bernoulli, las desigualdades entre medias y Cauchy--Schwarz proporcionarán otras cotas útiles. Al usarlas conviene comprobar siempre las hipótesis: el signo de los factores, la no nulidad de los denominadores y, cuando se comparan cuadrados, la no negatividad de las cantidades.
 
 \section{Conjuntos acotados}
-En esta sección estudiaremos qué significa que un conjunto de números reales esté limitado por arriba o por abajo y qué operaciones conservan esas propiedades. Los conjuntos acotados aparecen una y otra vez porque nos permiten controlar los valores que puede tomar un conjunto. Esta idea será importante más adelante: en el capítulo sobre sucesiones será una hipótesis central en el teorema de Bolzano--Weierstrass, y en el capítulo de topología aparecerá junto con la cerradura en el teorema de Heine--Borel. Aquí construiremos primero el lenguaje y las propiedades elementales que necesitaremos para entender esos resultados posteriores.
+\label{sec:conjuntos-acotados}
+En esta sección estudiaremos qué significa que un conjunto de números reales esté limitado por arriba o por abajo y qué operaciones conservan esas propiedades. Los conjuntos acotados nos permiten controlar todos sus elementos mediante cotas comunes. Esta idea será importante en el \cref{cap:sucesiones-limites}, para el teorema de Bolzano--Weierstrass, y en el \cref{cap:topologia-recta}, donde aparecerá junto con la condición de ser cerrado en el teorema de Heine--Borel. Aquí construiremos primero el lenguaje que necesitaremos para entender esos resultados.
 
+\begin{samepage}
 \begin{definition}[Cotas superiores]
+\label{def:cotas-superiores}
 Sea $A\subseteq\mathbb{R}$. Un número $M\in\mathbb{R}$ se llama \indexemph{cota superior} de $A$ si
 \[
  x\leq M\qquad\text{para todo }x\in A.
@@ -1342,8 +1531,17 @@ El \indexemph{conjunto de cotas superiores} de $A$ se denota por
 \]
 Decimos que $A$ está \indexemph{acotado superiormente} cuando $U(A)\neq\varnothing$.
 \end{definition}
+\end{samepage}
 
+La cota debe servir para \emph{todos} los elementos a la vez. El orden de los cuantificadores es
+\[
+\exists M\in\mathbb{R}\quad\forall x\in A,\quad x\leq M.
+\]
+Permitir que $M$ dependiera de $x$ no expresaría acotación: cualquier $x$ satisface $x\leq x+1$, incluso si $A=\mathbb{R}$.
+
+\begin{samepage}
 \begin{definition}[Cotas inferiores]
+\label{def:cotas-inferiores}
 Sea $A\subseteq\mathbb{R}$. Un número $m\in\mathbb{R}$ se llama \indexemph{cota inferior} de $A$ si
 \[
  m\leq x\qquad\text{para todo }x\in A.
@@ -1354,18 +1552,23 @@ El \indexemph{conjunto de cotas inferiores} de $A$ se denota por
 \]
 Decimos que $A$ está \indexemph{acotado inferiormente} cuando $L(A)\neq\varnothing$.
 \end{definition}
+\end{samepage}
 
 \begin{remark}
-Para $A=\varnothing$, las condiciones que definen una cota se cumplen vacíamente para todo real. Por tanto,
+\label{obs:cotas-vacio}
+Para $A=\varnothing$, las condiciones que definen una cota se cumplen vacíamente para todo real: no hay ningún elemento del conjunto que pueda incumplirlas. Por tanto,
 \[
  U(\varnothing)=L(\varnothing)=\mathbb{R}.
 \]
-Así, el conjunto vacío está acotado superior e inferiormente. Sin embargo, la afirmación de que toda cota inferior está por debajo de toda cota superior requiere que $A$ no sea vacío.
+Así, el conjunto vacío está acotado superior e inferiormente. Esto no implica que tenga extremos reales, como veremos en el \cref{ej:extremos-vacio}. Sin embargo, la afirmación de que toda cota inferior está por debajo de toda cota superior requiere que $A$ no sea vacío.
 \end{remark}
 
+\begin{samepage}
 \begin{proposition}[Relación entre cotas inferiores y superiores]
+\label{prop:comparacion-cotas}
 Si $A\neq\varnothing$, $m\in L(A)$ y $M\in U(A)$, entonces $m\leq M$. Es decir, toda cota inferior de $A$ queda a la izquierda de toda cota superior.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Como $A$ no es vacío, existe $x\in A$. Por las definiciones de cota inferior y superior,
@@ -1380,7 +1583,7 @@ Sea $A=(0,1)$. Entonces
 \[
  U(A)=[1,\infty),\qquad L(A)=(-\infty,0].
 \]
-En efecto, todo $M\geq1$ es mayor que cada elemento de $A$. Si $M<1$, cuando $M<0$ podemos tomar $x=1/2$, y cuando $0\leq M<1$ podemos tomar $x=(M+1)/2$; en ambos casos $x\in A$ y $x>M$, por lo que $M$ no es cota superior. Para las cotas inferiores, todo $m\leq0$ sirve. Si $m>0$, cuando $m<2$ tomamos $x=m/2$, y cuando $m\geq2$ tomamos $x=1/2$; en ambos casos $x\in A$ y $x<m$, así que $m$ no es cota inferior.
+La \cref{fig:cotas-intervalo-abierto} representa los tres conjuntos. En efecto, todo $M\geq1$ es mayor que cada elemento de $A$. Si $M<1$, cuando $M<0$ podemos tomar $x=1/2$, y cuando $0\leq M<1$ podemos tomar $x=(M+1)/2$; en ambos casos $x\in A$ y $x>M$, por lo que $M$ no es cota superior. Para las cotas inferiores, todo $m\leq0$ sirve. Si $m>0$, cuando $m<2$ tomamos $x=m/2$, y cuando $m\geq2$ tomamos $x=1/2$; en ambos casos $x\in A$ y $x<m$, así que $m$ no es cota inferior.
 \end{example}
 
 \begin{figuranotas}{El intervalo $A=(0,1)$ y sus conjuntos de cotas inferiores y superiores.}{fig:cotas-intervalo-abierto}
@@ -1402,19 +1605,24 @@ El conjunto $\mathbb{R}$ no está acotado superior ni inferiormente. Dado cualqu
 \]
 \end{example}
 
+\begin{samepage}
 \begin{proposition}[Monotonía respecto de la inclusión]
+\label{prop:inclusion-cotas}
 Si $A\subseteq B\subseteq\mathbb{R}$, entonces
 \[
  U(B)\subseteq U(A),\qquad L(B)\subseteq L(A).
 \]
 En particular, si $B$ está acotado superiormente (o inferiormente), todo subconjunto $A$ de $B$ también lo está.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Si $M\in U(B)$, entonces $x\leq M$ para todo $x\in B$, y en particular para todo $x\in A$; así, $M\in U(A)$. La inclusión de conjuntos de cotas inferiores se demuestra de la misma manera.
+Si $M\in U(B)$, entonces $x\leq M$ para todo $x\in B$, y en particular para todo $x\in A$; así, $M\in U(A)$. La inclusión de conjuntos de cotas inferiores se demuestra de la misma manera. Al reducir el conjunto, una cota que ya servía sigue sirviendo; pueden aparecer cotas nuevas. Por eso las inclusiones de $U$ y $L$ van en el sentido opuesto a $A\subseteq B$.
 \end{proof}
 
-\begin{proposition}[Cierre de los conjuntos de cotas]
+\begin{samepage}
+\begin{proposition}[Extensión de cotas]
+\label{prop:extension-cotas}
 Sea $A\subseteq\mathbb{R}$.
 \begin{enumerate}
   \item Si $M\in U(A)$ y $N\geq M$, entonces $N\in U(A)$.
@@ -1422,12 +1630,15 @@ Sea $A\subseteq\mathbb{R}$.
 \end{enumerate}
 Así, una vez que se encuentra una cota superior, todo número mayor también es cota superior; y todo número menor que una cota inferior también es cota inferior.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Si $M\in U(A)$, entonces $x\leq M$ para todo $x\in A$. De $M\leq N$ y la transitividad del orden se sigue $x\leq N$, luego $N\in U(A)$. El segundo inciso se demuestra del mismo modo: $n\leq m\leq x$ para todo $x\in A$, así que $n\in L(A)$.
 \end{proof}
 
+\begin{samepage}
 \begin{proposition}[Acotación superior e inferior mediante intervalos]
+\label{prop:cotas-intervalos}
 Un conjunto $A\subseteq\mathbb{R}$ está acotado superiormente si y solo si existe $M\in\mathbb{R}$ tal que
 \[
  A\subseteq(-\infty,M].
@@ -1437,51 +1648,64 @@ Análogamente, $A$ está acotado inferiormente si y solo si existe $m\in\mathbb{
  A\subseteq[m,\infty).
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 La primera equivalencia es exactamente la definición de cota superior escrita como inclusión de conjuntos: $x\leq M$ para todo $x\in A$ si y solo si cada elemento de $A$ pertenece a $(-\infty,M]$. La segunda se sigue del mismo modo de $m\leq x$.
 \end{proof}
 
+\begin{samepage}
 \begin{definition}[Conjunto acotado]
+\label{def:conjunto-acotado}
 Un conjunto $A\subseteq\mathbb{R}$ se llama \indexemph{acotado} si está acotado superior e inferiormente. Equivalentemente, existen $m,M\in\mathbb{R}$ con $m\leq M$ tales que
 \[
  m\leq x\leq M\qquad\text{para todo }x\in A,
 \]
 o, lo que es lo mismo, $A\subseteq[m,M]$.
-Si $A$ no es vacío, la relación entre cotas inferiores y superiores asegura $m\leq M$; si $A=\varnothing$, podemos elegir $m=M=0$.
+Si $A$ no es vacío, la \cref{prop:comparacion-cotas} asegura $m\leq M$; si $A=\varnothing$, podemos elegir $m=M=0$.
 \end{definition}
+\end{samepage}
 
+\begin{samepage}
 \begin{proposition}[Caracterización de los conjuntos no acotados]
+\label{prop:no-acotacion}
 Un conjunto $A\subseteq\mathbb{R}$ no está acotado superiormente si y solo si
 \[
  \text{para todo }M\in\mathbb{R}\text{ existe }x\in A\text{ tal que }M<x.
 \]
 Análogamente, no está acotado inferiormente si y solo si para todo $m\in\mathbb{R}$ existe $x\in A$ tal que $x<m$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Por definición, estar acotado superiormente significa que existe $M\in\mathbb{R}$ para el cual $x\leq M$ para todo $x\in A$. Negar esta afirmación equivale a decir que para cada $M\in\mathbb{R}$ hay al menos un $x\in A$ con $x\not\leq M$, es decir, $M<x$. La demostración para la acotación inferior es análoga.
 \end{proof}
 
+\begin{samepage}
 \begin{proposition}[Caracterización mediante el valor absoluto]
+\label{prop:acotacion-absoluto}
 Un conjunto $A\subseteq\mathbb{R}$ está acotado si y solo si existe $C\geq0$ tal que
 \[
  |x|\leq C\qquad\text{para todo }x\in A.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Supongamos primero que $m\leq x\leq M$ para todo $x\in A$. Tomemos $C=|m|+|M|$, que es no negativo. Si $x\geq0$, entonces $x\leq M$ y necesariamente $M\geq0$, por lo que $|x|=x\leq |M|\leq C$. Si $x<0$, entonces $m\leq x<0$, y así $|x|=-x\leq -m=|m|\leq C$. En ambos casos $|x|\leq C$.
 
-Recíprocamente, si $|x|\leq C$, la caracterización del valor absoluto ya demostrada da $-C\leq x\leq C$. Por ello $-C$ y $C$ son, respectivamente, cotas inferior y superior de $A$.
+Recíprocamente, si $|x|\leq C$, la caracterización del valor absoluto de la \cref{prop:absoluto-intervalos} da $-C\leq x\leq C$ cuando $C>0$. Si $C=0$, tenemos $x=0$ y las mismas desigualdades siguen siendo válidas. Por ello $-C$ y $C$ son, respectivamente, cotas inferior y superior de $A$.
 \end{proof}
 
+\begin{samepage}
 \begin{proposition}[Todo conjunto finito es acotado]
+\label{prop:finito-acotado}
 Todo conjunto finito $A\subseteq\mathbb{R}$ está acotado.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Si $A=\varnothing$, ya vimos que está acotado. Si $A=\{x_1,\ldots,x_n\}$, sea $C=\sum_{j=1}^{n}|x_j|$. Para cada $i$, se tiene $|x_i|\leq C$, pues los demás sumandos son no negativos. La caracterización mediante el valor absoluto prueba que $A$ está acotado.
+Si $A=\varnothing$, la \cref{obs:cotas-vacio} asegura que está acotado. Si $A=\{x_1,\ldots,x_n\}$, sea $C=\sum_{j=1}^{n}|x_j|$. Para cada $i$, se tiene $|x_i|\leq C$, pues los demás sumandos son no negativos. Por la \cref{prop:acotacion-absoluto}, $A$ está acotado.
 \end{proof}
 
 \begin{example}
@@ -1489,12 +1713,15 @@ La acotación no implica que un conjunto sea finito. El conjunto
 \[
  E=\left\{\frac1n:n\in\mathbb{N}\right\}
 \]
-es infinito —sus elementos son distintos— y está contenido en $(0,1]$, así que está acotado. Por otra parte, $\mathbb{R}$ es un conjunto infinito que no está acotado ni superior ni inferiormente. Por tanto, la infinitud por sí sola no determina si un conjunto está acotado.
+es infinito —sus elementos son distintos— y está contenido en $(0,1]$, así que está acotado. Por otra parte, $\mathbb{R}$ es un conjunto infinito que no está acotado ni superior ni inferiormente. Por tanto, la infinitud por sí sola no determina si un conjunto está acotado. En el \cref{ej:reciprocos-extremos} calcularemos los extremos de $E$.
 \end{example}
 
+\begin{samepage}
 \begin{proposition}[Uniones finitas]
+\label{prop:union-acotada}
 Si cada uno de los conjuntos $A_1,\ldots,A_n\subseteq\mathbb{R}$ está acotado superiormente, entonces $\bigcup_{j=1}^n A_j$ está acotado superiormente. La afirmación análoga vale para acotación inferior. En particular, la unión finita de conjuntos acotados es acotada.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Para cada $j$ elijamos una cota superior $M_j$ de $A_j$ y pongamos $C=\sum_{j=1}^n|M_j|$. Si $x\in\bigcup_{j=1}^n A_j$, entonces $x\in A_k$ para algún $k$, y por tanto $x\leq M_k\leq |M_k|\leq C$. Así, $C$ es cota superior de la unión. Para la acotación inferior, si $m_j$ es una cota inferior de $A_j$, para $x\in A_k$ se tiene
@@ -1504,11 +1731,21 @@ Para cada $j$ elijamos una cota superior $M_j$ de $A_j$ y pongamos $C=\sum_{j=1}
 así que $-\sum_{j=1}^n|m_j|$ es cota inferior común. Si $n=0$, la unión es vacía y el resultado también se cumple.
 \end{proof}
 
+\begin{example}[Una unión infinita puede dejar de estar acotada]
+Cada intervalo $[-t,t]$, con $t>0$, está acotado. Sin embargo,
+\[
+\bigcup_{t>0}[-t,t]=\mathbb{R}:
+\]
+dado $x\in\mathbb{R}$, basta tomar $t=|x|+1$ para que $x\in[-t,t]$. La unión no está acotada. Así, la finitud de la familia en la \cref{prop:union-acotada} no se puede omitir sin alguna hipótesis adicional, como disponer de cotas comunes para toda la familia.
+\end{example}
+
 \begin{remark}[Intersecciones y subconjuntos]
-La monotonía respecto de la inclusión también resuelve el caso de las intersecciones: $A\cap B\subseteq A$ y $A\cap B\subseteq B$. Por ello, si $A$ está acotado superiormente (o inferiormente), también lo está $A\cap B$, cualquiera que sea $B\subseteq\mathbb{R}$. Si $A$ está acotado, la intersección también está acotada.
+La monotonía de la \cref{prop:inclusion-cotas} también resuelve el caso de las intersecciones: $A\cap B\subseteq A$ y $A\cap B\subseteq B$. Por ello, si $A$ está acotado superiormente (o inferiormente), también lo está $A\cap B$, cualquiera que sea $B\subseteq\mathbb{R}$. Si $A$ está acotado, la intersección también está acotada.
 \end{remark}
 
+\begin{samepage}
 \begin{proposition}[Suma, producto, escalares y traslaciones]
+\label{prop:operaciones-acotadas}
 Sean $A,B\subseteq\mathbb{R}$ conjuntos acotados, $\lambda,c\in\mathbb{R}$, y definamos
 \[
  A+B=\{a+b:a\in A,\ b\in B\},\qquad
@@ -1520,17 +1757,18 @@ Sean $A,B\subseteq\mathbb{R}$ conjuntos acotados, $\lambda,c\in\mathbb{R}$, y de
 \]
 Entonces $A+B$, $AB$, $\lambda A$ y $A+c$ son acotados. Además, $A$ está acotado si y solo si su traslación $A+c$ está acotada.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Tomemos $m_A\leq a\leq M_A$ y $m_B\leq b\leq M_B$ para todo $a\in A$ y $b\in B$. Entonces
 \[
  m_A+m_B\leq a+b\leq M_A+M_B,
 \]
-lo que acota $A+B$. Por la caracterización mediante el valor absoluto, existen $C_A,C_B\geq0$ con $|a|\leq C_A$ y $|b|\leq C_B$. Así,
+lo que acota $A+B$. Por la \cref{prop:acotacion-absoluto}, existen $C_A,C_B\geq0$ con $|a|\leq C_A$ y $|b|\leq C_B$. Así,
 \[
  |ab|=|a||b|\leq C_A C_B,
 \]
-por lo que $AB$ está acotado. También $|\lambda a|\leq|\lambda|C_A$, de modo que $\lambda A$ está acotado. Finalmente, de $m_A\leq a\leq M_A$ se sigue $m_A+c\leq a+c\leq M_A+c$, lo que acota $A+c$. La implicación recíproca se obtiene al trasladar $A+c$ por $-c$.
+La identidad del producto procede de la \cref{prop:absoluto-producto}; la cota uniforme $C_A C_B$ y la \cref{prop:acotacion-absoluto} prueban que $AB$ está acotado. También $|\lambda a|\leq|\lambda|C_A$, de modo que $\lambda A$ está acotado. Finalmente, de $m_A\leq a\leq M_A$ se sigue $m_A+c\leq a+c\leq M_A+c$, lo que acota $A+c$. La implicación recíproca se obtiene al trasladar $A+c$ por $-c$.
 \end{proof}
 
 \section{Máximo, mínimo, supremo e ínfimo}
@@ -1538,9 +1776,11 @@ por lo que $AB$ está acotado. También $|\lambda a|\leq|\lambda|C_A$, de modo q
 
 Una cota indica hasta dónde llegan los elementos de un conjunto, pero puede haber muchas cotas y ninguna de ellas tiene por qué pertenecer al conjunto. En esta sección estudiaremos cuatro formas de precisar sus extremos. El máximo y el mínimo son elementos del conjunto que están, respectivamente, por encima y por debajo de todos los demás. El supremo y el ínfimo son las cotas más ajustadas, aunque el conjunto no las alcance.
 
-La diferencia se aprecia al comparar $(0,1)$ con $[0,1]$. Ambos tienen ínfimo $0$ y supremo $1$, pero solo el segundo tiene mínimo y máximo. Partiremos de esta distinción, aprenderemos a reconocer los extremos y estudiaremos cómo cambian al incluir conjuntos, tomar uniones, sumar o multiplicar por un escalar. El axioma de completitud garantizará la existencia del supremo y del ínfimo bajo las hipótesis correspondientes.
+Usaremos las cotas de las \cref{def:cotas-superiores,def:cotas-inferiores}. La diferencia entre cota y extremo se aprecia al comparar $(0,1)$ con $[0,1]$. Ambos tienen ínfimo $0$ y supremo $1$, pero solo el segundo tiene mínimo y máximo. Partiremos de esta distinción, aprenderemos a reconocer los extremos y estudiaremos cómo cambian al incluir conjuntos, tomar uniones, sumar o multiplicar por un escalar. El \cref{ax:completitud} y el \cref{teo:existencia-infimo} garantizarán la existencia del supremo y del ínfimo bajo las hipótesis correspondientes.
 
+\begin{samepage}
 \begin{definition}[Máximo]
+\label{def:maximo}
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $M$ se llama \indexemph{máximo} de $S$ si
 \[
  M\in S
@@ -1549,8 +1789,11 @@ Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $M$ se llama \index
 \]
 Cuando existe, lo denotamos por $\max S$. Así, un máximo es una cota superior que pertenece al conjunto.
 \end{definition}
+\end{samepage}
 
+\begin{samepage}
 \begin{definition}[Mínimo]
+\label{def:minimo}
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $m$ se llama \indexemph{mínimo} de $S$ si
 \[
  m\in S
@@ -1559,13 +1802,17 @@ Sea $S\subseteq\mathbb{R}$ un conjunto no vacío. Un número $m$ se llama \index
 \]
 Cuando existe, lo denotamos por $\min S$. Así, un mínimo es una cota inferior que pertenece al conjunto.
 \end{definition}
+\end{samepage}
 
+\begin{samepage}
 \begin{proposition}[Unicidad del máximo y del mínimo]
+\label{prop:unicidad-extremos}
 Si un conjunto tiene máximo, este es único. Lo mismo ocurre con el mínimo.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Si $M_1$ y $M_2$ son máximos de $S$, como $M_1\in S$ y $M_2$ es cota superior, se tiene $M_1\leq M_2$. Intercambiando sus papeles obtenemos $M_2\leq M_1$. La antisimetría implica $M_1=M_2$. Si $m_1$ y $m_2$ son mínimos, de su pertenencia a $S$ y de ser cotas inferiores se obtiene igualmente $m_1\leq m_2$ y $m_2\leq m_1$, por lo que $m_1=m_2$.
+Si $M_1$ y $M_2$ son máximos de $S$, como $M_1\in S$ y $M_2$ es cota superior, se tiene $M_1\leq M_2$. Intercambiando sus papeles obtenemos $M_2\leq M_1$. La antisimetría de la \cref{def:campo-ordenado} implica $M_1=M_2$. Si $m_1$ y $m_2$ son mínimos, de su pertenencia a $S$ y de ser cotas inferiores se obtiene igualmente $m_1\leq m_2$ y $m_2\leq m_1$, por lo que $m_1=m_2$.
 \end{proof}
 
 \begin{example}[Un conjunto finito]
@@ -1588,12 +1835,15 @@ Por tanto, siempre hay un elemento del intervalo menor que $x$ y otro mayor que 
 Si $a<b$, el intervalo $[a,b)$ tiene mínimo $a$, pero no tiene máximo: para cada $x\in[a,b)$, el número $(x+b)/2$ pertenece al intervalo y es mayor que $x$. Por su parte, $(a,b]$ tiene máximo $b$, pero no tiene mínimo, pues $(a+x)/2$ es un elemento menor que cualquier $x\in(a,b]$.
 \end{example}
 
+\begin{samepage}
 \begin{proposition}[Extremos de un conjunto finito]
+\label{prop:extremos-finitos}
 Todo subconjunto finito y no vacío de $\mathbb{R}$ tiene máximo y mínimo.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Procedemos por inducción sobre el número de elementos. Si $S=\{x_1\}$, el número $x_1$ es tanto su máximo como su mínimo. Supongamos que $\{x_1,\ldots,x_n\}$ tiene máximo $M_n$ y mínimo $m_n$. Al agregar $x_{n+1}$, el mayor de $M_n$ y $x_{n+1}$ pertenece al nuevo conjunto y es mayor o igual que todos sus elementos; por tanto, es su máximo. El menor de $m_n$ y $x_{n+1}$ pertenece al nuevo conjunto y es menor o igual que todos sus elementos, así que es su mínimo. La totalidad del orden permite hacer ambas comparaciones.
+Aplicamos el principio de inducción del \cref{teo:induccion} al número de elementos. Si $S=\{x_1\}$, el número $x_1$ es tanto su máximo como su mínimo. Supongamos que $\{x_1,\ldots,x_n\}$ tiene máximo $M_n$ y mínimo $m_n$. Al agregar $x_{n+1}$, el mayor de $M_n$ y $x_{n+1}$ pertenece al nuevo conjunto y es mayor o igual que todos sus elementos; por tanto, es su máximo. El menor de $m_n$ y $x_{n+1}$ pertenece al nuevo conjunto y es menor o igual que todos sus elementos, así que es su mínimo. La totalidad del orden permite hacer ambas comparaciones.
 \end{proof}
 
 \begin{remark}
@@ -1604,6 +1854,7 @@ Cuando el conjunto no alcanza un extremo, todavía podemos buscar la cota que me
 
 \begin{samepage}
 \begin{definition}[Supremo]
+\label{def:supremo}
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío y acotado superiormente. Un número $s\in\mathbb{R}$ se llama \indexemph{supremo} de $S$, o \indexemph{mínima cota superior}, si
 \begin{enumerate}
     \item $x\leq s$ para todo $x\in S$;
@@ -1617,7 +1868,9 @@ La primera condición dice que $s$ es una cota superior; la segunda, que es la m
 \end{definition}
 \end{samepage}
 
+\begin{samepage}
 \begin{definition}[Ínfimo]
+\label{def:infimo}
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío y acotado inferiormente. Un número $\ell\in\mathbb{R}$ se llama \indexemph{ínfimo} de $S$, o \indexemph{máxima cota inferior}, si
 \begin{enumerate}
     \item $\ell\leq x$ para todo $x\in S$;
@@ -1629,17 +1882,22 @@ Cuando existe, escribimos $\ell=\inf S$. Equivalentemente,
 \]
 El ínfimo es, por tanto, la mayor de todas las cotas inferiores.
 \end{definition}
+\end{samepage}
 
 Estas definiciones permiten reconocer un supremo o un ínfimo, pero todavía no establecen que existan para todo conjunto con la acotación correspondiente. Esa existencia será el contenido del axioma de completitud.
 
+\begin{samepage}
 \begin{proposition}[Unicidad del supremo y del ínfimo]
+\label{prop:unicidad-supremo}
 Si un conjunto tiene supremo, este es único. Si tiene ínfimo, también es único.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Si $s_1$ y $s_2$ son supremos de $S$, ambos son cotas superiores. La minimalidad de $s_1$ da $s_1\leq s_2$ y la de $s_2$ da $s_2\leq s_1$, de donde $s_1=s_2$. Si $\ell_1$ y $\ell_2$ son ínfimos, ambos son cotas inferiores y su maximalidad da $\ell_1\leq\ell_2$ y $\ell_2\leq\ell_1$. Así, $\ell_1=\ell_2$.
 \end{proof}
 
+\begin{samepage}
 \begin{proposition}[Relación con el máximo y el mínimo]
 \label{prop:extremos-alcanzados}
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío.
@@ -1650,6 +1908,7 @@ Sea $S\subseteq\mathbb{R}$ un conjunto no vacío.
     \item Si existe $\inf S$, entonces $S$ tiene mínimo si y solo si $\inf S\in S$.
 \end{enumerate}
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Un máximo $M$ es cota superior de $S$. Además, si $C$ es cualquier cota superior, como $M\in S$, se tiene $M\leq C$. Esto prueba que $M=\sup S$. Si $m$ es el mínimo y $c$ una cota inferior, de $m\in S$ se obtiene $c\leq m$, por lo que $m=\inf S$.
@@ -1657,8 +1916,9 @@ Un máximo $M$ es cota superior de $S$. Además, si $C$ es cualquier cota superi
 Si $\sup S$ pertenece a $S$, su condición de cota superior lo convierte en máximo. Recíprocamente, si hay máximo, por la primera afirmación coincide con el supremo y pertenece a $S$. El argumento para el ínfimo y el mínimo es el mismo, invirtiendo las desigualdades.
 \end{proof}
 
-La condición de ser la menor cota superior también puede expresarse así: cualquier número menor que el supremo deja algún elemento del conjunto por encima de él. Para el ínfimo ocurre lo análogo: cualquier número mayor deja algún elemento por debajo. La siguiente caracterización convierte esta idea en una herramienta para calcular extremos.
+La minimalidad exigida en la \cref{def:supremo} también puede expresarse así: cualquier número menor que el supremo deja algún elemento del conjunto por encima de él. Para el ínfimo ocurre lo análogo: cualquier número mayor deja algún elemento por debajo. La siguiente caracterización convierte esta idea en una herramienta para calcular extremos.
 
+\begin{samepage}
 \begin{proposition}[Caracterización mediante $\varepsilon$]
 \label{prop:caracterizacion-extremos-epsilon}
 Sea $S\subseteq\mathbb{R}$ un conjunto no vacío.
@@ -1675,6 +1935,7 @@ Sea $S\subseteq\mathbb{R}$ un conjunto no vacío.
     \]
 \end{enumerate}
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Supongamos que $s=\sup S$ y tomemos $\varepsilon>0$. Como $s-\varepsilon<s$, el número $s-\varepsilon$ no puede ser cota superior de $S$: si lo fuera, la minimalidad de $s$ daría $s\leq s-\varepsilon$. Por tanto, existe $x\in S$ con $s-\varepsilon<x$, y la condición de cota superior da $x\leq s$.
@@ -1684,20 +1945,25 @@ Recíprocamente, supongamos que $s$ es cota superior y satisface la condición i
 Para el ínfimo, si $\ell=\inf S$, el número $\ell+\varepsilon$ no puede ser cota inferior, pues es mayor que la máxima cota inferior. Existe entonces $x\in S$ con $x<\ell+\varepsilon$, y además $\ell\leq x$. En sentido inverso, si $\ell$ es cota inferior y satisface esa aproximación, una cota inferior $m>\ell$ daría, al tomar $\varepsilon=m-\ell$, un elemento $x\in S$ con $x<m$. Esto contradice que $m$ es cota inferior, y prueba que toda cota inferior es menor o igual que $\ell$.
 \end{proof}
 
-La caracterización anterior dice que hay elementos del conjunto a una distancia menor que $\varepsilon$ del supremo, sin superarlo, o del ínfimo, sin quedar por debajo de él. El elemento elegido puede depender de $\varepsilon$; si el extremo pertenece al conjunto, puede elegirse ese mismo elemento para todo $\varepsilon>0$. Para demostrar que un número es el supremo deben comprobarse ambas condiciones: ser cota superior y poder aproximarlo desde el conjunto.
+La \cref{prop:caracterizacion-extremos-epsilon} dice que hay elementos del conjunto a una distancia menor que $\varepsilon$ del supremo, sin superarlo, o del ínfimo, sin quedar por debajo de él. El elemento elegido puede depender de $\varepsilon$; si el extremo pertenece al conjunto, puede elegirse ese mismo elemento para todo $\varepsilon>0$. Para demostrar que un número es el supremo deben comprobarse ambas condiciones: ser cota superior y poder aproximarlo desde el conjunto. La \cref{fig:aproximacion-supremo-infimo} representa esa aproximación.
 
 \begin{figuranotas}{Aproximación al supremo y al ínfimo. Cada franja contiene al menos un elemento de $S$ para todo $\varepsilon>0$; no se afirma que la franja entera pertenezca a $S$.}{fig:aproximacion-supremo-infimo}
 \input{assets/aproximacion-supremo-infimo.tikz.tex}
 \end{figuranotas}
 
+\begin{remark}[El elemento puede depender de la precisión]
+En la \cref{prop:caracterizacion-extremos-epsilon}, primero se fija $\varepsilon$ y después se elige $x\in S$. No se afirma que un mismo $x$ funcione para todas las precisiones. Por ejemplo, para $S=(0,1)$ podemos aproximar $s=1$ tanto como queramos, pero cualquier $x\in S$ fijo deja de cumplir $1-\varepsilon<x$ si tomamos $\varepsilon=(1-x)/2$. Si un mismo $x\in S$ cumpliera $|s-x|<\varepsilon$ para todo $\varepsilon>0$, la \cref{prop:igualdad-epsilon} daría $x=s$, y el supremo sería máximo. Esta distinción explica por qué aproximar un extremo no significa alcanzarlo.
+\end{remark}
+
 \begin{example}[Supremo e ínfimo de intervalos]
+\label{ej:extremos-intervalos}
 Sean $a<b$. Para cada uno de los intervalos $(a,b)$, $[a,b]$, $[a,b)$ y $(a,b]$, el supremo es $b$ y el ínfimo es $a$.
 
 Comprobémoslo primero para $(a,b)$. El número $b$ es cota superior. Dado $\varepsilon>0$, pongamos
 \[
  \delta=\min\left\{\frac{\varepsilon}{2},\frac{b-a}{2}\right\}.
 \]
-Entonces $0<\delta<\varepsilon$ y $\delta<b-a$, de modo que $x=b-\delta$ pertenece a $(a,b)$ y satisface $b-\varepsilon<x<b$. Por la caracterización anterior, $\sup(a,b)=b$. Asimismo, $y=a+\delta$ pertenece al intervalo y cumple $a<y<a+\varepsilon$, por lo que $\inf(a,b)=a$.
+Elegimos el mínimo para satisfacer simultáneamente dos condiciones: acercarnos a $b$ menos que $\varepsilon$ y permanecer dentro del intervalo. Entonces $0<\delta<\varepsilon$ y $\delta<b-a$, de modo que $x=b-\delta$ pertenece a $(a,b)$ y satisface $b-\varepsilon<x<b$. Por la \cref{prop:caracterizacion-extremos-epsilon}, $\sup(a,b)=b$. Asimismo, $y=a+\delta$ pertenece al intervalo y cumple $a<y<a+\varepsilon$, por lo que $\inf(a,b)=a$.
 
 Los otros tres intervalos contienen $(a,b)$ y están contenidos en $[a,b]$. Por ello, $a$ y $b$ siguen siendo cotas y los mismos elementos $x$ e $y$ verifican la aproximación. La pertenencia de los extremos determina cuáles son además mínimo o máximo:
 \[
@@ -1718,7 +1984,7 @@ Los otros tres intervalos contienen $(a,b)$ y están contenidos en $[a,b]$. Por 
 \begin{example}[Un conjunto que no es un intervalo]
 Sea $S=\{-2\}\cup(0,3)$. El número $-2$ pertenece a $S$ y es menor que todos sus demás elementos; por tanto, $\min S=\inf S=-2$.
 
-Por otro lado, $3$ es cota superior. Dado $\varepsilon>0$, elijamos $\delta=\min\{\varepsilon/2,3/2\}$. Entonces $x=3-\delta$ pertenece a $(0,3)\subseteq S$ y cumple $3-\varepsilon<x<3$. La caracterización con $\varepsilon$ da $\sup S=3$. Como $3\notin S$, no hay máximo. El supremo y el ínfimo describen los extremos del conjunto completo, aunque este tenga partes separadas.
+Por otro lado, $3$ es cota superior. Dado $\varepsilon>0$, elijamos $\delta=\min\{\varepsilon/2,3/2\}$. Entonces $x=3-\delta$ pertenece a $(0,3)\subseteq S$ y cumple $3-\varepsilon<x<3$. La \cref{prop:caracterizacion-extremos-epsilon} da $\sup S=3$. Como $3\notin S$, no hay máximo. El supremo y el ínfimo describen los extremos del conjunto completo, aunque este tenga partes separadas.
 \end{example}
 
 \begin{example}[Acotación en un solo sentido]
@@ -1726,19 +1992,25 @@ El conjunto $S=[0,\infty)$ tiene mínimo e ínfimo iguales a $0$. No tiene supre
 \end{example}
 
 \begin{example}[El conjunto vacío]
-Aunque $\varnothing$ está acotado y $U(\varnothing)=L(\varnothing)=\mathbb{R}$, no tiene máximo ni mínimo, pues no tiene elementos. Tampoco tiene supremo ni ínfimo reales: $\mathbb{R}$ no tiene un menor elemento ni un mayor elemento. En efecto, dado cualquier $r\in\mathbb{R}$, se tiene $r-1<r<r+1$. En esta sección trabajamos con supremos e ínfimos que son números reales; no asignamos valores infinitos al conjunto vacío ni a conjuntos no acotados.
+\label{ej:extremos-vacio}
+Aunque $\varnothing$ está acotado y $U(\varnothing)=L(\varnothing)=\mathbb{R}$ por la \cref{obs:cotas-vacio}, no tiene máximo ni mínimo, pues no tiene elementos. Tampoco tiene supremo ni ínfimo reales: $\mathbb{R}$ no tiene un menor elemento ni un mayor elemento. En efecto, dado cualquier $r\in\mathbb{R}$, se tiene $r-1<r<r+1$. En esta sección trabajamos con supremos e ínfimos que son números reales; no asignamos valores infinitos al conjunto vacío ni a conjuntos no acotados.
 \end{example}
 
 Los ejemplos anteriores permiten reconocer extremos concretos. Para asegurar que todo conjunto no vacío con la acotación adecuada tiene un supremo, necesitamos una propiedad adicional de los reales. Esa es la función del axioma de completitud.
 
-\begin{axiom*}[Completitud o propiedad del supremo]
+\begin{samepage}
+\begin{axiom}[Completitud o propiedad del supremo]
+\label{ax:completitud}
 Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado superiormente tiene un supremo en $\mathbb{R}$.
-\end{axiom*}
+\end{axiom}
+\end{samepage}
 \index{axioma de completitud}
 
-Las dos hipótesis son esenciales. El conjunto vacío no tiene supremo real y un conjunto no acotado superiormente no puede tener una mínima cota superior. El axioma tampoco afirma que el supremo pertenezca al conjunto, como muestra $(0,1)$.
+La \cref{def:supremo} permite comprobar si un número propuesto es el supremo; el \cref{ax:completitud} asegura que tal número existe, incluso cuando todavía no sabemos calcularlo. Las dos hipótesis del axioma son esenciales. El conjunto vacío no tiene supremo real y un conjunto no acotado superiormente no puede tener una mínima cota superior. El axioma tampoco afirma que el supremo pertenezca al conjunto, como muestra $(0,1)$.
 
+\begin{samepage}
 \begin{theorem}[Existencia del ínfimo]
+\label{teo:existencia-infimo}
 Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado inferiormente tiene un ínfimo en $\mathbb{R}$. Además,
 \[
  \inf S=-\sup(-S),
@@ -1746,14 +2018,17 @@ Todo subconjunto no vacío de $\mathbb{R}$ que esté acotado inferiormente tiene
  -S=\{-x:x\in S\}.
 \]
 \end{theorem}
+\end{samepage}
 
 \begin{proof}
-Sea $m$ una cota inferior de $S$. Entonces $m\leq x$ para todo $x\in S$, de donde $-x\leq-m$. Por ello, $-S$ es no vacío y está acotado superiormente. Por el axioma de completitud existe $c=\sup(-S)$.
+Sea $m$ una cota inferior de $S$. Entonces $m\leq x$ para todo $x\in S$, de donde $-x\leq-m$ por la \cref{prop:multiplicacion-orden}. Por ello, $-S$ es no vacío y está acotado superiormente. Por el \cref{ax:completitud}, existe $c=\sup(-S)$.
 
 Como $-x\leq c$ para todo $x\in S$, el número $\ell=-c$ es cota inferior de $S$. Si $b$ es cualquier otra cota inferior, de $b\leq x$ se obtiene $-x\leq-b$ para todo $x\in S$. Así, $-b$ es cota superior de $-S$ y $c\leq-b$, es decir, $b\leq-c=\ell$. Esto prueba que $\ell=\inf S$.
 \end{proof}
 
+\begin{samepage}
 \begin{corollary}[Cambio de signo]
+\label{cor:extremos-signo}
 Si $S$ es no vacío y está acotado superiormente, entonces
 \[
  \inf(-S)=-\sup S.
@@ -1765,14 +2040,17 @@ En particular, si $S$ es no vacío y acotado, existen ambos extremos y
  \inf(-S)=-\sup S.
 \]
 \end{corollary}
+\end{samepage}
 
 \begin{proof}
-El conjunto $-S$ está acotado inferiormente. Aplicando el teorema anterior a $-S$ y usando $-(-S)=S$, obtenemos $\inf(-S)=-\sup S$. La otra identidad es la del teorema.
+El conjunto $-S$ está acotado inferiormente. Aplicando el \cref{teo:existencia-infimo} a $-S$ y usando $-(-S)=S$, obtenemos $\inf(-S)=-\sup S$. La otra identidad es la del teorema.
 \end{proof}
 
 Ahora podemos describir todas las cotas a partir de solo dos números: el ínfimo y el supremo.
 
+\begin{samepage}
 \begin{proposition}[Cotas óptimas de un conjunto acotado]
+\label{prop:cotas-optimas}
 Sea $S\subseteq\mathbb{R}$ no vacío y acotado, y escribamos $\ell=\inf S$ y $s=\sup S$. Entonces
 \[
  \ell\leq x\leq s\quad\text{para todo }x\in S,
@@ -1784,6 +2062,7 @@ Sea $S\subseteq\mathbb{R}$ no vacío y acotado, y escribamos $\ell=\inf S$ y $s=
 \]
 En particular, $\ell\leq s$. Además, $\ell=s$ si y solo si $S$ tiene exactamente un elemento.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Las primeras desigualdades son las condiciones de cota inferior y superior. Si $m\in L(S)$, la maximalidad de $\ell$ da $m\leq\ell$. Recíprocamente, si $m\leq\ell$, entonces $m\leq\ell\leq x$ para todo $x\in S$, así que $m\in L(S)$. Esto prueba la identidad para $L(S)$. La identidad para $U(S)$ se obtiene de modo análogo: $M\in U(S)$ implica $s\leq M$, y $s\leq M$ implica $x\leq s\leq M$ para todo $x\in S$.
@@ -1793,7 +2072,9 @@ Como $S$ no es vacío, podemos elegir $x_0\in S$ y obtener $\ell\leq x_0\leq s$,
 
 Al pasar a un subconjunto pueden desaparecer elementos cercanos a los extremos. El supremo puede disminuir y el ínfimo puede aumentar, como precisa el siguiente resultado.
 
+\begin{samepage}
 \begin{proposition}[Monotonía respecto de la inclusión]
+\label{prop:inclusion-extremos}
 Sean $A$ y $B$ subconjuntos no vacíos de $\mathbb{R}$ con $A\subseteq B$.
 \begin{enumerate}
     \item Si $B$ está acotado superiormente, entonces $\sup A\leq\sup B$.
@@ -1804,9 +2085,10 @@ En particular, si $B$ está acotado,
  \inf B\leq\inf A\leq\sup A\leq\sup B.
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-La inclusión asegura que $A$ tiene la acotación correspondiente. Además, $\sup B$ es cota superior de $A$, por lo que la minimalidad de $\sup A$ da $\sup A\leq\sup B$. Del mismo modo, $\inf B$ es cota inferior de $A$, y la maximalidad de $\inf A$ da $\inf B\leq\inf A$. La desigualdad intermedia se probó en la proposición anterior.
+Por la \cref{prop:inclusion-cotas}, $A$ tiene la acotación correspondiente. La existencia de sus extremos se sigue del \cref{ax:completitud} y el \cref{teo:existencia-infimo}. Además, $\sup B$ es cota superior de $A$, por lo que la minimalidad de $\sup A$ da $\sup A\leq\sup B$. Del mismo modo, $\inf B$ es cota inferior de $A$, y la maximalidad de $\inf A$ da $\inf B\leq\inf A$. La desigualdad intermedia es la de la \cref{prop:cotas-optimas}.
 \end{proof}
 
 \begin{remark}[Intersecciones]
@@ -1821,7 +2103,9 @@ Estas desigualdades pueden ser estrictas. Para $A=\{0,2,4\}$ y $B=\{1,2,5\}$, la
 
 En una unión finita, en cambio, los extremos se obtienen comparando los extremos de los conjuntos que la forman.
 
+\begin{samepage}
 \begin{proposition}[Uniones finitas]
+\label{prop:union-extremos}
 Sean $S_1,\ldots,S_n$ conjuntos no vacíos y acotados, con $n\geq1$. Entonces
 \[
  \sup\left(\bigcup_{j=1}^{n}S_j\right)
@@ -1833,16 +2117,19 @@ Sean $S_1,\ldots,S_n$ conjuntos no vacíos y acotados, con $n\geq1$. Entonces
 \]
 La primera igualdad requiere únicamente acotación superior de cada $S_j$; la segunda, únicamente acotación inferior.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-El número $s=\max\{\sup S_1,\ldots,\sup S_n\}$ existe por tratarse del máximo de un conjunto finito no vacío. Si $x$ pertenece a la unión, pertenece a algún $S_k$ y $x\leq\sup S_k\leq s$. Así, $s$ es cota superior de la unión. Toda cota superior $M$ de la unión es cota superior de cada $S_j$, por lo que $\sup S_j\leq M$ para todo $j$. Entonces $s\leq M$, y $s$ es el supremo de la unión.
+El número $s=\max\{\sup S_1,\ldots,\sup S_n\}$ existe por la \cref{prop:extremos-finitos}, pues es el máximo de un conjunto finito no vacío. Si $x$ pertenece a la unión, pertenece a algún $S_k$ y $x\leq\sup S_k\leq s$. Así, $s$ es cota superior de la unión. Toda cota superior $M$ de la unión es cota superior de cada $S_j$, por lo que $\sup S_j\leq M$ para todo $j$. Entonces $s\leq M$, y $s$ es el supremo de la unión.
 
 Análogamente, $\ell=\min\{\inf S_1,\ldots,\inf S_n\}$ es cota inferior de la unión. Toda cota inferior $m$ de la unión lo es de cada $S_j$, de modo que $m\leq\inf S_j$ para todo $j$ y, en consecuencia, $m\leq\ell$. Esto prueba la segunda igualdad.
 \end{proof}
 
 También podemos calcular extremos después de operar con los elementos del conjunto. Una traslación mueve ambos extremos la misma distancia. Un escalar positivo conserva su orden y uno negativo lo invierte.
 
+\begin{samepage}
 \begin{proposition}[Traslaciones y multiplicación por escalares]
+\label{prop:extremos-afines}
 Sea $S\subseteq\mathbb{R}$ no vacío y acotado, con $s=\sup S$ y $\ell=\inf S$. Para $c,\lambda\in\mathbb{R}$,
 \[
  \sup(S+c)=s+c,
@@ -1864,11 +2151,12 @@ y
  \end{cases}
 \]
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Un número $M$ es cota superior de $S+c$ si y solo si $M-c$ es cota superior de $S$. Por ello, $s+c$ es cota superior de $S+c$ y toda otra cota superior $M$ cumple $s\leq M-c$, es decir, $s+c\leq M$. Para las cotas inferiores se usa la misma equivalencia y se obtiene $\inf(S+c)=\ell+c$.
 
-Si $\lambda>0$, un número $M$ es cota superior de $\lambda S$ si y solo si $M/\lambda$ es cota superior de $S$; la división preserva el orden. Así, $\sup(\lambda S)=\lambda s$. La misma equivalencia para cotas inferiores da $\inf(\lambda S)=\lambda\ell$. Si $\lambda<0$, escribimos $\lambda S=(-\lambda)(-S)$ y aplicamos el caso positivo junto con las identidades de cambio de signo. Finalmente, si $\lambda=0$, la no vacuidad de $S$ da $0S=\{0\}$, cuyo supremo e ínfimo son ambos $0$.
+Si $\lambda>0$, un número $M$ es cota superior de $\lambda S$ si y solo si $M/\lambda$ es cota superior de $S$; la división preserva el orden por las \cref{prop:reciprocos-positivos,prop:multiplicacion-orden}. Así, $\sup(\lambda S)=\lambda s$. La misma equivalencia para cotas inferiores da $\inf(\lambda S)=\lambda\ell$. Si $\lambda<0$, escribimos $\lambda S=(-\lambda)(-S)$ y aplicamos el caso positivo junto con el \cref{cor:extremos-signo}. Finalmente, si $\lambda=0$, la no vacuidad de $S$ da $0S=\{0\}$, cuyo supremo e ínfimo son ambos $0$.
 \end{proof}
 
 \begin{example}[Una transformación que invierte los extremos]
@@ -1879,7 +2167,9 @@ Sea $S=[-1,2)$ y consideremos $T=-2S+3=\{-2x+3:x\in S\}$. Al multiplicar por $-2
 El mínimo de $S$ se transforma en el máximo de $T$. El supremo de $S$, que no se alcanza, se transforma en el ínfimo de $T$, que tampoco se alcanza.
 \end{example}
 
+\begin{samepage}
 \begin{proposition}[Extremos de una suma de conjuntos]
+\label{prop:extremos-suma}
 Sean $A,B\subseteq\mathbb{R}$ no vacíos y acotados. Entonces
 \[
  \sup(A+B)=\sup A+\sup B,\qquad
@@ -1887,11 +2177,12 @@ Sean $A,B\subseteq\mathbb{R}$ no vacíos y acotados. Entonces
 \]
 Si ambos conjuntos tienen máximo, $\max(A+B)=\max A+\max B$. Si ambos tienen mínimo, $\min(A+B)=\min A+\min B$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
 Escribamos $s_A=\sup A$ y $s_B=\sup B$. Para todo $a\in A$ y $b\in B$, se tiene $a+b\leq s_A+s_B$, de modo que la suma de los supremos es cota superior de $A+B$.
 
-Dado $\varepsilon>0$, la caracterización de los supremos permite elegir $a\in A$ y $b\in B$ con
+Dado $\varepsilon>0$, la \cref{prop:caracterizacion-extremos-epsilon} permite elegir $a\in A$ y $b\in B$ con
 \[
  s_A-\frac{\varepsilon}{2}<a\leq s_A,\qquad
  s_B-\frac{\varepsilon}{2}<b\leq s_B.
@@ -1900,7 +2191,7 @@ Al sumar,
 \[
  s_A+s_B-\varepsilon<a+b\leq s_A+s_B.
 \]
-Como $a+b\in A+B$, la misma caracterización demuestra la identidad para el supremo.
+Como $a+b\in A+B$, la \cref{prop:caracterizacion-extremos-epsilon} demuestra la identidad para el supremo. Repartimos el error como $\varepsilon/2+\varepsilon/2$ para que la suma quede a distancia menor que $\varepsilon$ del extremo propuesto.
 
 Si $\ell_A=\inf A$ y $\ell_B=\inf B$, todo elemento de $A+B$ es mayor o igual que $\ell_A+\ell_B$. Para cada $\varepsilon>0$, elegimos $a\in A$ y $b\in B$ con $\ell_A\leq a<\ell_A+\varepsilon/2$ y $\ell_B\leq b<\ell_B+\varepsilon/2$. Entonces
 \[
@@ -1908,13 +2199,14 @@ Si $\ell_A=\inf A$ y $\ell_B=\inf B$, todo elemento de $A+B$ es mayor o igual qu
 \]
 lo que prueba la identidad para el ínfimo.
 
-Cuando los máximos existen, su suma pertenece a $A+B$ y coincide con el supremo; por tanto, es el máximo. El argumento para los mínimos es análogo.
+Por la \cref{prop:extremos-alcanzados}, cuando los máximos existen, su suma pertenece a $A+B$ y coincide con el supremo; por tanto, es el máximo. El argumento para los mínimos es análogo.
 \end{proof}
 
 Los siguientes ejemplos reúnen las comprobaciones anteriores: identificar las cotas óptimas y decidir cuáles pertenecen al conjunto.
 
 \begin{example}[Conjuntos definidos por potencias]
-Usaremos las raíces positivas, cuya existencia se justificará en \cref{teo:raices-positivas}. Consideremos
+\label{ej:extremos-potencias}
+Usaremos las raíces positivas, cuya existencia se justificará en el \cref{teo:raices-positivas}. Consideremos
 \[
  A=\{x\in\mathbb{R}:x^3<2\},
  \qquad
@@ -1930,7 +2222,7 @@ Por su parte, $B$ contiene a $0$ y está acotado, pues $x^2<10$ implica $-4<x<4$
 \[
  B=(-\sqrt{10},\sqrt{10}),
 \]
-y, por los resultados sobre intervalos,
+y, por el \cref{ej:extremos-intervalos},
 \[
  \inf B=-\sqrt{10},
  \qquad
@@ -1940,13 +2232,14 @@ Ninguno de estos dos extremos pertenece a $B$, así que $B$ no tiene máximo ni 
 \end{example}
 
 \begin{example}[Un conjunto infinito acotado]
+\label{ej:reciprocos-extremos}
 Sea
 \[
  E=\left\{\frac1n:n\in\mathbb{N}\right\}.
 \]
-Como $0<1/n\leq1$ y $1\in E$, se tiene $\max E=\sup E=1$. Además, $0$ es una cota inferior. Para comprobar que es la mayor, usemos la existencia del ínfimo: sea $\ell=\inf E$, de modo que $\ell\geq0$.
+Como $0<1/n\leq1$ y $1\in E$, se tiene $\max E=\sup E=1$. Además, $0$ es una cota inferior. Para comprobar que es la mayor, usemos el \cref{teo:existencia-infimo}: sea $\ell=\inf E$, de modo que $\ell\geq0$.
 
-Si $\ell>0$, la caracterización con $\varepsilon=\ell$ daría un elemento $1/n\in E$ tal que
+Si $\ell>0$, la \cref{prop:caracterizacion-extremos-epsilon} con $\varepsilon=\ell$ daría un elemento $1/n\in E$ tal que
 \[
  \ell\leq\frac1n<2\ell.
 \]
@@ -1965,12 +2258,12 @@ El conjunto no tiene mínimo, pues $0\notin E$. También puede comprobarse direc
 \end{minipage}
 \end{center}
 
-Al calcular un supremo o un ínfimo conviene separar dos comprobaciones: el número propuesto debe ser una cota y ninguna cota más ajustada debe servir. Para decidir si hay máximo o mínimo, queda una pregunta adicional: ¿pertenece ese extremo al conjunto?
+La \cref{fig:extremos-conjuntos} resume dos ejemplos. Al calcular un supremo o un ínfimo mediante las \cref{def:supremo,def:infimo}, conviene separar dos comprobaciones: el número propuesto debe ser una cota y ninguna cota más ajustada debe servir. Para decidir si hay máximo o mínimo, queda una pregunta adicional: ¿pertenece ese extremo al conjunto?
 
 \section{Distribución de los números}
 \label{sec:distribucion-numeros}
 
-Las nociones de supremo e ínfimo permiten comparar la estructura de los racionales con la de los reales. Veremos primero que un conjunto de racionales puede estar acotado sin tener una mínima cota superior racional. Después usaremos la completitud de $\mathbb{R}$ para justificar la existencia de raíces y demostrar que los naturales superan cualquier número real. Estas herramientas nos permitirán estudiar, en la sección siguiente, cómo se distribuyen los racionales y los irracionales a lo largo de la recta.
+Las nociones de supremo e ínfimo permiten comparar la estructura de los racionales con la de los reales. Veremos primero que un conjunto de racionales puede estar acotado sin tener una mínima cota superior racional. Después usaremos la completitud de $\mathbb{R}$ para justificar la existencia de raíces y demostrar que los naturales superan cualquier número real. Estas herramientas nos permitirán estudiar en la \cref{sec:densidad} cómo se distribuyen los racionales y los irracionales a lo largo de la recta. En cada demostración indicaremos dónde se utiliza la completitud: allí está la diferencia con las propiedades puramente algebraicas y de orden.
 
 Los racionales satisfacen los axiomas de campo ordenado, pero no la propiedad del supremo cuando se exige que la mínima cota superior también sea racional. El siguiente ejemplo muestra esta diferencia.
 
@@ -1985,6 +2278,7 @@ Ambos son no vacíos porque contienen a $1$. También están acotados: si $x\geq
 \end{example}
 
 \begin{example}[Ausencia de supremo en $\mathbb{Q}$]
+\label{ej:incompletitud-racionales}
 Para el conjunto racional $A$ del ejemplo anterior, definamos sus cotas superiores \emph{dentro de los racionales} por
 \[
  U_{\mathbb{Q}}(A)=
@@ -1992,7 +2286,7 @@ Para el conjunto racional $A$ del ejemplo anterior, definamos sus cotas superior
 \]
 Este conjunto es no vacío, pero no tiene mínimo. Por tanto, $A$ no tiene supremo en $\mathbb{Q}$.
 
-Supongamos, para obtener una contradicción, que $c$ es el menor elemento de $U_{\mathbb{Q}}(A)$. Como $1\in A$, se tiene $c\geq1$. Además, $c^2\neq2$: si $c=p/q$ con enteros positivos coprimos y $p^2=2q^2$, entonces $p^2$ sería par y también $p$. Escribiendo $p=2k$, obtendríamos $q^2=2k^2$, por lo que $q$ también sería par. Esto contradice que $p$ y $q$ sean coprimos.
+Supongamos, para obtener una contradicción, que $c$ es el menor elemento de $U_{\mathbb{Q}}(A)$. Como $1\in A$, se tiene $c\geq1$. Además, $c^2\neq2$ por la \cref{prop:irracionalidad-raiz-dos}.
 
 Pongamos
 \[
@@ -2030,11 +2324,11 @@ Su utilidad es que conserva el signo de $c^2-2$ en $d^2-2$, mientras que el sign
 Las mismas dos contradicciones prueban el resultado. El caso anterior corresponde a $m=2$ y $n=1$.
 \end{remark}
 
-El ejemplo distingue dos preguntas: buscar una mínima cota superior en $\mathbb{Q}$ y buscarla en $\mathbb{R}$. Como $A$ también es un subconjunto no vacío y acotado superiormente de $\mathbb{R}$, el axioma de completitud garantiza un supremo real. Lo que hemos probado es que ese supremo no puede ser racional.
+El ejemplo distingue dos preguntas: buscar una mínima cota superior en $\mathbb{Q}$ y buscarla en $\mathbb{R}$. Como $A$ también es un subconjunto no vacío y acotado superiormente de $\mathbb{R}$, el \cref{ax:completitud} garantiza un supremo real. Si ese supremo fuera racional, sería una cota superior racional menor o igual que cualquier otra cota superior racional; sería el mínimo de $U_{\mathbb{Q}}(A)$, que acabamos de demostrar que no existe. Por tanto, el supremo real de $A$ no puede ser racional.
 
 \begin{example}[Construcción de la raíz cuadrada de $2$]
 \label{ej:raiz-dos-completitud}
-Sea $S=\{x\in\mathbb{R}:x^2<2\}$. Ya sabemos que $S$ es no vacío y está acotado superiormente. El axioma de completitud garantiza la existencia de $c=\sup S$. Como $1\in S$ y $2$ es una cota superior, se tiene $1\leq c\leq2$. Probaremos que $c^2=2$.
+Sea $S=\{x\in\mathbb{R}:x^2<2\}$. Ya sabemos que $S$ es no vacío y está acotado superiormente. El \cref{ax:completitud} garantiza la existencia de $c=\sup S$. Como $1\in S$ y $2$ es una cota superior, se tiene $1\leq c\leq2$. Probaremos que $c^2=2$. La estrategia consiste en descartar dos posibilidades: si el cuadrado es demasiado pequeño, encontraremos un elemento de $S$ mayor que $c$; si es demasiado grande, encontraremos una cota superior menor que $c$.
 \begin{enumerate}
     \item Supongamos que $c^2<2$ y pongamos $\delta=2-c^2$. Entonces $0<\delta\leq1$. Definamos
     \[
@@ -2065,9 +2359,12 @@ Las dos desigualdades estrictas son imposibles, de modo que $c^2=2$. Este númer
 
 El argumento anterior obtiene la raíz a partir de la completitud, sin presuponer su existencia. Para extenderlo a otras raíces conviene observar primero cómo se comparan las potencias de números no negativos.
 
+\begin{samepage}
 \begin{lemma}[Orden de las potencias no negativas]
+\label{lem:orden-potencias}
 Si $n\in\mathbb{N}$ y $0\leq u<v$, entonces $u^n<v^n$.
 \end{lemma}
+\end{samepage}
 
 \begin{proof}
 Usamos la factorización
@@ -2077,13 +2374,15 @@ Usamos la factorización
 El primer factor es positivo. Los sumandos son no negativos y el primero, $v^{n-1}$, es positivo; para $n=1$ la suma es $1$. Por tanto, la diferencia es positiva.
 \end{proof}
 
+\begin{samepage}
 \begin{theorem}[Existencia y unicidad de raíces positivas]
 \label{teo:raices-positivas}
 Para cada $a>0$ y cada $n\in\mathbb{N}$ existe un único $c>0$ tal que $c^n=a$. Este número se llama \indexemph{raíz enésima positiva} de $a$ y se denota por $\sqrt[n]{a}$.
 \end{theorem}
+\end{samepage}
 
 \begin{proof}
-Sea $S=\{x\in\mathbb{R}:x\geq0,\ x^n<a\}$. Contiene a $0$ y está acotado superiormente por $a+1$: si $x\geq a+1>1$, entonces $x^n\geq x>a$. Por completitud existe $c=\sup S$. Además, el número
+Sea $S=\{x\in\mathbb{R}:x\geq0,\ x^n<a\}$. Contiene a $0$ y está acotado superiormente por $a+1$: si $x\geq a+1>1$, entonces $x^n\geq x>a$. Por el \cref{ax:completitud}, existe $c=\sup S$. Además, el número
 \[
  r=\frac{\min\{1,a\}}2
 \]
@@ -2093,7 +2392,7 @@ Si $c^n<a$, pongamos $\delta=a-c^n>0$ y elijamos
 \[
  h=\min\left\{1,\frac{\delta}{2n(c+1)^{n-1}}\right\}>0.
 \]
-Como $h\leq1$, la factorización de la diferencia de potencias da
+La elección de $h$ controla simultáneamente su tamaño y el incremento de la potencia. Como $h\leq1$, todos los factores se pueden comparar con potencias de $c+1$. La factorización del \cref{lem:orden-potencias} da
 \[
  (c+h)^n-c^n
  =h\sum_{k=0}^{n-1}(c+h)^{n-1-k}c^k
@@ -2107,16 +2406,16 @@ Si $c^n>a$, pongamos $\delta=c^n-a>0$ y tomemos
  h=\min\left\{\frac c2,\frac{\delta}{2n c^{n-1}}\right\}>0,
  \qquad t=c-h.
 \]
-Se tiene $0<t<c$ y
+La condición $h\leq c/2$ garantiza $0<t<c$; la otra condición controla la disminución de la potencia. Así,
 \[
  c^n-t^n
  =h\sum_{k=0}^{n-1}c^{n-1-k}t^k
  \leq hn c^{n-1}
  \leq\frac{\delta}{2}.
 \]
-Así, $t^n\geq c^n-\delta/2>a$. Si $x\in S$ cumpliera $x\geq t$, el orden de las potencias daría $x^n\geq t^n>a$, una contradicción. Luego $t$ es cota superior de $S$ y es menor que $c$, lo cual también es imposible. Concluimos que $c^n=a$.
+Así, $t^n\geq c^n-\delta/2>a$. Si $x\in S$ cumpliera $x\geq t$, el \cref{lem:orden-potencias}, junto con el caso de igualdad, daría $x^n\geq t^n>a$, una contradicción. Luego $t$ es cota superior de $S$ y es menor que $c$, lo cual también es imposible. Concluimos que $c^n=a$.
 
-Finalmente, dos raíces positivas distintas podrían ordenarse como $u<v$, y el lema daría $u^n<v^n$. Por tanto, no pueden tener ambas potencia enésima igual a $a$. Esto prueba la unicidad.
+Finalmente, dos raíces positivas distintas podrían ordenarse como $u<v$, y el \cref{lem:orden-potencias} daría $u^n<v^n$. Por tanto, no pueden tener ambas potencia enésima igual a $a$. Esto prueba la unicidad.
 \end{proof}
 
 \begin{remark}[Raíces cuadradas]
@@ -2129,16 +2428,19 @@ La notación $\sqrt a$ designa la raíz no negativa; en particular, $\sqrt0=0$. 
 
 Otra consecuencia del axioma de completitud es que los números naturales no están acotados superiormente en $\mathbb{R}$. Esta propiedad permite superar cualquier número real mediante un natural y obtener recíprocos positivos tan pequeños como se quiera.
 
+\begin{samepage}
 \begin{theorem}[Propiedad arquimediana]
 \label{teo:propiedad-arquimediana}
 Para todo $x\in\mathbb{R}$ existe $n\in\mathbb{N}$ tal que $x<n$.
 \end{theorem}
+\end{samepage}
 \index{propiedad arquimediana}
 
 \begin{proof}
-Si $\mathbb{N}$ estuviera acotado superiormente, por completitud tendría un supremo $s$. Como $s-1<s$, el número $s-1$ no sería cota superior y existiría $n\in\mathbb{N}$ con $s-1<n$. Pero entonces $n+1\in\mathbb{N}$ y $s<n+1$, contradiciendo que $s$ sea cota superior. Por tanto, $\mathbb{N}$ no está acotado superiormente. La caracterización de la falta de acotación prueba la afirmación.
+Si $\mathbb{N}$ estuviera acotado superiormente, el \cref{ax:completitud} le daría un supremo $s$. Como $s-1<s$, el número $s-1$ no sería cota superior y existiría $n\in\mathbb{N}$ con $s-1<n$. Pero entonces $n+1\in\mathbb{N}$ y $s<n+1$, contradiciendo que $s$ sea cota superior. Por tanto, $\mathbb{N}$ no está acotado superiormente. La caracterización de la \cref{prop:no-acotacion} prueba la afirmación.
 \end{proof}
 
+\begin{samepage}
 \begin{corollary}[Recíprocos arbitrariamente pequeños]
 \label{cor:reciprocos-pequenos}
 Para todo $\varepsilon>0$ existe $n\in\mathbb{N}$ tal que
@@ -2147,13 +2449,15 @@ Para todo $\varepsilon>0$ existe $n\in\mathbb{N}$ tal que
 \]
 Más generalmente, dados $a,b>0$, existe $n\in\mathbb{N}$ tal que $b<na$.
 \end{corollary}
+\end{samepage}
 
 \begin{proof}
-Aplicando la propiedad arquimediana a $1/\varepsilon$, obtenemos $n>1/\varepsilon>0$. Al tomar recíprocos se invierte el orden, por lo que $0<1/n<\varepsilon$. Para la segunda afirmación basta elegir $n>b/a$ y multiplicar por $a>0$.
+Aplicando el \cref{teo:propiedad-arquimediana} a $1/\varepsilon$, obtenemos $n>1/\varepsilon>0$. Por la \cref{prop:reciprocos-positivos}, al tomar recíprocos se invierte el orden, por lo que $0<1/n<\varepsilon$. Para la segunda afirmación basta elegir $n>b/a$ y multiplicar por $a>0$.
 \end{proof}
 
 La propiedad arquimediana también permite situar cada real entre dos enteros consecutivos. Este paso será útil al buscar racionales con un denominador elegido de antemano.
 
+\begin{samepage}
 \begin{proposition}[Parte entera]
 \label{prop:parte-entera}
 Para todo $x\in\mathbb{R}$ existe un único $p\in\mathbb{Z}$ tal que
@@ -2162,13 +2466,14 @@ Para todo $x\in\mathbb{R}$ existe un único $p\in\mathbb{Z}$ tal que
 \]
 El entero $p$ se llama \indexemph{parte entera} de $x$ y se denota por $\lfloor x\rfloor$.
 \end{proposition}
+\end{samepage}
 
 \begin{proof}
-Por la propiedad arquimediana, elijamos $N\in\mathbb{N}$ con $N>|x|+1$. El conjunto
+Por el \cref{teo:propiedad-arquimediana}, elijamos $N\in\mathbb{N}$ con $N>|x|+1$. El conjunto
 \[
  F=\{k\in\mathbb{Z}:-N\leq k\leq N,\ k\leq x\}
 \]
-es finito y no vacío, pues contiene a $-N$. Tiene, por tanto, un máximo $p$. Su definición da $p\leq x$.
+es finito y no vacío, pues contiene a $-N$. Por la \cref{prop:extremos-finitos}, tiene un máximo $p$. Su definición da $p\leq x$.
 
 Si $p+1\leq x$, entonces $-N\leq p+1\leq x<N$, así que $p+1\in F$. Esto contradice la maximalidad de $p$. Luego $x<p+1$.
 
@@ -2184,25 +2489,30 @@ Se tiene $\lfloor 7/3\rfloor=2$, pues $2\leq7/3<3$. Para un número negativo, $\
 
 Entre dos números reales distintos siempre hay un racional y siempre hay un irracional. La palabra \emph{densidad} expresa esta propiedad: por pequeño que sea un intervalo abierto no vacío, contiene elementos de ambos tipos. Comenzaremos con una definición que permite formular las dos afirmaciones de la misma manera.
 
+\begin{samepage}
 \begin{definition}[Conjunto denso en $\mathbb{R}$]
+\label{def:denso}
 Un conjunto $D\subseteq\mathbb{R}$ se llama \indexemph{denso} en $\mathbb{R}$ si para cualesquiera $a,b\in\mathbb{R}$ con $a<b$ existe $d\in D$ tal que
 \[
  a<d<b.
 \]
 Equivalentemente, $D\cap(a,b)\neq\varnothing$ para todo intervalo abierto no vacío $(a,b)$.
 \end{definition}
+\end{samepage}
 
+\begin{samepage}
 \begin{theorem}[Densidad de los racionales]
 \label{teo:densidad-racionales}
 El conjunto $\mathbb{Q}$ es denso en $\mathbb{R}$.
 \end{theorem}
+\end{samepage}
 
 \begin{proof}
-Sean $a<b$. Por \cref{cor:reciprocos-pequenos}, podemos elegir $n\in\mathbb{N}$ tal que $1/n<b-a$. Tomemos
+Sean $a<b$. Por el \cref{cor:reciprocos-pequenos}, podemos elegir $n\in\mathbb{N}$ tal que $1/n<b-a$. Tomemos
 \[
  m=\lfloor na\rfloor+1\in\mathbb{Z}.
 \]
-La definición de parte entera da
+Por la \cref{prop:parte-entera},
 \[
  m-1\leq na<m.
 \]
@@ -2213,7 +2523,7 @@ Dividiendo entre $n>0$ y reordenando, obtenemos
 Por tanto, el racional $m/n$ pertenece a $(a,b)$. El argumento funciona también cuando $a$ es negativo.
 \end{proof}
 
-La elección del denominador divide la recta en pasos de longitud $1/n$. Como ese paso es menor que la longitud $b-a$, el primer punto de la forma $m/n$ que queda a la derecha de $a$ todavía queda a la izquierda de $b$.
+La \cref{fig:densidad-racionales} ilustra la construcción. La elección del denominador divide la recta en pasos de longitud $1/n$. Como ese paso es menor que la longitud $b-a$, el primer punto de la forma $m/n$ que queda a la derecha de $a$ todavía queda a la izquierda de $b$.
 
 \begin{figuranotas}{Construcción de un racional entre $a$ y $b$. El paso $1/n$ es menor que $b-a$, y la elección de $m$ garantiza $(m-1)/n\leq a<m/n<b$.}{fig:densidad-racionales}
 \input{assets/densidad-racionales.tikz.tex}
@@ -2229,17 +2539,19 @@ Para $a=-2/5$ y $b=-1/3$ se tiene $b-a=1/15$. Podemos tomar $n=30$, pues $1/30<1
 Así obtenemos un racional dentro del intervalo mediante la construcción de la demostración.
 \end{example}
 
+\begin{samepage}
 \begin{theorem}[Densidad de los irracionales]
 \label{teo:densidad-irracionales}
 El conjunto $\mathbb{R}\setminus\mathbb{Q}$ es denso en $\mathbb{R}$.
 \end{theorem}
+\end{samepage}
 
 \begin{proof}
-Sean $a<b$. Por la densidad de los racionales, existe $q\in\mathbb{Q}$ tal que
+Sean $a<b$. Por el \cref{teo:densidad-racionales}, existe $q\in\mathbb{Q}$ tal que
 \[
  a-\sqrt2<q<b-\sqrt2.
 \]
-Al sumar $\sqrt2$, el número $t=q+\sqrt2$ satisface $a<t<b$. Además, $t$ es irracional: si fuera racional, también lo sería $\sqrt2=t-q$, contradiciendo la irracionalidad demostrada en la sección anterior.
+Al sumar $\sqrt2$, el número $t=q+\sqrt2$ satisface $a<t<b$. Además, $t$ es irracional: si fuera racional, también lo sería $\sqrt2=t-q$, contradiciendo la \cref{prop:irracionalidad-raiz-dos}. La existencia de ese número real positivo se justificó en el \cref{ej:raiz-dos-completitud}.
 \end{proof}
 
 \begin{example}
@@ -2251,17 +2563,22 @@ En el intervalo $(13/10,8/5)$ están el racional $3/2$ y el irracional $\sqrt2$.
 permite comparar los extremos positivos con $\sqrt2$. Los dos teoremas aseguran que esta coexistencia ocurre en cualquier intervalo abierto no vacío.
 \end{example}
 
+\begin{samepage}
 \begin{corollary}[Infinitos números de ambos tipos]
+\label{cor:infinitos-en-intervalo}
 Todo intervalo abierto no vacío contiene infinitos racionales e infinitos irracionales.
 \end{corollary}
+\end{samepage}
 
 \begin{proof}
-Si los racionales de $(a,b)$ formaran un conjunto finito, ese conjunto sería no vacío por la densidad y tendría un máximo $r$. Pero el intervalo $(r,b)$ contendría otro racional, mayor que $r$, una contradicción. El mismo argumento, aplicado a los irracionales de $(a,b)$, prueba la segunda afirmación.
+Si los racionales de $(a,b)$ formaran un conjunto finito, ese conjunto sería no vacío por el \cref{teo:densidad-racionales} y tendría un máximo $r$ por la \cref{prop:extremos-finitos}. Pero el intervalo $(r,b)$ contendría otro racional, mayor que $r$, una contradicción. El mismo argumento, aplicado a los irracionales de $(a,b)$, prueba la segunda afirmación.
 \end{proof}
 
 La densidad también permite calcular extremos de conjuntos que contienen únicamente racionales o únicamente irracionales, aunque sus extremos puedan ser de cualquier tipo.
 
+\begin{samepage}
 \begin{corollary}[Extremos en un intervalo]
+\label{cor:extremos-densos}
 Sean $a<b$ y
 \[
  A=\mathbb{Q}\cap(a,b),
@@ -2276,22 +2593,57 @@ Entonces
 \]
 Ninguno de los dos conjuntos tiene máximo ni mínimo.
 \end{corollary}
+\end{samepage}
 
 \begin{proof}
-Ambos conjuntos son no vacíos por densidad, y $a$ y $b$ son cotas inferior y superior de cada uno. Dado $\varepsilon>0$, pongamos $u=\max\{a,b-\varepsilon\}<b$. El intervalo $(u,b)$ contiene un racional y un irracional; cada uno pertenece al conjunto correspondiente y está entre $b-\varepsilon$ y $b$. La caracterización con $\varepsilon$ prueba que ambos supremos son $b$.
+Ambos conjuntos son no vacíos por densidad, y $a$ y $b$ son cotas inferior y superior de cada uno. Dado $\varepsilon>0$, pongamos $u=\max\{a,b-\varepsilon\}<b$. El intervalo $(u,b)$ contiene un racional y un irracional; cada uno pertenece al conjunto correspondiente y está entre $b-\varepsilon$ y $b$. La \cref{prop:caracterizacion-extremos-epsilon} prueba que ambos supremos son $b$.
 
-Análogamente, con $v=\min\{b,a+\varepsilon\}>a$, el intervalo $(a,v)$ contiene elementos de ambos tipos entre $a$ y $a+\varepsilon$. Por tanto, ambos ínfimos son $a$. Como $a$ y $b$ no pertenecen a $A$ ni a $B$, estos conjuntos no alcanzan ninguno de sus extremos.
+Análogamente, con $v=\min\{b,a+\varepsilon\}>a$, el intervalo $(a,v)$ contiene elementos de ambos tipos entre $a$ y $a+\varepsilon$. Por tanto, ambos ínfimos son $a$. Como $a$ y $b$ no pertenecen a $A$ ni a $B$, la \cref{prop:extremos-alcanzados} asegura que estos conjuntos no alcanzan ninguno de sus extremos.
 \end{proof}
 
 \begin{remark}[Densidad y completitud]
-La densidad y la completitud expresan propiedades distintas. La primera asegura que encontramos elementos dentro de cualquier intervalo abierto; la segunda garantiza una mínima cota superior para cada conjunto no vacío acotado superiormente. Los racionales son densos en $\mathbb{R}$, pero el conjunto $\{q\in\mathbb{Q}:q^2<2\}$ no tiene supremo racional. Por su parte, $\mathbb{Z}$ no es denso, pues $(0,1)$ no contiene enteros.
+\label{obs:densidad-completitud}
+La densidad y la completitud expresan propiedades distintas. La primera asegura que encontramos elementos dentro de cualquier intervalo abierto; la segunda garantiza una mínima cota superior para cada conjunto no vacío acotado superiormente. Por el \cref{teo:densidad-racionales}, los racionales son densos en $\mathbb{R}$, pero el \cref{ej:incompletitud-racionales} muestra que el conjunto $\{q\in\mathbb{Q}:q^2<2\}$ no tiene supremo racional. La garantía del \cref{ax:completitud} se refiere a cotas superiores y supremos en $\mathbb{R}$. Por su parte, $\mathbb{Z}$ no es denso, pues $(0,1)$ no contiene enteros.
 \end{remark}
 
+\medskip
+\noindent\textbf{Guía para usar los resultados del capítulo.}
+Las flechas de la \cref{fig:estructura-capitulo} señalan el recorrido de las ideas y las herramientas empleadas en las demostraciones finales. En particular, la densidad se obtiene después de disponer de la propiedad arquimediana; la mera presencia de un orden no sustituye a la completitud.
+
+\begin{center}
+\begin{minipage}{\linewidth}
+\centering
+\captionsetup{hypcap=false}
+\input{assets/estructura-capitulo-01.tikz.tex}
+\captionof{figure}{Estructuras y resultados del capítulo. Las primeras flechas añaden propiedades a un campo; las restantes indican herramientas utilizadas en las demostraciones. La construcción de irracionales también utiliza la irracionalidad de $\sqrt2$ de la \cref{prop:irracionalidad-raiz-dos}.}
+\label{fig:estructura-capitulo}
+\end{minipage}
+\end{center}
+
+Para elegir una herramienta, conviene formular con precisión lo que se quiere probar:
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}@{}}
+\toprule
+\textbf{Objetivo} & \textbf{Qué comprobar o estimar} & \textbf{Referencia}\\
+\midrule
+Comparar cantidades & Revisar signos antes de multiplicar, dividir o comparar cuadrados. & \cref{prop:multiplicacion-orden,prop:comparacion-cuadrados}\\[5pt]
+Probar una igualdad & Acotar la distancia de dos números fijos para toda precisión positiva. & \cref{prop:igualdad-epsilon}\\[5pt]
+Probar acotación & Encontrar una constante común $C$ con $|x|\leq C$ para todos los elementos. & \cref{prop:acotacion-absoluto}\\[5pt]
+Identificar un supremo & Comprobar que es cota superior y aproximarlo desde el conjunto. & \cref{prop:caracterizacion-extremos-epsilon}\\[5pt]
+Decidir si hay máximo & Comprobar si el supremo pertenece al conjunto. & \cref{prop:extremos-alcanzados}\\[5pt]
+Encontrar un racional & Elegir un paso $1/n$ menor que el intervalo y usar la parte entera. & \cref{teo:densidad-racionales}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \section{Problemas}
-Los siguientes 21 problemas practican los apartados del capítulo que ya están desarrollados: conjuntos numéricos, axiomas de campo, orden, intervalos, valor absoluto, desigualdades, acotación y extremos de conjuntos.
+\label{sec:problemas-reales}
+Los siguientes 29 problemas recorren los temas del capítulo: conjuntos numéricos, axiomas de campo, orden, intervalos, valor absoluto, desigualdades, acotación, extremos, completitud y densidad. En cada demostración identifica primero las hipótesis y la conclusión; después elige una definición o un resultado que conecte ambas. Las referencias incluidas ofrecen un punto de partida.
 
 \subsection{Números y estructura de campo}
 
+\begin{samepage}
 \begin{problem}
 Clasifica cada número en el conjunto más pequeño de la cadena
 \[
@@ -2300,19 +2652,26 @@ Clasifica cada número en el conjunto más pequeño de la cadena
 \]
 Indica cuáles son irracionales y recuerda que en estas notas $0\notin\mathbb{N}$.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Demuestra que $\sqrt2$ es irracional. Supón que $\sqrt2=p/q$ con $p$ y $q$ enteros coprimos y deduce una contradicción.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Usa inducción matemática para demostrar que
 \[
 1+3+5+\cdots +(2n-1)=n^2
 \]
 para todo $n\in\mathbb{N}$.
+Identifica el caso inicial y el paso inductivo del \cref{teo:induccion}.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Usando únicamente los axiomas de campo y las propiedades ya deducidas, demuestra que para $a,b\in\mathbb{R}$,
 \[
@@ -2321,7 +2680,9 @@ a\cdot0=0
 a(-b)=-(ab).
 \]
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Simplifica
 \[
@@ -2329,13 +2690,17 @@ Simplifica
 \]
 indicando en cada paso qué propiedad de los signos o del cero utilizas.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
-Resuelve $3x+2=11$ en $\mathbb{R}$. Justifica cada operación mediante las propiedades de campo y explica por qué la solución es única.
+Resuelve $3x+2=11$ en $\mathbb{R}$. Justifica cada operación mediante las propiedades de campo y explica por qué la solución es única usando la \cref{prop:cancelacion-campo}.
 \end{problem}
+\end{samepage}
 
 \subsection{Orden, intervalos y valor absoluto}
 
+\begin{samepage}
 \begin{problem}
 Resuelve la desigualdad
 \[
@@ -2343,15 +2708,20 @@ Resuelve la desigualdad
 \]
 Explica por qué cambia el sentido de la desigualdad al despejar $x$ y expresa la solución como intervalo.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Sean $x,y\in\mathbb{R}$ con $0<x<y$. Demuestra que
 \[
 0<\frac1y<\frac1x.
 \]
 Después verifica la conclusión para $x=2$ y $y=7$.
+¿Cuál es la regla si $x<y<0$? Consulta el \cref{cor:reciprocos-negativos} y compruébala con $x=-7$ y $y=-2$.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Representa en una recta real los intervalos
 \[
@@ -2359,7 +2729,9 @@ Representa en una recta real los intervalos
 \]
 En cada dibujo señala con claridad los extremos incluidos y excluidos, y explica qué indican las flechas.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Escribe en notación de intervalos los conjuntos
 \[
@@ -2369,15 +2741,21 @@ Escribe en notación de intervalos los conjuntos
 \]
 Clasifica cada intervalo como acotado o no acotado, e identifica si su extremo real se incluye.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Resuelve $|x-4|\leq3$ y expresa la solución como intervalo. Interpreta la desigualdad como una condición de distancia a $4$.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Resuelve $|2x+1|<5$. Primero expresa la desigualdad de valor absoluto como una desigualdad doble y después despeja $x$.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Usando la desigualdad del triángulo, demuestra que
 \[
@@ -2385,27 +2763,69 @@ Usando la desigualdad del triángulo, demuestra que
 \]
 para cualesquiera $x,y\in\mathbb{R}$.
 \end{problem}
+\end{samepage}
 
 \subsection{Desigualdades básicas}
 
+\begin{samepage}
+\begin{problem}
+Sean $x,y\in\mathbb{R}$ fijos. Supón que $|x-y|\leq3\varepsilon$ para todo $\varepsilon>0$ y demuestra que $x=y$. Explica cómo aplicar la \cref{prop:igualdad-epsilon} cambiando la precisión. ¿Basta que la desigualdad se cumpla para un solo $\varepsilon>0$? Si no, da un contraejemplo.
+\end{problem}
+\end{samepage}
+
+\begin{samepage}
 \begin{problem}
 Sean $a=2$ y $b=8$. Calcula las medias armónica, geométrica, aritmética y cuadrática, y verifica numéricamente el orden entre ellas.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Aplica la desigualdad de Bernoulli con $a=1/5$ y $n=4$ para obtener una cota inferior de $(6/5)^4$.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Aplica Cauchy--Schwarz a los vectores $(1,-1,2)$ y $(2,3,-1)$. Escribe la desigualdad resultante y comprueba ambos lados.
+Usa la condición de igualdad de la \cref{prop:cauchy-schwarz} para decidir si puede haber igualdad en este caso.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Demuestra que si $|x|\leq2$, entonces $x^2\leq4$. Usa la identidad entre el cuadrado del valor absoluto y $x^2$.
 \end{problem}
+\end{samepage}
+
+\subsection{Conjuntos acotados}
+
+\begin{samepage}
+\begin{problem}
+Determina $U(A)$ y $L(A)$ para cada uno de los conjuntos
+\[
+A=\varnothing,\qquad A=(-2,4],\qquad
+A=\{x\in\mathbb{R}:|x-1|<2\}.
+\]
+Indica en cada caso si $A$ está acotado y comprueba tus respuestas directamente con las \cref{def:cotas-superiores,def:cotas-inferiores}. Explica por qué el conjunto vacío necesita un tratamiento distinto al comparar cotas inferiores y superiores.
+\end{problem}
+\end{samepage}
+
+\begin{samepage}
+\begin{problem}
+Sean $A\subseteq B\subseteq\mathbb{R}$ y $D\subseteq\mathbb{R}$. Si $B$ está acotado, demuestra que $A$ y $B\cap D$ están acotados de dos maneras: usando la \cref{prop:inclusion-cotas} y usando la \cref{prop:acotacion-absoluto}. ¿Puede estar acotado $A$ sin que lo esté $B$? Da un ejemplo.
+\end{problem}
+\end{samepage}
+
+\begin{samepage}
+\begin{problem}
+Para cada $n\in\mathbb{N}$, considera $A_n=[-n,n]$ y $B_n=[-1,1-1/n]$. Demuestra que todos estos conjuntos están acotados. Decide si $\bigcup_{n\in\mathbb{N}}A_n$ y $\bigcup_{n\in\mathbb{N}}B_n$ están acotados y justifica tus respuestas. Para la primera unión puedes usar el \cref{teo:propiedad-arquimediana}; para la segunda, busca cotas que sirvan para todos los $B_n$.
+\end{problem}
+\end{samepage}
 
 \subsection{Máximo, mínimo, supremo e ínfimo}
 
+\begin{samepage}
 \begin{problem}
 Para cada uno de los siguientes conjuntos, determina sus conjuntos de cotas superiores e inferiores, su supremo y su ínfimo, e indica si tiene máximo o mínimo:
 \[
@@ -2416,11 +2836,16 @@ Para cada uno de los siguientes conjuntos, determina sus conjuntos de cotas supe
 \]
 Justifica también la ausencia de cualquiera de los extremos y representa $A$ y $C$ en la recta real.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Sea $S=\{x\in\mathbb{R}:x^2<9\}$. Demuestra que $\sup S=3$ y $\inf S=-3$ mediante la caracterización con $\varepsilon$. Explica por qué $S$ no tiene máximo ni mínimo.
+Usa las \cref{prop:caracterizacion-extremos-epsilon,prop:extremos-alcanzados} y verifica por separado que los números propuestos sean cotas.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Sean $A$ y $B$ conjuntos no vacíos y acotados, y supongamos que $a\leq b$ para todo $a\in A$ y todo $b\in B$. Demuestra que
 \[
@@ -2428,11 +2853,45 @@ Sean $A$ y $B$ conjuntos no vacíos y acotados, y supongamos que $a\leq b$ para 
 \]
 ¿Se obtiene necesariamente $\sup A<\inf B$ si se supone $a<b$ para todos esos pares? Examina los conjuntos $A=(-1,0)$ y $B=(0,1)$.
 \end{problem}
+\end{samepage}
 
+\begin{samepage}
 \begin{problem}
 Para $E=\{1/n:n\in\mathbb{N}\}$, determina el supremo y el ínfimo de los conjuntos
 \[
  -E,\qquad 2E+3,\qquad -2E+3.
 \]
 Indica cuáles de esos extremos se alcanzan. Justifica tus respuestas mediante las propiedades de traslación, multiplicación por escalares y cambio de signo.
+Consulta el \cref{ej:reciprocos-extremos} y la \cref{prop:extremos-afines}.
 \end{problem}
+\end{samepage}
+
+\subsection{Completitud, distribución y densidad}
+
+\begin{samepage}
+\begin{problem}
+Dado $\varepsilon>0$, demuestra que existe $N\in\mathbb{N}$ tal que $0<1/n<\varepsilon$ para todo natural $n\geq N$. Utiliza el \cref{teo:propiedad-arquimediana} y la \cref{prop:reciprocos-positivos}. Explica por qué este enunciado da más información que encontrar un único natural con $1/n<\varepsilon$.
+\end{problem}
+\end{samepage}
+
+\begin{samepage}
+\begin{problem}
+Calcula las partes enteras de $7/3$, $-7/3$, $-4$ y $9/2$, comprobando las dos desigualdades de la \cref{prop:parte-entera}. Después demuestra que
+\[
+\lfloor x+k\rfloor=\lfloor x\rfloor+k
+\qquad(x\in\mathbb{R},\ k\in\mathbb{Z}).
+\]
+\end{problem}
+\end{samepage}
+
+\begin{samepage}
+\begin{problem}
+Construye un racional y un irracional en $(5/4,4/3)$. Para el racional, sigue la elección de $n$ y $m$ del \cref{teo:densidad-racionales}. Para el irracional, puedes buscar un número de la forma $q+\sqrt2$, con $q\in\mathbb{Q}$, como en el \cref{teo:densidad-irracionales}. Justifica las desigualdades y la clasificación de ambos números.
+\end{problem}
+\end{samepage}
+
+\begin{samepage}
+\begin{problem}
+Sea $A=\mathbb{Q}\cap(-\sqrt2,\sqrt2)$. Determina su supremo y su ínfimo en $\mathbb{R}$ usando el \cref{cor:extremos-densos}. Decide si tiene máximo o mínimo. Explica por qué la existencia de esos extremos reales no implica que $\mathbb{Q}$ satisfaga el axioma de completitud; consulta el \cref{ej:incompletitud-racionales} y la \cref{obs:densidad-completitud}.
+\end{problem}
+\end{samepage}

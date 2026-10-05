@@ -1,0 +1,25 @@
+\begin{tikzpicture}[
+  >=Stealth, font=\small,
+  etapa/.style={draw=blue!65!black, fill=blue!4, rounded corners=3pt,
+    align=center, text width=3.1cm, minimum height=1.1cm, inner sep=6pt},
+  resultado/.style={draw=teal!70!black, fill=teal!4, rounded corners=3pt,
+    align=center, text width=3.1cm, minimum height=0.95cm, inner sep=6pt},
+  enlace/.style={->, thick, gray!80}
+]
+  \node[etapa] (campo) at (0,0) {Campo\\\cref{def:campo}};
+  \node[etapa] (orden) at (4.5,0) {Campo ordenado\\\cref{def:campo-ordenado}};
+  \node[etapa] (completo) at (9,0) {Campo ordenado\\completo\\\cref{ax:completitud}};
+  \draw[enlace] (campo) -- (orden);
+  \draw[enlace] (orden) -- (completo);
+  \node[resultado] (raices) at (4.5,-1.9) {Raíces positivas\\\cref{teo:raices-positivas}};
+  \node[resultado] (arquimediana) at (9,-1.9) {Propiedad\\arquimediana\\\cref{teo:propiedad-arquimediana}};
+  \node[resultado] (parte) at (9,-3.8) {Parte entera y pasos $1/n$\\\cref{prop:parte-entera,cor:reciprocos-pequenos}};
+  \node[resultado] (racionales) at (4.5,-3.8) {Densidad de racionales\\\cref{teo:densidad-racionales}};
+  \node[resultado] (irracionales) at (0,-3.8) {Densidad de irracionales\\\cref{teo:densidad-irracionales}};
+  \draw[enlace] (completo.south west) -- (raices.north east);
+  \draw[enlace] (completo) -- (arquimediana);
+  \draw[enlace] (arquimediana) -- (parte);
+  \draw[enlace] (parte) -- (racionales);
+  \draw[enlace] (racionales) -- (irracionales);
+  \draw[enlace] (raices.west) -| (irracionales.north);
+\end{tikzpicture}
